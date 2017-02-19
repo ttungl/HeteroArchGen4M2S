@@ -92,7 +92,7 @@ Let’s use the `blacksholes` example with 16 cores CPUs (`8` x86 CPUs), 16 core
 	* For benchmarks, you need to modify the name of specific benchmark you want to run, and modify the command line of this benchmark and its path in `create_shell_script` file.
 
 	* For network topologies, HeteroArchGen4M2S currently supports three types of network, including `2D-Mesh`, `customized 2D-Mesh`, and `2D-Torus`. For `customized 2D-Mesh`, you need to specify the paths for local links and hybrid links in your network, as well as their linkwidths. 
-
+```
 	---------------- Heterogeneous CPU-GPU Architecture ---------------
 
 	|~~CPU~~|..|~~CPU~~~||~~~~~~~~GPU~~~~~~~|..|~~~~~~~~~~GPU~~~~~~~~~|
@@ -120,7 +120,7 @@ Let’s use the `blacksholes` example with 16 cores CPUs (`8` x86 CPUs), 16 core
                	 -----	  -----	  -----	  -----
 
 
-	---------------------------------------------------------------------------------------------------------------
+```
 
 
 3.	After modifying `create_sim_configs_files.py`: 
