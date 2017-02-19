@@ -73,9 +73,9 @@ Let’s assume you are in the home directory (`$multi2sim-5.0/HeteroArchGen4M2S`
 * Now, there are three files should be in `results` folder, including `pipeline.out`, `mem.out`, and `net_report.out`(just copied).
 
 ##Demonstration: 
-###How to run multi2sim-5.0 with HeteroArchGen4M2S
+###How to run multi2sim-5.0 with HeteroArchGen4M2S ?
 
-Let’s use the `blacksholes` example with 16 CPUs, 16 GPUs, 4 Memory Controllers, in a customized 2D-Mesh for demonstration. 
+Let’s use the `blacksholes` example with 16 cores CPUs (`8` x86 CPUs), 16 cores GPUs (`4` Southern Islands GPUs), 4 Memory Controllers, in a 2D-Mesh for demonstration. 
 
 > Important: You need to download `parsec` benchmark from `https://github.com/Multi2Sim/m2s-bench-parsec-3.0`, then unzip it under the `benchmarks` folder in `multi2sim-5.0` directory for demonstration.
 
@@ -92,6 +92,36 @@ Let’s use the `blacksholes` example with 16 CPUs, 16 GPUs, 4 Memory Controller
 	* For benchmarks, you need to modify the name of specific benchmark you want to run, and modify the command line of this benchmark and its path in `create_shell_script` file.
 
 	* For network topologies, HeteroArchGen4M2S currently supports three types of network, including `2D-Mesh`, `customized 2D-Mesh`, and `2D-Torus`. For `customized 2D-Mesh`, you need to specify the paths for local links and hybrid links in your network, as well as their linkwidths. 
+
+	------------------------------------- Heterogeneous CPU-GPU Architecture ------------------------------------
+
+	|~~~~~~~~CPU~~~~~~~| ... |~~~~~~~~CPU~~~~~~~| |~~~~~~~~~~~~GPU~~~~~~~~~~~~| ... |~~~~~~~~~~~~GPU~~~~~~~~~~~~|
+	|--------  --------|     |--------  --------| |------ ------ ------ ------|     |------ ------ ------ ------|  
+	||core_0|  |core_1|| ... ||core_14||core_15|| ||cu_0| |cu_1| |cu_2| |cu_3|| ... ||cu_12||cu_13||cu_14||cu_15|  
+	|--------  --------|     |--------  --------| |------ ------ ------ ------|     |------ ------ ------ ------|  
+        |          | 			 |          |         \     /      \     /              \     /      \     / 
+      -----      -----         -----      -----        -----        -----				  -----        ----- 
+      |L1$|      |L1$|   ...   |L1$|      |L1$|        |L1$|        |L1$|				  |L1$|        |L1$|		  
+      |D/I|      |D/I|         |D/I|      |D/I|  	   -----	    -----				  -----		   -----	
+      -----      -----         -----      -----          |   net_g0   |                     |    net_g3  |
+        |  net_c0  |             |  net_c7  |          ------------------   			   ----------------             
+      ----------------         ---------------- 				|								   |
+              |						   |                        |								   |	
+            -----					 -----					  ----- 							 -----
+            |L2$|					 |L2$|					  |L2$|								 |L2$|	
+            -----					 -----					  -----								 -----
+              | sw0    ...			   | sw7                    | sw8                         sw11 |
+            ------------------------------------------------------------------------------------------ net-l2-mm
+            |                         2D-Mesh Interconnection Network			                	 |
+            ------------------------------------------------------------------------------------------
+               	   | sw12			  | sw13			  | sw14				  | sw15			
+               	 -----				-----				-----					-----			
+               	 |MM0|				|MM1|				|MM2|					|MM3|	
+               	 -----				-----				-----					-----
+
+
+	---------------------------------------------------------------------------------------------------------------
+
 
 3.	After modifying `create_sim_configs_files.py`: 
 
