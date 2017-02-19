@@ -8,7 +8,7 @@ Heterogeneous Architecture Configurations Generator for Multi2Sim simulator (Het
 `HeteroArchGen4M2S` is written to help you configure M2S 
 easily, but non-warranty and non-mechantability.
 
-> A pdf version of this manual is also available in `HeteroArchGen4M2S_manual.pdf`.
+> A pdf version of this manual is also available in `HeteroArchGen4M2S.pdf`.
 
 ##Setup Requirements
 
@@ -20,18 +20,29 @@ easily, but non-warranty and non-mechantability.
 
 	* Python 2.7
 
-3. Download and install `multi2sim-5.0` from `https://github.com/Multi2Sim/multi2sim`. 
+3. Download and install `multi2sim-5.0` from:
+	
+	* `https://github.com/Multi2Sim/multi2sim`. 
 
-4. Download `McPAT` (current version-1.3) from `https://code.google.com/archive/p/mcpat/`. Unzip it under multi2sim-5.0 directory and install it following the README file.
+4. Download `McPAT` (current version-1.3) from:
+	
+	* `https://code.google.com/archive/p/mcpat/`. 
 
-5. Download and install `CACTI6.5` from `http://www.hpl.hp.com/research/cacti/cacti65.tgz`. 
+	* Unzip it under multi2sim-5.0 directory and install it following the README file.
+
+5. Download and install `CACTI6.5` from:
+
+	* `http://www.hpl.hp.com/research/cacti/cacti65.tgz`. 
 	
 	* CACTI 6.5 is used to obtain the cache and memory latency.
 
 6. Required benchmarks to run:
 	
-	* Download benchmarks from `https://github.com/Multi2Sim`, then unzip the benchmarks' files under the installed multi2sim directory, then compile the benchmarks following the README file.
+	* Download benchmarks from `https://github.com/Multi2Sim`. 
 
+	* Then unzip the benchmarks' files under the installed multi2sim directory
+
+	* Compile the benchmarks following the README file.
 
 	> Note: In case you want to run CUDA benchmarks, you can download other benchmarks for CPU-GPU systems such as Rodinia, Parboil, etc. Your desktop should have a NVIDIA graphic card (e.g., NVIDIA Quadro 4000), and you need to install the graphic card driver for running the simulation. (When compiling benchmarks, use `-m32` to make compatible with `multi2sim`). 
 
@@ -44,15 +55,18 @@ easily, but non-warranty and non-mechantability.
 Let’s assume you are in the home directory (`$multi2sim-5.0/HeteroArchGen4M2S`)
 
 ####Where are the configuration files?
-* After running `/multi2sim-5.0/HeteroArchGen4M2S$ python create_sim_configs_files.py`, the output files will be saved in `configs` directory.
-* `cd configs`	>>> note that, `configs` folder contains four files, including `memconfig`, `netconfig`, `x86_cpuconfig`, and `si_gpuconfig`.
+* Run `/multi2sim-5.0/HeteroArchGen4M2S$ python create_sim_configs_files.py`.
+* The output files will be saved in `configs` directory.
+* `cd configs` >>> `configs` folder contains four files, including `memconfig`, `netconfig`, `x86_cpuconfig`, and `si_gpuconfig`.
 
 ####How to run the simulation?
 * Previous steps show how to generate the configuration files. By running `create_sim_configs_files.py`, it also generated a shell script file inside `run_simulation_files` folder. The bash file (shell script) has been `chmod 777` for running.
-* Go back under `multi2sim-5.0` directory, run `./HeteroArchGen4M2S/run_simulation_files/run-bash-sim.sh`. This will create the output files which are the results of the simulation.  
+* Go back under `multi2sim-5.0` directory.
+* Run `./HeteroArchGen4M2S/run_simulation_files/run-bash-sim.sh`. 
+* This will create the output files which are the results of the simulation.  
 
 ####Where are the output files after simulation?
-* `cd results`	>>> note that, `results` folder contains two files at this time, including `pipeline.out`, `mem.out`.
+* `cd results` >>> Note that, `results` folder contains two files at this time, including `pipeline.out`, `mem.out`.
 
 * With `net_report.out` file, it is generated under the `multi2sim-5.0` directory (outside of `HeteroArchGen4M2S` folder), you need to copy this file to `HeteroArchGen4M2S/results`.
 
@@ -86,11 +100,20 @@ Let’s use the `blacksholes` example with 16 CPUs, 16 GPUs, 4 Memory Controller
 
 	* A shell script (`.sh`) has also been generated in the `run_simulation_files` folder. The shell script looks like as below.
 
-		> m2s --x86-sim detailed --x86-report HeteroArchGen4M2S/results/blackscholes_pipeline.out --mem-report HeteroArchGen4M2S/results/blackscholes_mem.out --x86-config ./HeteroArchGen4M2S/configs/x86_cpuconfig --si-sim detailed --si-config ./HeteroArchGen4M2S/configs/si_gpuconfig --mem-config ./HeteroArchGen4M2S/configs/memconfig --net-config ./HeteroArchGen4M2S/configs/netconfig --x86-max-inst 100000000 --net-report blackscholes_net_report.out benchmarks/m2s-bench-parsec-3.0/blackscholes/blackscholes 16 in_4K.txt prives.txt data-small
+		> m2s --x86-sim detailed --x86-report \
+		HeteroArchGen4M2S/results/blackscholes_pipeline.out \
+		--mem-report HeteroArchGen4M2S/results/blackscholes_mem.out \
+		--x86-config ./HeteroArchGen4M2S/configs/x86_cpuconfig \
+		--si-sim detailed --si-config ./HeteroArchGen4M2S/configs/si_gpuconfig \
+		--mem-config ./HeteroArchGen4M2S/configs/memconfig \
+		--net-config ./HeteroArchGen4M2S/configs/netconfig \
+		--x86-max-inst 100000000 --net-report blackscholes_net_report.out \
+		benchmarks/m2s-bench-parsec-3.0/blackscholes/blackscholes 16 in_4K.txt prives.txt data-small
 
 	* `cd ..` to `multi2sim-5.0` directory.
 
-	* `./HeteroArchGen4M2S/run_simulation_files/run-sim-16-CPU-16-SouthernIslands-GPU-benchmark-blacksholes.sh`
+	* `./HeteroArchGen4M2S/run_simulation_files/run-sim-16-CPU-16-\
+	SouthernIslands-GPU-benchmark-blacksholes.sh`
 
 4.	To check the results, all of them are in the `results` folder, including:
 
