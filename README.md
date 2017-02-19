@@ -61,7 +61,7 @@ Now you are ready to go. Hack the code and have fun!
 
 We would like to thank the open source multi2sim community.
 
-This work is inspired by [M2StoMcPAT](http://www.ece.umd.edu/~cserafy1/index.htm), but implemented completely in Python (v2.7). 
+This work is inspired by [M2StoMcPAT](http://www.ece.umd.edu/~cserafy1/index.htm), but implemented completely in Python. 
 
 		Tung Thanh Le
 		ttungl at gmail dot com
