@@ -31,7 +31,7 @@ easily, but non-warranty and non-mechantability.
 6. Required benchmarks to run:
 	
 	* Download benchmarks from `https://github.com/Multi2Sim`, then unzip the benchmarks' files under the installed multi2sim directory, then compile the benchmarks following the README file.
-	
+
 
 	> Note: In case you want to run CUDA benchmarks, you can download other benchmarks for CPU-GPU systems such as Rodinia, Parboil, etc. Your desktop should have a NVIDIA graphic card (e.g., NVIDIA Quadro 4000), and you need to install the graphic card driver for running the simulation. (When compiling benchmarks, use `-m32` to make compatible with `multi2sim`). 
 
@@ -45,22 +45,24 @@ Let’s assume you are in the home directory (`$multi2sim-5.0/HeteroArchGen4M2S`
 
 ####Where are the configuration files?
 * After running `/multi2sim-5.0/HeteroArchGen4M2S$ python create_sim_configs_files.py`, the output files will be saved in `configs` directory.
-* `cd configs`	>>> note that, `configs` folder contains many configuration files, including `memconfig`, `netconfig`, `x86_cpuconfig`, and `si_gpuconfig`.
+* `cd configs`	>>> note that, `configs` folder contains four files, including `memconfig`, `netconfig`, `x86_cpuconfig`, and `si_gpuconfig`.
 
 ####How to run the simulation?
 * Previous steps show how to generate the configuration files. By running `create_sim_configs_files.py`, it also generated a shell script file inside `run_simulation_files` folder. The bash file (shell script) has been `chmod 777` for running.
 * Go back under `multi2sim-5.0` directory, run `./HeteroArchGen4M2S/run_simulation_files/run-bash-sim.sh`. This will create the output files which are the results of the simulation.  
 
 ####Where are the output files after simulation?
-* `cd results`	>>> note that, `results` folder contains many configuration files, including `pipeline.out`, `mem.out`.
+* `cd results`	>>> note that, `results` folder contains two files at this time, including `pipeline.out`, `mem.out`.
+
 * With `net_report.out` file, it is generated under the `multi2sim-5.0` directory (outside of `HeteroArchGen4M2S` folder), you need to copy this file to `HeteroArchGen4M2S/results`.
+
 * Now, there are three files should be in `results` folder, including `pipeline.out`, `mem.out`, and `net_report.out`(just copied).
 
-##Demonstration: How to run multi2sim-5.0 simulator with a benchmark
+##Demonstration: How to run multi2sim-5.0 simulator with HeteroArchGen4M2S
 
 Let’s use the `blacksholes` example for demonstration. 
 
-1.	Check:
+1.	Assume that you are under the :
 	* `./run.check.sh`
 	
 
