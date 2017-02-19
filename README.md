@@ -12,20 +12,16 @@ easily, but non-warranty and non-mechantability.
 
 A pdf version of this manual is also available in `HeteroArchGen4M2S_manual.pdf`.
 
-##Download HeteroArchGen4M2S
-
-	git clone https://github.com/ttungl/HeteroArchGen4M2S.git
 
 ##Setup Requirements
 
 1. Currently HeteroArchGen4M2S has been tested on 64-bit platforms:
 
-	* Ubuntu 14.04 (final)
+>	* Ubuntu 14.04 (final)
 
 2. Required tools to build and run with HeteroArchGen4M2S:
 
-	* GCC-4.8.0 to build HeteroArchGen4M2S
-	* Python 2.7
+>	* Python 2.7 to run HeteroArchGen4M2S.
 
 3. Download and install `multi2sim-5.0` from `https://github.com/Multi2Sim/multi2sim`. 
 
@@ -34,6 +30,11 @@ A pdf version of this manual is also available in `HeteroArchGen4M2S_manual.pdf`
 5. Required benchmarks to run:
 	* Download benchmarks from `https://github.com/Multi2Sim`, then unzip under the installed multi2sim directory, then compile the benchmarks following the README file.
 	* Note: In case you want to run CUDA benchmarks, you can download other benchmarks for CPU-GPU interaction such as Rodinia, Parboil, etc. Your desktop should have a NVIDIA graphic card (e.g., NVIDIA Quadro 4000), and you need to install the graphic card driver for running the simulation. (When compiling benchmarks, use `-m32` to make compatible with `multi2sim`). 
+
+##Download HeteroArchGen4M2S
+
+	git clone https://github.com/ttungl/HeteroArchGen4M2S.git
+
 
 ##Build configuration files with HeteroArchGen4M2S
 
