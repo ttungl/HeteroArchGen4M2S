@@ -17,11 +17,11 @@ A pdf version of this manual is also available in `HeteroArchGen4M2S_manual.pdf`
 
 1. Currently HeteroArchGen4M2S has been tested on 64-bit platforms:
 
->	* Ubuntu 14.04 (final)
+	* Ubuntu 14.04 (final)
 
 2. Required tools to build and run with HeteroArchGen4M2S:
 
->	* Python 2.7 to run HeteroArchGen4M2S.
+	* Python 2.7 to run HeteroArchGen4M2S.
 
 3. Download and install `multi2sim-5.0` from `https://github.com/Multi2Sim/multi2sim`. 
 
