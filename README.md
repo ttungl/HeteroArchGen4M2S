@@ -156,7 +156,7 @@ Let’s use the `blacksholes` example with 16 CPUs, 16 GPUs, 4 Memory Controller
 ##Claims:
 
 I would like to thank the open source multi2sim community.
-This work is also inspired by [M2StoMcPAT](http://www.ece.umd.edu/~cserafy1/index.htm) in Matlab, but I implemented completely in Python. 
+This work is also inspired by [M2StoMcPAT](http://www.ece.umd.edu/~cserafy1/index.htm) in Matlab, but I implemented completely in Python, with heterogeneous CPU-GPU architectures. 
 
 		Tung Thanh Le
 		ttungl at gmail dot com
