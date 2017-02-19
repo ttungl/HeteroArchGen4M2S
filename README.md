@@ -107,14 +107,14 @@ Let’s use the `blacksholes` example with 16 CPUs, 16 GPUs, 4 Memory Controller
 	* Run `python read_results.py`, the total cycles and network performance results are saved in `results` folder, under the names: `blacksholes_totalCycles.out` and `blacksholes_network_performance.out`. 
 
 
-		> For `blacksholes_totalCycles.out`:
-		* Cycles: 306794
-		* Time: 3.94
+	> For `blacksholes_totalCycles.out`:
+	* Cycles: 306794
+	* Time: 3.94
 
 
-		> For `blacksholes_network_performance.out`
-		* Network Throughput: 32366.64 
-		* Network Latency (cycles): 23.6969
+	> For `blacksholes_network_performance.out`
+	* Network Throughput: 32366.64 
+	* Network Latency (cycles): 23.6969
 
 
 
