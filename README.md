@@ -14,7 +14,7 @@ A pdf version of this manual is also available in `HeteroArchGen4M2S_manual.pdf`
 
 ##Download HeteroArchGen4M2S
 
-	git clone https://github.com/HeteroArchGen4M2S.git
+	git clone https://github.com/ttungl/HeteroArchGen4M2S.git
 
 ##Setup Requirements
 
