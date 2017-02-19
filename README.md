@@ -1,7 +1,7 @@
 ##Introduction
-Heterogeneous Architecture Configurations Generator for Multi2Sim simulator (`HeteroArchGen4M2S`) 
+Heterogeneous Architecture Configurations Generator for Multi2Sim simulator (HeteroArchGen4M2S) 
 
-`HeteroArchGen4M2S` is an automatic generator tool for heterogeneous CPU-GPU architectures' configurations for Multi2Sim simulator. This tool runs on top of M2S simulator, it allows us to configure the various heterogeneous CPU-GPU architectures (e.g., number of CPU cores, GPU cores, L1$, L2$, memory (size and latency (via `CACTI 6.5`)), network topologies (currently support 2D-Mesh, customized 2D-Mesh, and Torus networks)...). The output files include the results of network throughput and latency, caches/memory access time, and power consumption of the cores (can be collected after running `McPAT`).
+`HeteroArchGen4M2S` is an automatic generator tool for heterogeneous CPU-GPU architectures' configurations for multi2sim (M2S) simulator. This tool runs on top of M2S simulator, it allows us to configure the various heterogeneous CPU-GPU architectures (e.g., number of CPU cores, GPU cores, L1$, L2$, memory (size and latency (via `CACTI 6.5`)), network topologies (currently support 2D-Mesh, customized 2D-Mesh, and Torus networks)...). The output files include the results of network throughput and latency, caches/memory access time, and power consumption of the cores (can be collected after running `McPAT`).
 
 `HeteroArchGen4M2S` is free software, which is freely to be redistributed and modified it under the terms of the GNU General Public License as published by the Free Software Foundation.
 
@@ -10,7 +10,7 @@ For more details `http://www.gnu.org/licenses`.
 `HeteroArchGen4M2S` is written to help you configure M2S 
 easily, but non-warranty and non-mechantability.
 
-A pdf version of this manual is also available in `HeteroArchGen4M2S_manual.pdf`.
+> A pdf version of this manual is also available in `HeteroArchGen4M2S_manual.pdf`.
 
 ##Setup Requirements
 
@@ -20,14 +20,14 @@ A pdf version of this manual is also available in `HeteroArchGen4M2S_manual.pdf`
 
 2. Required tools to build and run with HeteroArchGen4M2S:
 
-	* Python 2.7 to run HeteroArchGen4M2S.
+	* Python 2.7 
 
 3. Download and install `multi2sim-5.0` from `https://github.com/Multi2Sim/multi2sim`. 
 
 4. Download McPAT (current version-1.3) from `https://code.google.com/archive/p/mcpat/`. Unzip it under multi2sim-5.0 directory and install it following the README file.
 
 5. Required benchmarks to run:
-	* Download benchmarks from `https://github.com/Multi2Sim`, then unzip under the installed multi2sim directory, then compile the benchmarks following the README file.
+	* Download benchmarks from `https://github.com/Multi2Sim`, then unzip the benchmarks' files under the installed multi2sim directory, then compile the benchmarks following the README file.
 
 	> Note: In case you want to run CUDA benchmarks, you can download other benchmarks for CPU-GPU systems such as Rodinia, Parboil, etc. Your desktop should have a NVIDIA graphic card (e.g., NVIDIA Quadro 4000), and you need to install the graphic card driver for running the simulation. (When compiling benchmarks, use `-m32` to make compatible with `multi2sim`). 
 
@@ -40,16 +40,21 @@ A pdf version of this manual is also available in `HeteroArchGen4M2S_manual.pdf`
 Let’s assume you are in the home directory (`$multi2sim-5.0/HeteroArchGen4M2S`)
 
 ####Where are the configuration files?
-* After running `create_sim_configs_files.py` the output files will be saved in configs directory.
-* `cd HeteroArchGen4M2S/configs`	--- note that, it contains many configuration files, i.e., memconfig, netconfig, x86_cpuconfig, si_gpuconfig.
+* After running `/multi2sim-5.0/HeteroArchGen4M2S$ python create_sim_configs_files.py`, the output files will be saved in `configs` directory.
+* `cd configs`	--- note that, it contains many configuration files in `configs` folder, including `memconfig`, `netconfig`, `x86_cpuconfig`, and `si_gpuconfig`.
+
+####How to run the simulation?
+* Previous steps show how to generate the configuration files. By running `create_sim_configs_files.py`, it also generated a shell script file inside `run_simulation_files` folder. The bash file (shell script) has been `chmod 777` for running.
+* Go back under `multi2sim-5.0` directory, run `./HeteroArchGen4M2S/run_simulation_files/run-bash-sim.sh`. This will create the output files which are the results of the simulation.  
 
 ####Where are the output files after simulation?
-* `cd HeteroArchGen4M2S/results`	--- note that, it contains many configuration files, i.e., pipeline.out, mem.out.
-* Note that, `net_report.out` will be generated under the multi2sim-5.0 directory, you need to copy this file to `HeteroArchGen4M2S/results`.
+* `cd results`	--- note that, it contains many configuration files in `results` folder, including `pipeline.out`, `mem.out`.
+* `net_report.out` will be generated under the `multi2sim-5.0` directory (outside of `HeteroArchGen4M2S` folder), you need to copy this file to `HeteroArchGen4M2S/results`.
+* Now, there are three files should be in `results` folder, including `pipeline.out`, `mem.out`, and `net_report.out`(just copied).
 
-##Demonstration: How to Run multi2sim-5.0 simulator with a benchmark
+##Demonstration: How to run multi2sim-5.0 simulator with a benchmark
 
-Let’s use the mm_multi_serial example for demonstration.
+Let’s use the `blacksholes` example for demonstration. 
 
 1.	Check:
 	* `./run.check.sh`
@@ -57,7 +62,7 @@ Let’s use the mm_multi_serial example for demonstration.
 
 Now you are ready to go. Hack the code and have fun!
 
-##Claims:
+##Several claims:
 
 We would like to thank the open source multi2sim community.
 
