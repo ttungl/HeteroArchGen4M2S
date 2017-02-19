@@ -61,7 +61,7 @@ Let’s assume you are in the home directory (`$multi2sim-5.0/HeteroArchGen4M2S`
 ##Demonstration: How to run multi2sim-5.0 with HeteroArchGen4M2S
 
 Let’s use the `blacksholes` example with 16 CPUs, 16 GPUs, 4 Memory Controllers, in a customized 2D-Mesh for demonstration. 
-**** Important: You can download parsec benchmark from `https://github.com/Multi2Sim/m2s-bench-parsec-3.0`, then unzip it under the `multi2sim-5.0` directory.
+			> Important: You can download parsec benchmark from `https://github.com/Multi2Sim/m2s-bench-parsec-3.0`, then unzip it under the `multi2sim-5.0` directory.
 
 1.	Suppose that you already got the cache and memory latencies for your proposed architecture by running `CACTI6.5`.  
 
