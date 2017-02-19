@@ -25,16 +25,16 @@ A pdf version of this manual is also available in `HeteroArchGen4M2S_manual.pdf`
 
 3. Download and install `multi2sim-5.0` from `https://github.com/Multi2Sim/multi2sim`. 
 
-4. Download McPAT (current version-1.3) from `https://code.google.com/archive/p/mcpat/`. Unzip under multi2sim-5.0 directory and install it.
+4. Download McPAT (current version-1.3) from `https://code.google.com/archive/p/mcpat/`. Unzip it under multi2sim-5.0 directory and install it following the README file.
 
 5. Required benchmarks to run:
 	* Download benchmarks from `https://github.com/Multi2Sim`, then unzip under the installed multi2sim directory, then compile the benchmarks following the README file.
-	* Note: In case you want to run CUDA benchmarks, you can download other benchmarks for CPU-GPU interaction such as Rodinia, Parboil, etc. Your desktop should have a NVIDIA graphic card (e.g., NVIDIA Quadro 4000), and you need to install the graphic card driver for running the simulation. (When compiling benchmarks, use `-m32` to make compatible with `multi2sim`). 
+
+	> Note: In case you want to run CUDA benchmarks, you can download other benchmarks for CPU-GPU interaction such as Rodinia, Parboil, etc. Your desktop should have a NVIDIA graphic card (e.g., NVIDIA Quadro 4000), and you need to install the graphic card driver for running the simulation. (When compiling benchmarks, use `-m32` to make compatible with `multi2sim`). 
 
 ##Download HeteroArchGen4M2S
 
 	git clone https://github.com/ttungl/HeteroArchGen4M2S.git
-
 
 ##Build configuration files with HeteroArchGen4M2S
 
