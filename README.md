@@ -99,18 +99,21 @@ Let’s use the `blacksholes` example with 16 CPUs, 16 GPUs, 4 Memory Controller
 
 5.	To read the results:
 	
-	* Make sure you are in `/HeteroArchGen4M2S` folder. 
+	* Make sure you are in `/HeteroArchGen4M2S` directory. 
 
 	* Run `python read_results.py`, the total cycles and network performance results are saved in `results` folder, under the names: `blacksholes_totalCycles.out` and `blacksholes_network_performance.out`. 
 
 6. 	To get the dynamic power from McPAT.
 
-	* Run `.xml` file with the `blacksholes_pipeline.out`.
+	* Make sure you are in `/multi2sim-5.0` directory. 
 
-	* 
+	* Run `m2s2xml4mcpat.sh` with the input files `hetero_mcpat.xml` file and `blacksholes_pipeline.out` to get the `mcpat.xml` file.
 
+	* Run `./mcpat -infile mcpat.xml -opt_for_clk 1 -print_level 5 > HeteroArchGen4M2S/results/mcpat_result.txt`
 
-Now you are ready to go. Happy hacking the code!
+	* `mcpat_result.txt` contains the results of McPAT.
+
+> Now you are ready to go. Happy hacking the code!
 
 ##Claims:
 
