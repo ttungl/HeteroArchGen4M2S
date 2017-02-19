@@ -56,8 +56,8 @@ Let’s assume you are in the home directory (`$multi2sim-5.0/HeteroArchGen4M2S`
 
 ####Where are the configuration files?
 * Run `/multi2sim-5.0/HeteroArchGen4M2S$ python create_sim_configs_files.py`.
-* The output files will be saved in `configs` directory.
-* `cd configs` >>> `configs` folder contains four files, including `memconfig`, `netconfig`, `x86_cpuconfig`, and `si_gpuconfig`.
+* The output files will be saved in the `configs` directory.
+* `cd configs` >>> the `configs` folder contains four files, including `memconfig`, `netconfig`, `x86_cpuconfig`, and `si_gpuconfig`.
 
 ####How to run the simulation?
 * Previous steps show how to generate the configuration files. By running `create_sim_configs_files.py`, it also generated a shell script file inside `run_simulation_files` folder. The bash file (shell script) has been `chmod 777` for running.
