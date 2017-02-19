@@ -84,9 +84,9 @@ Let’s use the `blacksholes` example with 16 CPUs, 16 GPUs, 4 Memory Controller
 
 	* `sudo vim create_sim_configs_files.py` to configure your architecture. This file includes many parameters that need to be configured.
 	
-	* For CPU cores, a set of CPU includes two cores. Each core in the set can have its own L1$ (Data&Instr) or it can share the Instruction-L1$ with the other core in that set. by enabling `L1_Inst_shared` flag in the CPU Memory Parameters settings.
+	* For CPU cores, a set of CPU includes two cores. Each core in the set can have its own L1$ (Data&Instr) or it can share the Instruction-L1$ with the other core in that set, by enabling `L1_Inst_shared` flag in the CPU Memory Parameters settings.
 	
-	* For GPU cores, a set of GPU includes four compute units. Each two units share with one L1$. Each two L1$ shares with one L2$.
+	* For GPU cores, a set of GPU includes four compute units. Each two compute units share with one L1$, each two L1$ shares with one L2$.
 
 	* For benchmarks, you need to modify the name of specific benchmark you want to run, and modify the command line of this benchmark and its path in `create_shell_script` file.
 
