@@ -72,7 +72,8 @@ Let’s assume you are in the home directory (`$multi2sim-5.0/HeteroArchGen4M2S`
 
 * Now, there are three files should be in `results` folder, including `pipeline.out`, `mem.out`, and `net_report.out`(just copied).
 
-##Demonstration: How to run multi2sim-5.0 with HeteroArchGen4M2S
+##Demonstration: 
+###How to run multi2sim-5.0 with HeteroArchGen4M2S
 
 Let’s use the `blacksholes` example with 16 CPUs, 16 GPUs, 4 Memory Controllers, in a customized 2D-Mesh for demonstration. 
 
@@ -135,10 +136,9 @@ Let’s use the `blacksholes` example with 16 CPUs, 16 GPUs, 4 Memory Controller
 	* Time: 3.94
 
 
-	> For `blacksholes_network_performance.out`
+	> For `blacksholes_network_performance.out`:
 	* Network Throughput: 32366.64 
 	* Network Latency (cycles): 23.6969
-
 
 
 6. 	To get the dynamic power from McPAT.
