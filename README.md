@@ -118,11 +118,11 @@ Let’s use the `blacksholes` example with 16 cores CPUs (`8` x86 CPUs), 16 core
                	 -----	  -----   -----	  -----			
                	 |MM0|	  |MM1|	  |MM2|	  |MM3|	
                	 -----	  -----	  -----	  -----
-
-   * net_c0: net-cpu-l1-l2-0
-   * net_c7: net-cpu-l1-l2-7
-   * net_g0: net-gpu-l1-l2-0
-   * net_g3: net-gpu-l1-l2-3
+		
+           * net_c0: net-cpu-l1-l2-0
+		   * net_c7: net-cpu-l1-l2-7
+		   * net_g0: net-gpu-l1-l2-0
+		   * net_g3: net-gpu-l1-l2-3       	         	 
 ```
 
 
