@@ -58,12 +58,21 @@ Let’s assume you are in the home directory (`$multi2sim-5.0/HeteroArchGen4M2S`
 
 * Now, there are three files should be in `results` folder, including `pipeline.out`, `mem.out`, and `net_report.out`(just copied).
 
-##Demonstration: How to run multi2sim-5.0 simulator with HeteroArchGen4M2S
+##Demonstration: How to run multi2sim-5.0 with HeteroArchGen4M2S
 
 Let’s use the `blacksholes` example for demonstration. 
 
-1.	Assume that you are under the :
-	* `./run.check.sh`
+1.	Assume that you are under the `multi2sim-5.0\HeteroArchGen4M2S$` directory:
+	* `sudo vim create_sim_configs_files.py` to configure your architecture. This file includes many parameters that need to be configured, such as:
+	
+	> For CPU cores, a set of CPU includes two cores. Each core in the set can have its own L1$ (Data&Instr) or it can share the Instruction-L1$ with the other core in that set. by enabling `L1_Inst_shared` flag in the CPU Memory Parameters settings.
+	
+	> For GPU cores, a set of GPU includes four compute units. Each two units share with one L1$. Each two L1$ shares with one L2$.
+
+	> For benchmarks, you need to modify the name of specific benchmark you want to run, and modify the command line of this benchmark and its path in `create_shell_script` file.
+
+	> For network topologies, HeteroArchGen4M2S currently supports three types of network, including `2D-Mesh`, `customized 2D-Mesh`, and `2D-Torus`. The next version will be updated with `3D-Mesh` for 3D-DRAM-stack and `HMC` (micron).
+
 	
 
 Now you are ready to go. Hack the code and have fun!
