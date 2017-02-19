@@ -108,10 +108,12 @@ Let’s use the `blacksholes` example with 16 CPUs, 16 GPUs, 4 Memory Controller
 
 
 	> For `blacksholes_totalCycles.out`:
+	
 	> Cycles: 306794
 	> Time: 3.94
 
 	> For `blacksholes_network_performance.out`
+	
 	> Network Throughput: 32366.64 
 	> Network Latency (cycles): 23.6969
 
