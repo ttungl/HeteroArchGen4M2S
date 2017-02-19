@@ -66,7 +66,7 @@ Let’s assume you are in the home directory (`$multi2sim-5.0/HeteroArchGen4M2S`
 * This will create the output files which are the results of the simulation.  
 
 ####Where are the output files after simulation?
-* `cd results` >>> Note that, `results` folder contains two files at this time, including `pipeline.out`, `mem.out`.
+* `cd results` >>> Note that, `results` folder contains two files at this point, including `pipeline.out`, `mem.out`.
 
 * With `net_report.out` file, it is generated under the `multi2sim-5.0` directory (outside of `HeteroArchGen4M2S` folder), you need to copy this file to `HeteroArchGen4M2S/results`.
 
