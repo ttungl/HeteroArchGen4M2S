@@ -61,8 +61,10 @@ Let’s assume you are in the home directory (`$multi2sim-5.0/HeteroArchGen4M2S`
 ##Demonstration: How to run multi2sim-5.0 with HeteroArchGen4M2S
 
 Let’s use the `blacksholes` example with 16 CPUs, 16 GPUs, 4 Memory Controllers, in a customized 2D-Mesh for demonstration. 
+**** Important: You can download parsec benchmark from `https://github.com/Multi2Sim/m2s-bench-parsec-3.0`, then unzip it under the `multi2sim-5.0` directory.
 
 1.	Suppose that you already got the cache and memory latencies for your proposed architecture by running `CACTI6.5`.  
+
 2.	Suppose that you are under the `multi2sim-5.0\HeteroArchGen4M2S$` directory:
 
 	* `sudo vim create_sim_configs_files.py` to configure your architecture. This file includes many parameters that need to be configured, such as:
@@ -102,6 +104,16 @@ Let’s use the `blacksholes` example with 16 CPUs, 16 GPUs, 4 Memory Controller
 	* Make sure you are in `/HeteroArchGen4M2S` directory. 
 
 	* Run `python read_results.py`, the total cycles and network performance results are saved in `results` folder, under the names: `blacksholes_totalCycles.out` and `blacksholes_network_performance.out`. 
+
+
+	> For `blacksholes_totalCycles.out`:
+		> Cycles: 306794
+		> Time: 3.94
+
+	> For `blacksholes_network_performance.out`
+		> Network Throughput: 32366.64 
+		> Network Latency (cycles): 23.6969
+
 
 6. 	To get the dynamic power from McPAT.
 
