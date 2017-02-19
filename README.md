@@ -60,9 +60,11 @@ Let’s assume you are in the home directory (`$multi2sim-5.0/HeteroArchGen4M2S`
 
 ##Demonstration: How to run multi2sim-5.0 with HeteroArchGen4M2S
 
-Let’s use the `blacksholes` example for demonstration. 
+Let’s use the `blacksholes` example with 16 CPUs, 16 GPUs, 4 Memory Controllers, in a customized 2D-Mesh for demonstration. 
 
-1.	Assume that you are under the `multi2sim-5.0\HeteroArchGen4M2S$` directory:
+1.	Suppose that you already got the cache and memory latencies for your proposed architecture by running `CACTI6.5`.  
+2.	Suppose that you are under the `multi2sim-5.0\HeteroArchGen4M2S$` directory:
+
 	* `sudo vim create_sim_configs_files.py` to configure your architecture. This file includes many parameters that need to be configured, such as:
 	
 	* For CPU cores, a set of CPU includes two cores. Each core in the set can have its own L1$ (Data&Instr) or it can share the Instruction-L1$ with the other core in that set. by enabling `L1_Inst_shared` flag in the CPU Memory Parameters settings.
@@ -71,17 +73,50 @@ Let’s use the `blacksholes` example for demonstration.
 
 	* For benchmarks, you need to modify the name of specific benchmark you want to run, and modify the command line of this benchmark and its path in `create_shell_script` file.
 
-	* For network topologies, HeteroArchGen4M2S currently supports three types of network, including `2D-Mesh`, `customized 2D-Mesh`, and `2D-Torus`. The next version will be updated with `3D-Mesh` for 3D-DRAM-stack and `HMC` (micron).
+	* For network topologies, HeteroArchGen4M2S currently supports three types of network, including `2D-Mesh`, `customized 2D-Mesh`, and `2D-Torus`. For `customized 2D-Mesh`, you need to specify the paths for local links and hybrid links in your network, as well as their linkwidths. 
+
+3.	After modifying `create_sim_configs_files.py`: 
+
+	* Run `\HeteroArchGen4M2S$ python create_sim_configs_files.py` to generate the configuration files.
+
+	* Checking the configuration files in the `configs` folder.
+
+	* A shell script (`.sh`) has also been generated in the `run_simulation_files` folder. The shell script looks like as below.
+
+		> m2s --x86-sim detailed --x86-report HeteroArchGen4M2S/results/blackscholes_pipeline.out --mem-report HeteroArchGen4M2S/results/blackscholes_mem.out --x86-config ./HeteroArchGen4M2S/configs/x86_cpuconfig --si-sim detailed --si-config ./HeteroArchGen4M2S/configs/si_gpuconfig --mem-config ./HeteroArchGen4M2S/configs/memconfig --net-config ./HeteroArchGen4M2S/configs/netconfig --x86-max-inst 100000000 --net-report blackscholes_net_report.out blackscholes 16 in_4K.txt prives.txt data-small
+
+	* `cd ..` to `multi2sim-5.0` directory.
+
+	* `./HeteroArchGen4M2S/run_simulation_files/run-sim-16-CPU-16-SouthernIslands-GPU-benchmark-blacksholes.sh`
+
+4.	To check the results, all of them are in the `results` folder, including:
+
+	* `blacksholes_mem.out`
+	
+	* `blacksholes_pipeline.out`
+	
+	* With `net-l2-mm_blacksholes_net_report.out`, it is saved under the `multi2sim-5.0` directory, so just copy into the `results` folder.
+
+5.	To read the results:
+	
+	* Make sure you are in `/HeteroArchGen4M2S` folder. 
+
+	* Run `python read_results.py`, the total cycles and network performance results are saved in `results` folder, under the names: `blacksholes_totalCycles.out` and `blacksholes_network_performance.out`. 
+
+6. 	To get the dynamic power from McPAT.
+
+	* Run `.xml` file with the `blacksholes_pipeline.out`.
+
+	* 
 
 
+Now you are ready to go. Happy hacking the code!
 
-Now you are ready to go. Hack the code and have fun!
-
-##Several claims:
+##Claims:
 
 We would like to thank the open source multi2sim community.
 
-This work is inspired by [M2StoMcPAT](http://www.ece.umd.edu/~cserafy1/index.htm), but implemented completely in Python. 
+This work is inspired by [M2StoMcPAT](http://www.ece.umd.edu/~cserafy1/index.htm) in Matlab, but implemented completely in Python. 
 
 		Tung Thanh Le
 		ttungl at gmail dot com
