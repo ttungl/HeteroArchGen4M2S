@@ -25,7 +25,7 @@ A pdf version of this manual is also available in `HeteroArchGen4M2S_manual.pdf`
 
 3. Download and install `multi2sim-5.0` from `https://github.com/Multi2Sim/multi2sim`. 
 
-4. Download McPAT (current ver-1.3) from `https://code.google.com/archive/p/mcpat/`. Unzip under multi2sim-5.0 directory and install it.
+4. Download McPAT (current version-1.3) from `https://code.google.com/archive/p/mcpat/`. Unzip under multi2sim-5.0 directory and install it.
 
 5. Required benchmarks to run:
 	* Download benchmarks from `https://github.com/Multi2Sim`, then unzip under the installed multi2sim directory, then compile the benchmarks following the README file.
