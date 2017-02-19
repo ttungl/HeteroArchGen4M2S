@@ -18,14 +18,20 @@ easily, but non-warranty and non-mechantability.
 
 2. Required tools to build and run with HeteroArchGen4M2S:
 
-	* Python 2.7 
+	* Python 2.7
 
 3. Download and install `multi2sim-5.0` from `https://github.com/Multi2Sim/multi2sim`. 
 
-4. Download McPAT (current version-1.3) from `https://code.google.com/archive/p/mcpat/`. Unzip it under multi2sim-5.0 directory and install it following the README file.
+4. Download `McPAT` (current version-1.3) from `https://code.google.com/archive/p/mcpat/`. Unzip it under multi2sim-5.0 directory and install it following the README file.
 
-5. Required benchmarks to run:
+5. Download and install `CACTI6.5` from `http://www.hpl.hp.com/research/cacti/cacti65.tgz`. 
+	
+	* CACTI 6.5 is used to obtain the cache and memory latency.
+
+6. Required benchmarks to run:
+	
 	* Download benchmarks from `https://github.com/Multi2Sim`, then unzip the benchmarks' files under the installed multi2sim directory, then compile the benchmarks following the README file.
+	
 
 	> Note: In case you want to run CUDA benchmarks, you can download other benchmarks for CPU-GPU systems such as Rodinia, Parboil, etc. Your desktop should have a NVIDIA graphic card (e.g., NVIDIA Quadro 4000), and you need to install the graphic card driver for running the simulation. (When compiling benchmarks, use `-m32` to make compatible with `multi2sim`). 
 
