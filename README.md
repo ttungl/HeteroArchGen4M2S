@@ -160,5 +160,6 @@ This work is also inspired by [M2StoMcPAT](http://www.ece.umd.edu/~cserafy1/inde
 
 		Tung Thanh Le
 		ttungl at gmail dot com
-		version 1.0
+		Version 1.0
+		Date: 02/18/17
 
