@@ -40,11 +40,11 @@ A pdf version of this manual is also available in `HeteroArchGen4M2S_manual.pdf`
 
 Let’s assume you are in the home directory (`$multi2sim-5.0/HeteroArchGen4M2S`)
 
-##Where are the configuration files?
+####Where are the configuration files?
 * After running `create_sim_configs_files.py` the output files will be saved in configs directory.
 * `cd HeteroArchGen4M2S/configs`	--- note that, it contains many configuration files, i.e., memconfig, netconfig, x86_cpuconfig, si_gpuconfig.
 
-##Where are the output files after simulation?
+####Where are the output files after simulation?
 * `cd HeteroArchGen4M2S/results`	--- note that, it contains many configuration files, i.e., pipeline.out, mem.out.
 * Note that, `net_report.out` will be generated under the multi2sim-5.0 directory, you need to copy this file to `HeteroArchGen4M2S/results`.
 
