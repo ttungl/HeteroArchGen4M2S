@@ -83,7 +83,7 @@ Let’s use the `blacksholes` example with 16 CPUs, 16 GPUs, 4 Memory Controller
 
 	* A shell script (`.sh`) has also been generated in the `run_simulation_files` folder. The shell script looks like as below.
 
-		> m2s --x86-sim detailed --x86-report HeteroArchGen4M2S/results/blackscholes_pipeline.out --mem-report HeteroArchGen4M2S/results/blackscholes_mem.out --x86-config ./HeteroArchGen4M2S/configs/x86_cpuconfig --si-sim detailed --si-config ./HeteroArchGen4M2S/configs/si_gpuconfig --mem-config ./HeteroArchGen4M2S/configs/memconfig --net-config ./HeteroArchGen4M2S/configs/netconfig --x86-max-inst 100000000 --net-report blackscholes_net_report.out blackscholes 16 in_4K.txt prives.txt data-small
+		> m2s --x86-sim detailed --x86-report HeteroArchGen4M2S/results/blackscholes_pipeline.out --mem-report HeteroArchGen4M2S/results/blackscholes_mem.out --x86-config ./HeteroArchGen4M2S/configs/x86_cpuconfig --si-sim detailed --si-config ./HeteroArchGen4M2S/configs/si_gpuconfig --mem-config ./HeteroArchGen4M2S/configs/memconfig --net-config ./HeteroArchGen4M2S/configs/netconfig --x86-max-inst 100000000 --net-report blackscholes_net_report.out benchmarks/m2s-bench-parsec-3.0/blackscholes/blackscholes 16 in_4K.txt prives.txt data-small
 
 	* `cd ..` to `multi2sim-5.0` directory.
 
