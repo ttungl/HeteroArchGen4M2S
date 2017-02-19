@@ -27,14 +27,16 @@ A pdf version of this manual is also available in `HeteroArchGen4M2S_manual.pdf`
 	* Python 2.7
 
 3. Download and install `multi2sim-5.0` from `https://github.com/Multi2Sim/multi2sim`. 
-4. Download McPAT (current ver-1.3) from `https://code.google.com/archive/p/mcpat/`.
+
+4. Download McPAT (current ver-1.3) from `https://code.google.com/archive/p/mcpat/`. Unzip under multi2sim-5.0 directory and install it.
+
 5. Required benchmarks to run:
 	* Download benchmarks from `https://github.com/Multi2Sim`, then unzip under the installed multi2sim directory, then compile the benchmarks following the README file.
 	* Note: In case you want to run CUDA benchmarks, you can download other benchmarks for CPU-GPU interaction such as Rodinia, Parboil, etc. Your desktop should have a NVIDIA graphic card (e.g., NVIDIA Quadro 4000), and you need to install the graphic card driver for running the simulation. (When compiling benchmarks, use `-m32` to make compatible with `multi2sim`). 
 
 ##Build configuration files with HeteroArchGen4M2S
 
-Let’s assume you are in the home directory (`$Multi2Sim-5.0/HeteroArchGen4M2S`)
+Let’s assume you are in the home directory (`$multi2sim-5.0/HeteroArchGen4M2S`)
 
 ##Where are the configuration files after running `create_sim_configs_files.py`?
 * `cd HeteroArchGen4M2S/configs`	--- note that, it contains many configuration files, i.e., memconfig, netconfig, x86_cpuconfig, si_gpuconfig.
