@@ -166,11 +166,11 @@ Let’s use the `blacksholes` example with 16 cores CPUs (`8` x86 CPUs), 16 core
 
 	> For `blacksholes_totalCycles.out`:
 	* Cycles: 306794
-	* Time: 3.94
+	* Time (seconds): 3.94
 
 
 	> For `blacksholes_network_performance.out`:
-	* Network Throughput: 32366.64 
+	* Network Throughput (MBps): 32366.64 
 	* Network Latency (cycles): 23.6969
 
 
