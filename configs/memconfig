@@ -1,0 +1,2535 @@
+;; Cache Geometry for CPUs and GPUs.
+;; (Summary at the end of this file)
+
+[CacheGeometry geo-cpu-i-l1]
+Sets = 512
+Assoc = 1
+BlockSize = 64
+Latency = 1
+Policy = LRU
+Ports = 2
+
+[CacheGeometry geo-cpu-d-l1]
+Sets = 512
+Assoc = 1
+BlockSize = 64
+Latency = 1
+Policy = LRU
+Ports = 2
+
+[CacheGeometry geo-cpu-l2]
+Sets = 1024
+Assoc = 8
+BlockSize = 64
+Latency = 4
+Policy = LRU
+Ports = 4
+
+[CacheGeometry geo-gpu-l1]
+Sets = 256
+Assoc = 4
+BlockSize = 64
+Latency = 22
+Policy = LRU
+Ports = 2
+
+;; Cache Geometry L2$ for GPUs.
+
+[CacheGeometry geo-gpu-l2]
+Sets = 512
+Assoc = 16
+BlockSize = 64
+Latency = 63
+Policy = LRU
+Ports = 4
+
+
+;; 48 Data cache (D-L1$) for CPUs.
+
+[Module mod-cpu-dl1-0]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-0
+LowModules = mod-cpu-l2-0
+
+[Module mod-cpu-dl1-1]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-0
+LowModules = mod-cpu-l2-0
+
+[Module mod-cpu-dl1-2]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-1
+LowModules = mod-cpu-l2-1
+
+[Module mod-cpu-dl1-3]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-1
+LowModules = mod-cpu-l2-1
+
+[Module mod-cpu-dl1-4]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-2
+LowModules = mod-cpu-l2-2
+
+[Module mod-cpu-dl1-5]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-2
+LowModules = mod-cpu-l2-2
+
+[Module mod-cpu-dl1-6]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-3
+LowModules = mod-cpu-l2-3
+
+[Module mod-cpu-dl1-7]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-3
+LowModules = mod-cpu-l2-3
+
+[Module mod-cpu-dl1-8]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-4
+LowModules = mod-cpu-l2-4
+
+[Module mod-cpu-dl1-9]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-4
+LowModules = mod-cpu-l2-4
+
+[Module mod-cpu-dl1-10]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-5
+LowModules = mod-cpu-l2-5
+
+[Module mod-cpu-dl1-11]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-5
+LowModules = mod-cpu-l2-5
+
+[Module mod-cpu-dl1-12]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-6
+LowModules = mod-cpu-l2-6
+
+[Module mod-cpu-dl1-13]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-6
+LowModules = mod-cpu-l2-6
+
+[Module mod-cpu-dl1-14]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-7
+LowModules = mod-cpu-l2-7
+
+[Module mod-cpu-dl1-15]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-7
+LowModules = mod-cpu-l2-7
+
+[Module mod-cpu-dl1-16]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-8
+LowModules = mod-cpu-l2-8
+
+[Module mod-cpu-dl1-17]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-8
+LowModules = mod-cpu-l2-8
+
+[Module mod-cpu-dl1-18]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-9
+LowModules = mod-cpu-l2-9
+
+[Module mod-cpu-dl1-19]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-9
+LowModules = mod-cpu-l2-9
+
+[Module mod-cpu-dl1-20]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-10
+LowModules = mod-cpu-l2-10
+
+[Module mod-cpu-dl1-21]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-10
+LowModules = mod-cpu-l2-10
+
+[Module mod-cpu-dl1-22]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-11
+LowModules = mod-cpu-l2-11
+
+[Module mod-cpu-dl1-23]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-11
+LowModules = mod-cpu-l2-11
+
+[Module mod-cpu-dl1-24]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-12
+LowModules = mod-cpu-l2-12
+
+[Module mod-cpu-dl1-25]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-12
+LowModules = mod-cpu-l2-12
+
+[Module mod-cpu-dl1-26]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-13
+LowModules = mod-cpu-l2-13
+
+[Module mod-cpu-dl1-27]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-13
+LowModules = mod-cpu-l2-13
+
+[Module mod-cpu-dl1-28]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-14
+LowModules = mod-cpu-l2-14
+
+[Module mod-cpu-dl1-29]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-14
+LowModules = mod-cpu-l2-14
+
+[Module mod-cpu-dl1-30]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-15
+LowModules = mod-cpu-l2-15
+
+[Module mod-cpu-dl1-31]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-15
+LowModules = mod-cpu-l2-15
+
+[Module mod-cpu-dl1-32]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-16
+LowModules = mod-cpu-l2-16
+
+[Module mod-cpu-dl1-33]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-16
+LowModules = mod-cpu-l2-16
+
+[Module mod-cpu-dl1-34]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-17
+LowModules = mod-cpu-l2-17
+
+[Module mod-cpu-dl1-35]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-17
+LowModules = mod-cpu-l2-17
+
+[Module mod-cpu-dl1-36]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-18
+LowModules = mod-cpu-l2-18
+
+[Module mod-cpu-dl1-37]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-18
+LowModules = mod-cpu-l2-18
+
+[Module mod-cpu-dl1-38]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-19
+LowModules = mod-cpu-l2-19
+
+[Module mod-cpu-dl1-39]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-19
+LowModules = mod-cpu-l2-19
+
+[Module mod-cpu-dl1-40]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-20
+LowModules = mod-cpu-l2-20
+
+[Module mod-cpu-dl1-41]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-20
+LowModules = mod-cpu-l2-20
+
+[Module mod-cpu-dl1-42]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-21
+LowModules = mod-cpu-l2-21
+
+[Module mod-cpu-dl1-43]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-21
+LowModules = mod-cpu-l2-21
+
+[Module mod-cpu-dl1-44]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-22
+LowModules = mod-cpu-l2-22
+
+[Module mod-cpu-dl1-45]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-22
+LowModules = mod-cpu-l2-22
+
+[Module mod-cpu-dl1-46]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-23
+LowModules = mod-cpu-l2-23
+
+[Module mod-cpu-dl1-47]
+Type = Cache
+Geometry = geo-cpu-d-l1
+LowNetwork = net-cpu-l1-l2-23
+LowModules = mod-cpu-l2-23
+
+
+;; 48 Instruction cache (I-L1$) for CPUs.
+
+[Module mod-cpu-il1-0]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-0
+LowModules = mod-cpu-l2-0
+
+[Module mod-cpu-il1-1]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-0
+LowModules = mod-cpu-l2-0
+
+[Module mod-cpu-il1-2]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-1
+LowModules = mod-cpu-l2-1
+
+[Module mod-cpu-il1-3]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-1
+LowModules = mod-cpu-l2-1
+
+[Module mod-cpu-il1-4]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-2
+LowModules = mod-cpu-l2-2
+
+[Module mod-cpu-il1-5]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-2
+LowModules = mod-cpu-l2-2
+
+[Module mod-cpu-il1-6]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-3
+LowModules = mod-cpu-l2-3
+
+[Module mod-cpu-il1-7]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-3
+LowModules = mod-cpu-l2-3
+
+[Module mod-cpu-il1-8]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-4
+LowModules = mod-cpu-l2-4
+
+[Module mod-cpu-il1-9]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-4
+LowModules = mod-cpu-l2-4
+
+[Module mod-cpu-il1-10]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-5
+LowModules = mod-cpu-l2-5
+
+[Module mod-cpu-il1-11]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-5
+LowModules = mod-cpu-l2-5
+
+[Module mod-cpu-il1-12]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-6
+LowModules = mod-cpu-l2-6
+
+[Module mod-cpu-il1-13]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-6
+LowModules = mod-cpu-l2-6
+
+[Module mod-cpu-il1-14]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-7
+LowModules = mod-cpu-l2-7
+
+[Module mod-cpu-il1-15]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-7
+LowModules = mod-cpu-l2-7
+
+[Module mod-cpu-il1-16]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-8
+LowModules = mod-cpu-l2-8
+
+[Module mod-cpu-il1-17]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-8
+LowModules = mod-cpu-l2-8
+
+[Module mod-cpu-il1-18]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-9
+LowModules = mod-cpu-l2-9
+
+[Module mod-cpu-il1-19]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-9
+LowModules = mod-cpu-l2-9
+
+[Module mod-cpu-il1-20]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-10
+LowModules = mod-cpu-l2-10
+
+[Module mod-cpu-il1-21]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-10
+LowModules = mod-cpu-l2-10
+
+[Module mod-cpu-il1-22]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-11
+LowModules = mod-cpu-l2-11
+
+[Module mod-cpu-il1-23]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-11
+LowModules = mod-cpu-l2-11
+
+[Module mod-cpu-il1-24]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-12
+LowModules = mod-cpu-l2-12
+
+[Module mod-cpu-il1-25]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-12
+LowModules = mod-cpu-l2-12
+
+[Module mod-cpu-il1-26]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-13
+LowModules = mod-cpu-l2-13
+
+[Module mod-cpu-il1-27]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-13
+LowModules = mod-cpu-l2-13
+
+[Module mod-cpu-il1-28]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-14
+LowModules = mod-cpu-l2-14
+
+[Module mod-cpu-il1-29]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-14
+LowModules = mod-cpu-l2-14
+
+[Module mod-cpu-il1-30]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-15
+LowModules = mod-cpu-l2-15
+
+[Module mod-cpu-il1-31]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-15
+LowModules = mod-cpu-l2-15
+
+[Module mod-cpu-il1-32]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-16
+LowModules = mod-cpu-l2-16
+
+[Module mod-cpu-il1-33]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-16
+LowModules = mod-cpu-l2-16
+
+[Module mod-cpu-il1-34]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-17
+LowModules = mod-cpu-l2-17
+
+[Module mod-cpu-il1-35]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-17
+LowModules = mod-cpu-l2-17
+
+[Module mod-cpu-il1-36]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-18
+LowModules = mod-cpu-l2-18
+
+[Module mod-cpu-il1-37]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-18
+LowModules = mod-cpu-l2-18
+
+[Module mod-cpu-il1-38]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-19
+LowModules = mod-cpu-l2-19
+
+[Module mod-cpu-il1-39]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-19
+LowModules = mod-cpu-l2-19
+
+[Module mod-cpu-il1-40]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-20
+LowModules = mod-cpu-l2-20
+
+[Module mod-cpu-il1-41]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-20
+LowModules = mod-cpu-l2-20
+
+[Module mod-cpu-il1-42]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-21
+LowModules = mod-cpu-l2-21
+
+[Module mod-cpu-il1-43]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-21
+LowModules = mod-cpu-l2-21
+
+[Module mod-cpu-il1-44]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-22
+LowModules = mod-cpu-l2-22
+
+[Module mod-cpu-il1-45]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-22
+LowModules = mod-cpu-l2-22
+
+[Module mod-cpu-il1-46]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-23
+LowModules = mod-cpu-l2-23
+
+[Module mod-cpu-il1-47]
+Type = Cache
+Geometry = geo-cpu-i-l1
+LowNetwork = net-cpu-l1-l2-23
+LowModules = mod-cpu-l2-23
+
+
+;; 48 L1$ for GPUs.
+;; Each L1$ is for two compute units.
+;; Each GPU has 4 compute units.
+
+[Module mod-gpu-l1-0]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-0
+LowModules = mod-gpu-l2-0
+
+[Module mod-gpu-l1-1]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-0
+LowModules = mod-gpu-l2-0
+
+[Module mod-gpu-l1-2]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-1
+LowModules = mod-gpu-l2-1
+
+[Module mod-gpu-l1-3]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-1
+LowModules = mod-gpu-l2-1
+
+[Module mod-gpu-l1-4]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-2
+LowModules = mod-gpu-l2-2
+
+[Module mod-gpu-l1-5]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-2
+LowModules = mod-gpu-l2-2
+
+[Module mod-gpu-l1-6]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-3
+LowModules = mod-gpu-l2-3
+
+[Module mod-gpu-l1-7]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-3
+LowModules = mod-gpu-l2-3
+
+[Module mod-gpu-l1-8]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-4
+LowModules = mod-gpu-l2-4
+
+[Module mod-gpu-l1-9]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-4
+LowModules = mod-gpu-l2-4
+
+[Module mod-gpu-l1-10]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-5
+LowModules = mod-gpu-l2-5
+
+[Module mod-gpu-l1-11]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-5
+LowModules = mod-gpu-l2-5
+
+[Module mod-gpu-l1-12]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-6
+LowModules = mod-gpu-l2-6
+
+[Module mod-gpu-l1-13]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-6
+LowModules = mod-gpu-l2-6
+
+[Module mod-gpu-l1-14]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-7
+LowModules = mod-gpu-l2-7
+
+[Module mod-gpu-l1-15]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-7
+LowModules = mod-gpu-l2-7
+
+[Module mod-gpu-l1-16]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-8
+LowModules = mod-gpu-l2-8
+
+[Module mod-gpu-l1-17]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-8
+LowModules = mod-gpu-l2-8
+
+[Module mod-gpu-l1-18]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-9
+LowModules = mod-gpu-l2-9
+
+[Module mod-gpu-l1-19]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-9
+LowModules = mod-gpu-l2-9
+
+[Module mod-gpu-l1-20]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-10
+LowModules = mod-gpu-l2-10
+
+[Module mod-gpu-l1-21]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-10
+LowModules = mod-gpu-l2-10
+
+[Module mod-gpu-l1-22]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-11
+LowModules = mod-gpu-l2-11
+
+[Module mod-gpu-l1-23]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-11
+LowModules = mod-gpu-l2-11
+
+[Module mod-gpu-l1-24]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-12
+LowModules = mod-gpu-l2-12
+
+[Module mod-gpu-l1-25]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-12
+LowModules = mod-gpu-l2-12
+
+[Module mod-gpu-l1-26]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-13
+LowModules = mod-gpu-l2-13
+
+[Module mod-gpu-l1-27]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-13
+LowModules = mod-gpu-l2-13
+
+[Module mod-gpu-l1-28]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-14
+LowModules = mod-gpu-l2-14
+
+[Module mod-gpu-l1-29]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-14
+LowModules = mod-gpu-l2-14
+
+[Module mod-gpu-l1-30]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-15
+LowModules = mod-gpu-l2-15
+
+[Module mod-gpu-l1-31]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-15
+LowModules = mod-gpu-l2-15
+
+[Module mod-gpu-l1-32]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-16
+LowModules = mod-gpu-l2-16
+
+[Module mod-gpu-l1-33]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-16
+LowModules = mod-gpu-l2-16
+
+[Module mod-gpu-l1-34]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-17
+LowModules = mod-gpu-l2-17
+
+[Module mod-gpu-l1-35]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-17
+LowModules = mod-gpu-l2-17
+
+[Module mod-gpu-l1-36]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-18
+LowModules = mod-gpu-l2-18
+
+[Module mod-gpu-l1-37]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-18
+LowModules = mod-gpu-l2-18
+
+[Module mod-gpu-l1-38]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-19
+LowModules = mod-gpu-l2-19
+
+[Module mod-gpu-l1-39]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-19
+LowModules = mod-gpu-l2-19
+
+[Module mod-gpu-l1-40]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-20
+LowModules = mod-gpu-l2-20
+
+[Module mod-gpu-l1-41]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-20
+LowModules = mod-gpu-l2-20
+
+[Module mod-gpu-l1-42]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-21
+LowModules = mod-gpu-l2-21
+
+[Module mod-gpu-l1-43]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-21
+LowModules = mod-gpu-l2-21
+
+[Module mod-gpu-l1-44]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-22
+LowModules = mod-gpu-l2-22
+
+[Module mod-gpu-l1-45]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-22
+LowModules = mod-gpu-l2-22
+
+[Module mod-gpu-l1-46]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-23
+LowModules = mod-gpu-l2-23
+
+[Module mod-gpu-l1-47]
+Type = Cache
+Geometry = geo-gpu-l1
+LowNetwork = net-gpu-l1-l2-23
+LowModules = mod-gpu-l2-23
+
+
+;; 24 L2$ for CPUs.
+
+[Module mod-cpu-l2-0]
+Type = Cache
+Geometry = geo-cpu-l2
+HighNetwork = net-cpu-l1-l2-0
+LowNetwork = net-l2-mm
+LowNetworkNode = n0
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-cpu-l2-1]
+Type = Cache
+Geometry = geo-cpu-l2
+HighNetwork = net-cpu-l1-l2-1
+LowNetwork = net-l2-mm
+LowNetworkNode = n1
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-cpu-l2-2]
+Type = Cache
+Geometry = geo-cpu-l2
+HighNetwork = net-cpu-l1-l2-2
+LowNetwork = net-l2-mm
+LowNetworkNode = n2
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-cpu-l2-3]
+Type = Cache
+Geometry = geo-cpu-l2
+HighNetwork = net-cpu-l1-l2-3
+LowNetwork = net-l2-mm
+LowNetworkNode = n3
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-cpu-l2-4]
+Type = Cache
+Geometry = geo-cpu-l2
+HighNetwork = net-cpu-l1-l2-4
+LowNetwork = net-l2-mm
+LowNetworkNode = n4
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-cpu-l2-5]
+Type = Cache
+Geometry = geo-cpu-l2
+HighNetwork = net-cpu-l1-l2-5
+LowNetwork = net-l2-mm
+LowNetworkNode = n5
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-cpu-l2-6]
+Type = Cache
+Geometry = geo-cpu-l2
+HighNetwork = net-cpu-l1-l2-6
+LowNetwork = net-l2-mm
+LowNetworkNode = n6
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-cpu-l2-7]
+Type = Cache
+Geometry = geo-cpu-l2
+HighNetwork = net-cpu-l1-l2-7
+LowNetwork = net-l2-mm
+LowNetworkNode = n7
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-cpu-l2-8]
+Type = Cache
+Geometry = geo-cpu-l2
+HighNetwork = net-cpu-l1-l2-8
+LowNetwork = net-l2-mm
+LowNetworkNode = n8
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-cpu-l2-9]
+Type = Cache
+Geometry = geo-cpu-l2
+HighNetwork = net-cpu-l1-l2-9
+LowNetwork = net-l2-mm
+LowNetworkNode = n9
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-cpu-l2-10]
+Type = Cache
+Geometry = geo-cpu-l2
+HighNetwork = net-cpu-l1-l2-10
+LowNetwork = net-l2-mm
+LowNetworkNode = n10
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-cpu-l2-11]
+Type = Cache
+Geometry = geo-cpu-l2
+HighNetwork = net-cpu-l1-l2-11
+LowNetwork = net-l2-mm
+LowNetworkNode = n11
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-cpu-l2-12]
+Type = Cache
+Geometry = geo-cpu-l2
+HighNetwork = net-cpu-l1-l2-12
+LowNetwork = net-l2-mm
+LowNetworkNode = n12
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-cpu-l2-13]
+Type = Cache
+Geometry = geo-cpu-l2
+HighNetwork = net-cpu-l1-l2-13
+LowNetwork = net-l2-mm
+LowNetworkNode = n13
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-cpu-l2-14]
+Type = Cache
+Geometry = geo-cpu-l2
+HighNetwork = net-cpu-l1-l2-14
+LowNetwork = net-l2-mm
+LowNetworkNode = n14
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-cpu-l2-15]
+Type = Cache
+Geometry = geo-cpu-l2
+HighNetwork = net-cpu-l1-l2-15
+LowNetwork = net-l2-mm
+LowNetworkNode = n15
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-cpu-l2-16]
+Type = Cache
+Geometry = geo-cpu-l2
+HighNetwork = net-cpu-l1-l2-16
+LowNetwork = net-l2-mm
+LowNetworkNode = n16
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-cpu-l2-17]
+Type = Cache
+Geometry = geo-cpu-l2
+HighNetwork = net-cpu-l1-l2-17
+LowNetwork = net-l2-mm
+LowNetworkNode = n17
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-cpu-l2-18]
+Type = Cache
+Geometry = geo-cpu-l2
+HighNetwork = net-cpu-l1-l2-18
+LowNetwork = net-l2-mm
+LowNetworkNode = n18
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-cpu-l2-19]
+Type = Cache
+Geometry = geo-cpu-l2
+HighNetwork = net-cpu-l1-l2-19
+LowNetwork = net-l2-mm
+LowNetworkNode = n19
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-cpu-l2-20]
+Type = Cache
+Geometry = geo-cpu-l2
+HighNetwork = net-cpu-l1-l2-20
+LowNetwork = net-l2-mm
+LowNetworkNode = n20
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-cpu-l2-21]
+Type = Cache
+Geometry = geo-cpu-l2
+HighNetwork = net-cpu-l1-l2-21
+LowNetwork = net-l2-mm
+LowNetworkNode = n21
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-cpu-l2-22]
+Type = Cache
+Geometry = geo-cpu-l2
+HighNetwork = net-cpu-l1-l2-22
+LowNetwork = net-l2-mm
+LowNetworkNode = n22
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-cpu-l2-23]
+Type = Cache
+Geometry = geo-cpu-l2
+HighNetwork = net-cpu-l1-l2-23
+LowNetwork = net-l2-mm
+LowNetworkNode = n23
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+
+;; 24 L2$ for GPUs.
+
+[Module mod-gpu-l2-0]
+Type = Cache
+Geometry = geo-gpu-l2
+HighNetwork = net-gpu-l1-l2-0
+LowNetwork = net-l2-mm
+LowNetworkNode = n24
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-gpu-l2-1]
+Type = Cache
+Geometry = geo-gpu-l2
+HighNetwork = net-gpu-l1-l2-1
+LowNetwork = net-l2-mm
+LowNetworkNode = n25
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-gpu-l2-2]
+Type = Cache
+Geometry = geo-gpu-l2
+HighNetwork = net-gpu-l1-l2-2
+LowNetwork = net-l2-mm
+LowNetworkNode = n26
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-gpu-l2-3]
+Type = Cache
+Geometry = geo-gpu-l2
+HighNetwork = net-gpu-l1-l2-3
+LowNetwork = net-l2-mm
+LowNetworkNode = n27
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-gpu-l2-4]
+Type = Cache
+Geometry = geo-gpu-l2
+HighNetwork = net-gpu-l1-l2-4
+LowNetwork = net-l2-mm
+LowNetworkNode = n28
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-gpu-l2-5]
+Type = Cache
+Geometry = geo-gpu-l2
+HighNetwork = net-gpu-l1-l2-5
+LowNetwork = net-l2-mm
+LowNetworkNode = n29
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-gpu-l2-6]
+Type = Cache
+Geometry = geo-gpu-l2
+HighNetwork = net-gpu-l1-l2-6
+LowNetwork = net-l2-mm
+LowNetworkNode = n30
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-gpu-l2-7]
+Type = Cache
+Geometry = geo-gpu-l2
+HighNetwork = net-gpu-l1-l2-7
+LowNetwork = net-l2-mm
+LowNetworkNode = n31
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-gpu-l2-8]
+Type = Cache
+Geometry = geo-gpu-l2
+HighNetwork = net-gpu-l1-l2-8
+LowNetwork = net-l2-mm
+LowNetworkNode = n32
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-gpu-l2-9]
+Type = Cache
+Geometry = geo-gpu-l2
+HighNetwork = net-gpu-l1-l2-9
+LowNetwork = net-l2-mm
+LowNetworkNode = n33
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-gpu-l2-10]
+Type = Cache
+Geometry = geo-gpu-l2
+HighNetwork = net-gpu-l1-l2-10
+LowNetwork = net-l2-mm
+LowNetworkNode = n34
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-gpu-l2-11]
+Type = Cache
+Geometry = geo-gpu-l2
+HighNetwork = net-gpu-l1-l2-11
+LowNetwork = net-l2-mm
+LowNetworkNode = n35
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-gpu-l2-12]
+Type = Cache
+Geometry = geo-gpu-l2
+HighNetwork = net-gpu-l1-l2-12
+LowNetwork = net-l2-mm
+LowNetworkNode = n36
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-gpu-l2-13]
+Type = Cache
+Geometry = geo-gpu-l2
+HighNetwork = net-gpu-l1-l2-13
+LowNetwork = net-l2-mm
+LowNetworkNode = n37
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-gpu-l2-14]
+Type = Cache
+Geometry = geo-gpu-l2
+HighNetwork = net-gpu-l1-l2-14
+LowNetwork = net-l2-mm
+LowNetworkNode = n38
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-gpu-l2-15]
+Type = Cache
+Geometry = geo-gpu-l2
+HighNetwork = net-gpu-l1-l2-15
+LowNetwork = net-l2-mm
+LowNetworkNode = n39
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-gpu-l2-16]
+Type = Cache
+Geometry = geo-gpu-l2
+HighNetwork = net-gpu-l1-l2-16
+LowNetwork = net-l2-mm
+LowNetworkNode = n40
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-gpu-l2-17]
+Type = Cache
+Geometry = geo-gpu-l2
+HighNetwork = net-gpu-l1-l2-17
+LowNetwork = net-l2-mm
+LowNetworkNode = n41
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-gpu-l2-18]
+Type = Cache
+Geometry = geo-gpu-l2
+HighNetwork = net-gpu-l1-l2-18
+LowNetwork = net-l2-mm
+LowNetworkNode = n42
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-gpu-l2-19]
+Type = Cache
+Geometry = geo-gpu-l2
+HighNetwork = net-gpu-l1-l2-19
+LowNetwork = net-l2-mm
+LowNetworkNode = n43
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-gpu-l2-20]
+Type = Cache
+Geometry = geo-gpu-l2
+HighNetwork = net-gpu-l1-l2-20
+LowNetwork = net-l2-mm
+LowNetworkNode = n44
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-gpu-l2-21]
+Type = Cache
+Geometry = geo-gpu-l2
+HighNetwork = net-gpu-l1-l2-21
+LowNetwork = net-l2-mm
+LowNetworkNode = n45
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-gpu-l2-22]
+Type = Cache
+Geometry = geo-gpu-l2
+HighNetwork = net-gpu-l1-l2-22
+LowNetwork = net-l2-mm
+LowNetworkNode = n46
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+[Module mod-gpu-l2-23]
+Type = Cache
+Geometry = geo-gpu-l2
+HighNetwork = net-gpu-l1-l2-23
+LowNetwork = net-l2-mm
+LowNetworkNode = n47
+LowModules = mod-mm-0 mod-mm-1 mod-mm-2 mod-mm-3 mod-mm-4 mod-mm-5 mod-mm-6 mod-mm-7 mod-mm-8 mod-mm-9 mod-mm-10 mod-mm-11 mod-mm-12 mod-mm-13 mod-mm-14 mod-mm-15
+
+
+;; 16 Memory Banks.
+
+[Module mod-mm-0]
+Type = MainMemory
+BlockSize = 64
+Latency = 100
+Ports = 1
+HighNetwork = net-l2-mm
+HighNetworkNode = n48
+AddressRange = ADDR DIV 64 MOD 16 EQ 0
+
+[Module mod-mm-1]
+Type = MainMemory
+BlockSize = 64
+Latency = 100
+Ports = 1
+HighNetwork = net-l2-mm
+HighNetworkNode = n49
+AddressRange = ADDR DIV 64 MOD 16 EQ 1
+
+[Module mod-mm-2]
+Type = MainMemory
+BlockSize = 64
+Latency = 100
+Ports = 1
+HighNetwork = net-l2-mm
+HighNetworkNode = n50
+AddressRange = ADDR DIV 64 MOD 16 EQ 2
+
+[Module mod-mm-3]
+Type = MainMemory
+BlockSize = 64
+Latency = 100
+Ports = 1
+HighNetwork = net-l2-mm
+HighNetworkNode = n51
+AddressRange = ADDR DIV 64 MOD 16 EQ 3
+
+[Module mod-mm-4]
+Type = MainMemory
+BlockSize = 64
+Latency = 100
+Ports = 1
+HighNetwork = net-l2-mm
+HighNetworkNode = n52
+AddressRange = ADDR DIV 64 MOD 16 EQ 4
+
+[Module mod-mm-5]
+Type = MainMemory
+BlockSize = 64
+Latency = 100
+Ports = 1
+HighNetwork = net-l2-mm
+HighNetworkNode = n53
+AddressRange = ADDR DIV 64 MOD 16 EQ 5
+
+[Module mod-mm-6]
+Type = MainMemory
+BlockSize = 64
+Latency = 100
+Ports = 1
+HighNetwork = net-l2-mm
+HighNetworkNode = n54
+AddressRange = ADDR DIV 64 MOD 16 EQ 6
+
+[Module mod-mm-7]
+Type = MainMemory
+BlockSize = 64
+Latency = 100
+Ports = 1
+HighNetwork = net-l2-mm
+HighNetworkNode = n55
+AddressRange = ADDR DIV 64 MOD 16 EQ 7
+
+[Module mod-mm-8]
+Type = MainMemory
+BlockSize = 64
+Latency = 100
+Ports = 1
+HighNetwork = net-l2-mm
+HighNetworkNode = n56
+AddressRange = ADDR DIV 64 MOD 16 EQ 8
+
+[Module mod-mm-9]
+Type = MainMemory
+BlockSize = 64
+Latency = 100
+Ports = 1
+HighNetwork = net-l2-mm
+HighNetworkNode = n57
+AddressRange = ADDR DIV 64 MOD 16 EQ 9
+
+[Module mod-mm-10]
+Type = MainMemory
+BlockSize = 64
+Latency = 100
+Ports = 1
+HighNetwork = net-l2-mm
+HighNetworkNode = n58
+AddressRange = ADDR DIV 64 MOD 16 EQ 10
+
+[Module mod-mm-11]
+Type = MainMemory
+BlockSize = 64
+Latency = 100
+Ports = 1
+HighNetwork = net-l2-mm
+HighNetworkNode = n59
+AddressRange = ADDR DIV 64 MOD 16 EQ 11
+
+[Module mod-mm-12]
+Type = MainMemory
+BlockSize = 64
+Latency = 100
+Ports = 1
+HighNetwork = net-l2-mm
+HighNetworkNode = n60
+AddressRange = ADDR DIV 64 MOD 16 EQ 12
+
+[Module mod-mm-13]
+Type = MainMemory
+BlockSize = 64
+Latency = 100
+Ports = 1
+HighNetwork = net-l2-mm
+HighNetworkNode = n61
+AddressRange = ADDR DIV 64 MOD 16 EQ 13
+
+[Module mod-mm-14]
+Type = MainMemory
+BlockSize = 64
+Latency = 100
+Ports = 1
+HighNetwork = net-l2-mm
+HighNetworkNode = n62
+AddressRange = ADDR DIV 64 MOD 16 EQ 14
+
+[Module mod-mm-15]
+Type = MainMemory
+BlockSize = 64
+Latency = 100
+Ports = 1
+HighNetwork = net-l2-mm
+HighNetworkNode = n63
+AddressRange = ADDR DIV 64 MOD 16 EQ 15
+
+
+;; 48 CPU cores.
+
+[Entry core-0]
+Arch = x86
+Core = 0
+Thread = 0
+DataModule = mod-cpu-dl1-0
+InstModule = mod-cpu-il1-0
+
+[Entry core-1]
+Arch = x86
+Core = 1
+Thread = 0
+DataModule = mod-cpu-dl1-1
+InstModule = mod-cpu-il1-1
+
+[Entry core-2]
+Arch = x86
+Core = 2
+Thread = 0
+DataModule = mod-cpu-dl1-2
+InstModule = mod-cpu-il1-2
+
+[Entry core-3]
+Arch = x86
+Core = 3
+Thread = 0
+DataModule = mod-cpu-dl1-3
+InstModule = mod-cpu-il1-3
+
+[Entry core-4]
+Arch = x86
+Core = 4
+Thread = 0
+DataModule = mod-cpu-dl1-4
+InstModule = mod-cpu-il1-4
+
+[Entry core-5]
+Arch = x86
+Core = 5
+Thread = 0
+DataModule = mod-cpu-dl1-5
+InstModule = mod-cpu-il1-5
+
+[Entry core-6]
+Arch = x86
+Core = 6
+Thread = 0
+DataModule = mod-cpu-dl1-6
+InstModule = mod-cpu-il1-6
+
+[Entry core-7]
+Arch = x86
+Core = 7
+Thread = 0
+DataModule = mod-cpu-dl1-7
+InstModule = mod-cpu-il1-7
+
+[Entry core-8]
+Arch = x86
+Core = 8
+Thread = 0
+DataModule = mod-cpu-dl1-8
+InstModule = mod-cpu-il1-8
+
+[Entry core-9]
+Arch = x86
+Core = 9
+Thread = 0
+DataModule = mod-cpu-dl1-9
+InstModule = mod-cpu-il1-9
+
+[Entry core-10]
+Arch = x86
+Core = 10
+Thread = 0
+DataModule = mod-cpu-dl1-10
+InstModule = mod-cpu-il1-10
+
+[Entry core-11]
+Arch = x86
+Core = 11
+Thread = 0
+DataModule = mod-cpu-dl1-11
+InstModule = mod-cpu-il1-11
+
+[Entry core-12]
+Arch = x86
+Core = 12
+Thread = 0
+DataModule = mod-cpu-dl1-12
+InstModule = mod-cpu-il1-12
+
+[Entry core-13]
+Arch = x86
+Core = 13
+Thread = 0
+DataModule = mod-cpu-dl1-13
+InstModule = mod-cpu-il1-13
+
+[Entry core-14]
+Arch = x86
+Core = 14
+Thread = 0
+DataModule = mod-cpu-dl1-14
+InstModule = mod-cpu-il1-14
+
+[Entry core-15]
+Arch = x86
+Core = 15
+Thread = 0
+DataModule = mod-cpu-dl1-15
+InstModule = mod-cpu-il1-15
+
+[Entry core-16]
+Arch = x86
+Core = 16
+Thread = 0
+DataModule = mod-cpu-dl1-16
+InstModule = mod-cpu-il1-16
+
+[Entry core-17]
+Arch = x86
+Core = 17
+Thread = 0
+DataModule = mod-cpu-dl1-17
+InstModule = mod-cpu-il1-17
+
+[Entry core-18]
+Arch = x86
+Core = 18
+Thread = 0
+DataModule = mod-cpu-dl1-18
+InstModule = mod-cpu-il1-18
+
+[Entry core-19]
+Arch = x86
+Core = 19
+Thread = 0
+DataModule = mod-cpu-dl1-19
+InstModule = mod-cpu-il1-19
+
+[Entry core-20]
+Arch = x86
+Core = 20
+Thread = 0
+DataModule = mod-cpu-dl1-20
+InstModule = mod-cpu-il1-20
+
+[Entry core-21]
+Arch = x86
+Core = 21
+Thread = 0
+DataModule = mod-cpu-dl1-21
+InstModule = mod-cpu-il1-21
+
+[Entry core-22]
+Arch = x86
+Core = 22
+Thread = 0
+DataModule = mod-cpu-dl1-22
+InstModule = mod-cpu-il1-22
+
+[Entry core-23]
+Arch = x86
+Core = 23
+Thread = 0
+DataModule = mod-cpu-dl1-23
+InstModule = mod-cpu-il1-23
+
+[Entry core-24]
+Arch = x86
+Core = 24
+Thread = 0
+DataModule = mod-cpu-dl1-24
+InstModule = mod-cpu-il1-24
+
+[Entry core-25]
+Arch = x86
+Core = 25
+Thread = 0
+DataModule = mod-cpu-dl1-25
+InstModule = mod-cpu-il1-25
+
+[Entry core-26]
+Arch = x86
+Core = 26
+Thread = 0
+DataModule = mod-cpu-dl1-26
+InstModule = mod-cpu-il1-26
+
+[Entry core-27]
+Arch = x86
+Core = 27
+Thread = 0
+DataModule = mod-cpu-dl1-27
+InstModule = mod-cpu-il1-27
+
+[Entry core-28]
+Arch = x86
+Core = 28
+Thread = 0
+DataModule = mod-cpu-dl1-28
+InstModule = mod-cpu-il1-28
+
+[Entry core-29]
+Arch = x86
+Core = 29
+Thread = 0
+DataModule = mod-cpu-dl1-29
+InstModule = mod-cpu-il1-29
+
+[Entry core-30]
+Arch = x86
+Core = 30
+Thread = 0
+DataModule = mod-cpu-dl1-30
+InstModule = mod-cpu-il1-30
+
+[Entry core-31]
+Arch = x86
+Core = 31
+Thread = 0
+DataModule = mod-cpu-dl1-31
+InstModule = mod-cpu-il1-31
+
+[Entry core-32]
+Arch = x86
+Core = 32
+Thread = 0
+DataModule = mod-cpu-dl1-32
+InstModule = mod-cpu-il1-32
+
+[Entry core-33]
+Arch = x86
+Core = 33
+Thread = 0
+DataModule = mod-cpu-dl1-33
+InstModule = mod-cpu-il1-33
+
+[Entry core-34]
+Arch = x86
+Core = 34
+Thread = 0
+DataModule = mod-cpu-dl1-34
+InstModule = mod-cpu-il1-34
+
+[Entry core-35]
+Arch = x86
+Core = 35
+Thread = 0
+DataModule = mod-cpu-dl1-35
+InstModule = mod-cpu-il1-35
+
+[Entry core-36]
+Arch = x86
+Core = 36
+Thread = 0
+DataModule = mod-cpu-dl1-36
+InstModule = mod-cpu-il1-36
+
+[Entry core-37]
+Arch = x86
+Core = 37
+Thread = 0
+DataModule = mod-cpu-dl1-37
+InstModule = mod-cpu-il1-37
+
+[Entry core-38]
+Arch = x86
+Core = 38
+Thread = 0
+DataModule = mod-cpu-dl1-38
+InstModule = mod-cpu-il1-38
+
+[Entry core-39]
+Arch = x86
+Core = 39
+Thread = 0
+DataModule = mod-cpu-dl1-39
+InstModule = mod-cpu-il1-39
+
+[Entry core-40]
+Arch = x86
+Core = 40
+Thread = 0
+DataModule = mod-cpu-dl1-40
+InstModule = mod-cpu-il1-40
+
+[Entry core-41]
+Arch = x86
+Core = 41
+Thread = 0
+DataModule = mod-cpu-dl1-41
+InstModule = mod-cpu-il1-41
+
+[Entry core-42]
+Arch = x86
+Core = 42
+Thread = 0
+DataModule = mod-cpu-dl1-42
+InstModule = mod-cpu-il1-42
+
+[Entry core-43]
+Arch = x86
+Core = 43
+Thread = 0
+DataModule = mod-cpu-dl1-43
+InstModule = mod-cpu-il1-43
+
+[Entry core-44]
+Arch = x86
+Core = 44
+Thread = 0
+DataModule = mod-cpu-dl1-44
+InstModule = mod-cpu-il1-44
+
+[Entry core-45]
+Arch = x86
+Core = 45
+Thread = 0
+DataModule = mod-cpu-dl1-45
+InstModule = mod-cpu-il1-45
+
+[Entry core-46]
+Arch = x86
+Core = 46
+Thread = 0
+DataModule = mod-cpu-dl1-46
+InstModule = mod-cpu-il1-46
+
+[Entry core-47]
+Arch = x86
+Core = 47
+Thread = 0
+DataModule = mod-cpu-dl1-47
+InstModule = mod-cpu-il1-47
+
+
+;; 96 GPU cores.
+
+[Entry gpu-cu-0]
+Arch = SouthernIslands
+ComputeUnit = 0
+Module = mod-gpu-l1-0
+
+[Entry gpu-cu-1]
+Arch = SouthernIslands
+ComputeUnit = 1
+Module = mod-gpu-l1-0
+
+[Entry gpu-cu-2]
+Arch = SouthernIslands
+ComputeUnit = 2
+Module = mod-gpu-l1-1
+
+[Entry gpu-cu-3]
+Arch = SouthernIslands
+ComputeUnit = 3
+Module = mod-gpu-l1-1
+
+[Entry gpu-cu-4]
+Arch = SouthernIslands
+ComputeUnit = 4
+Module = mod-gpu-l1-2
+
+[Entry gpu-cu-5]
+Arch = SouthernIslands
+ComputeUnit = 5
+Module = mod-gpu-l1-2
+
+[Entry gpu-cu-6]
+Arch = SouthernIslands
+ComputeUnit = 6
+Module = mod-gpu-l1-3
+
+[Entry gpu-cu-7]
+Arch = SouthernIslands
+ComputeUnit = 7
+Module = mod-gpu-l1-3
+
+[Entry gpu-cu-8]
+Arch = SouthernIslands
+ComputeUnit = 8
+Module = mod-gpu-l1-4
+
+[Entry gpu-cu-9]
+Arch = SouthernIslands
+ComputeUnit = 9
+Module = mod-gpu-l1-4
+
+[Entry gpu-cu-10]
+Arch = SouthernIslands
+ComputeUnit = 10
+Module = mod-gpu-l1-5
+
+[Entry gpu-cu-11]
+Arch = SouthernIslands
+ComputeUnit = 11
+Module = mod-gpu-l1-5
+
+[Entry gpu-cu-12]
+Arch = SouthernIslands
+ComputeUnit = 12
+Module = mod-gpu-l1-6
+
+[Entry gpu-cu-13]
+Arch = SouthernIslands
+ComputeUnit = 13
+Module = mod-gpu-l1-6
+
+[Entry gpu-cu-14]
+Arch = SouthernIslands
+ComputeUnit = 14
+Module = mod-gpu-l1-7
+
+[Entry gpu-cu-15]
+Arch = SouthernIslands
+ComputeUnit = 15
+Module = mod-gpu-l1-7
+
+[Entry gpu-cu-16]
+Arch = SouthernIslands
+ComputeUnit = 16
+Module = mod-gpu-l1-8
+
+[Entry gpu-cu-17]
+Arch = SouthernIslands
+ComputeUnit = 17
+Module = mod-gpu-l1-8
+
+[Entry gpu-cu-18]
+Arch = SouthernIslands
+ComputeUnit = 18
+Module = mod-gpu-l1-9
+
+[Entry gpu-cu-19]
+Arch = SouthernIslands
+ComputeUnit = 19
+Module = mod-gpu-l1-9
+
+[Entry gpu-cu-20]
+Arch = SouthernIslands
+ComputeUnit = 20
+Module = mod-gpu-l1-10
+
+[Entry gpu-cu-21]
+Arch = SouthernIslands
+ComputeUnit = 21
+Module = mod-gpu-l1-10
+
+[Entry gpu-cu-22]
+Arch = SouthernIslands
+ComputeUnit = 22
+Module = mod-gpu-l1-11
+
+[Entry gpu-cu-23]
+Arch = SouthernIslands
+ComputeUnit = 23
+Module = mod-gpu-l1-11
+
+[Entry gpu-cu-24]
+Arch = SouthernIslands
+ComputeUnit = 24
+Module = mod-gpu-l1-12
+
+[Entry gpu-cu-25]
+Arch = SouthernIslands
+ComputeUnit = 25
+Module = mod-gpu-l1-12
+
+[Entry gpu-cu-26]
+Arch = SouthernIslands
+ComputeUnit = 26
+Module = mod-gpu-l1-13
+
+[Entry gpu-cu-27]
+Arch = SouthernIslands
+ComputeUnit = 27
+Module = mod-gpu-l1-13
+
+[Entry gpu-cu-28]
+Arch = SouthernIslands
+ComputeUnit = 28
+Module = mod-gpu-l1-14
+
+[Entry gpu-cu-29]
+Arch = SouthernIslands
+ComputeUnit = 29
+Module = mod-gpu-l1-14
+
+[Entry gpu-cu-30]
+Arch = SouthernIslands
+ComputeUnit = 30
+Module = mod-gpu-l1-15
+
+[Entry gpu-cu-31]
+Arch = SouthernIslands
+ComputeUnit = 31
+Module = mod-gpu-l1-15
+
+[Entry gpu-cu-32]
+Arch = SouthernIslands
+ComputeUnit = 32
+Module = mod-gpu-l1-16
+
+[Entry gpu-cu-33]
+Arch = SouthernIslands
+ComputeUnit = 33
+Module = mod-gpu-l1-16
+
+[Entry gpu-cu-34]
+Arch = SouthernIslands
+ComputeUnit = 34
+Module = mod-gpu-l1-17
+
+[Entry gpu-cu-35]
+Arch = SouthernIslands
+ComputeUnit = 35
+Module = mod-gpu-l1-17
+
+[Entry gpu-cu-36]
+Arch = SouthernIslands
+ComputeUnit = 36
+Module = mod-gpu-l1-18
+
+[Entry gpu-cu-37]
+Arch = SouthernIslands
+ComputeUnit = 37
+Module = mod-gpu-l1-18
+
+[Entry gpu-cu-38]
+Arch = SouthernIslands
+ComputeUnit = 38
+Module = mod-gpu-l1-19
+
+[Entry gpu-cu-39]
+Arch = SouthernIslands
+ComputeUnit = 39
+Module = mod-gpu-l1-19
+
+[Entry gpu-cu-40]
+Arch = SouthernIslands
+ComputeUnit = 40
+Module = mod-gpu-l1-20
+
+[Entry gpu-cu-41]
+Arch = SouthernIslands
+ComputeUnit = 41
+Module = mod-gpu-l1-20
+
+[Entry gpu-cu-42]
+Arch = SouthernIslands
+ComputeUnit = 42
+Module = mod-gpu-l1-21
+
+[Entry gpu-cu-43]
+Arch = SouthernIslands
+ComputeUnit = 43
+Module = mod-gpu-l1-21
+
+[Entry gpu-cu-44]
+Arch = SouthernIslands
+ComputeUnit = 44
+Module = mod-gpu-l1-22
+
+[Entry gpu-cu-45]
+Arch = SouthernIslands
+ComputeUnit = 45
+Module = mod-gpu-l1-22
+
+[Entry gpu-cu-46]
+Arch = SouthernIslands
+ComputeUnit = 46
+Module = mod-gpu-l1-23
+
+[Entry gpu-cu-47]
+Arch = SouthernIslands
+ComputeUnit = 47
+Module = mod-gpu-l1-23
+
+[Entry gpu-cu-48]
+Arch = SouthernIslands
+ComputeUnit = 48
+Module = mod-gpu-l1-24
+
+[Entry gpu-cu-49]
+Arch = SouthernIslands
+ComputeUnit = 49
+Module = mod-gpu-l1-24
+
+[Entry gpu-cu-50]
+Arch = SouthernIslands
+ComputeUnit = 50
+Module = mod-gpu-l1-25
+
+[Entry gpu-cu-51]
+Arch = SouthernIslands
+ComputeUnit = 51
+Module = mod-gpu-l1-25
+
+[Entry gpu-cu-52]
+Arch = SouthernIslands
+ComputeUnit = 52
+Module = mod-gpu-l1-26
+
+[Entry gpu-cu-53]
+Arch = SouthernIslands
+ComputeUnit = 53
+Module = mod-gpu-l1-26
+
+[Entry gpu-cu-54]
+Arch = SouthernIslands
+ComputeUnit = 54
+Module = mod-gpu-l1-27
+
+[Entry gpu-cu-55]
+Arch = SouthernIslands
+ComputeUnit = 55
+Module = mod-gpu-l1-27
+
+[Entry gpu-cu-56]
+Arch = SouthernIslands
+ComputeUnit = 56
+Module = mod-gpu-l1-28
+
+[Entry gpu-cu-57]
+Arch = SouthernIslands
+ComputeUnit = 57
+Module = mod-gpu-l1-28
+
+[Entry gpu-cu-58]
+Arch = SouthernIslands
+ComputeUnit = 58
+Module = mod-gpu-l1-29
+
+[Entry gpu-cu-59]
+Arch = SouthernIslands
+ComputeUnit = 59
+Module = mod-gpu-l1-29
+
+[Entry gpu-cu-60]
+Arch = SouthernIslands
+ComputeUnit = 60
+Module = mod-gpu-l1-30
+
+[Entry gpu-cu-61]
+Arch = SouthernIslands
+ComputeUnit = 61
+Module = mod-gpu-l1-30
+
+[Entry gpu-cu-62]
+Arch = SouthernIslands
+ComputeUnit = 62
+Module = mod-gpu-l1-31
+
+[Entry gpu-cu-63]
+Arch = SouthernIslands
+ComputeUnit = 63
+Module = mod-gpu-l1-31
+
+[Entry gpu-cu-64]
+Arch = SouthernIslands
+ComputeUnit = 64
+Module = mod-gpu-l1-32
+
+[Entry gpu-cu-65]
+Arch = SouthernIslands
+ComputeUnit = 65
+Module = mod-gpu-l1-32
+
+[Entry gpu-cu-66]
+Arch = SouthernIslands
+ComputeUnit = 66
+Module = mod-gpu-l1-33
+
+[Entry gpu-cu-67]
+Arch = SouthernIslands
+ComputeUnit = 67
+Module = mod-gpu-l1-33
+
+[Entry gpu-cu-68]
+Arch = SouthernIslands
+ComputeUnit = 68
+Module = mod-gpu-l1-34
+
+[Entry gpu-cu-69]
+Arch = SouthernIslands
+ComputeUnit = 69
+Module = mod-gpu-l1-34
+
+[Entry gpu-cu-70]
+Arch = SouthernIslands
+ComputeUnit = 70
+Module = mod-gpu-l1-35
+
+[Entry gpu-cu-71]
+Arch = SouthernIslands
+ComputeUnit = 71
+Module = mod-gpu-l1-35
+
+[Entry gpu-cu-72]
+Arch = SouthernIslands
+ComputeUnit = 72
+Module = mod-gpu-l1-36
+
+[Entry gpu-cu-73]
+Arch = SouthernIslands
+ComputeUnit = 73
+Module = mod-gpu-l1-36
+
+[Entry gpu-cu-74]
+Arch = SouthernIslands
+ComputeUnit = 74
+Module = mod-gpu-l1-37
+
+[Entry gpu-cu-75]
+Arch = SouthernIslands
+ComputeUnit = 75
+Module = mod-gpu-l1-37
+
+[Entry gpu-cu-76]
+Arch = SouthernIslands
+ComputeUnit = 76
+Module = mod-gpu-l1-38
+
+[Entry gpu-cu-77]
+Arch = SouthernIslands
+ComputeUnit = 77
+Module = mod-gpu-l1-38
+
+[Entry gpu-cu-78]
+Arch = SouthernIslands
+ComputeUnit = 78
+Module = mod-gpu-l1-39
+
+[Entry gpu-cu-79]
+Arch = SouthernIslands
+ComputeUnit = 79
+Module = mod-gpu-l1-39
+
+[Entry gpu-cu-80]
+Arch = SouthernIslands
+ComputeUnit = 80
+Module = mod-gpu-l1-40
+
+[Entry gpu-cu-81]
+Arch = SouthernIslands
+ComputeUnit = 81
+Module = mod-gpu-l1-40
+
+[Entry gpu-cu-82]
+Arch = SouthernIslands
+ComputeUnit = 82
+Module = mod-gpu-l1-41
+
+[Entry gpu-cu-83]
+Arch = SouthernIslands
+ComputeUnit = 83
+Module = mod-gpu-l1-41
+
+[Entry gpu-cu-84]
+Arch = SouthernIslands
+ComputeUnit = 84
+Module = mod-gpu-l1-42
+
+[Entry gpu-cu-85]
+Arch = SouthernIslands
+ComputeUnit = 85
+Module = mod-gpu-l1-42
+
+[Entry gpu-cu-86]
+Arch = SouthernIslands
+ComputeUnit = 86
+Module = mod-gpu-l1-43
+
+[Entry gpu-cu-87]
+Arch = SouthernIslands
+ComputeUnit = 87
+Module = mod-gpu-l1-43
+
+[Entry gpu-cu-88]
+Arch = SouthernIslands
+ComputeUnit = 88
+Module = mod-gpu-l1-44
+
+[Entry gpu-cu-89]
+Arch = SouthernIslands
+ComputeUnit = 89
+Module = mod-gpu-l1-44
+
+[Entry gpu-cu-90]
+Arch = SouthernIslands
+ComputeUnit = 90
+Module = mod-gpu-l1-45
+
+[Entry gpu-cu-91]
+Arch = SouthernIslands
+ComputeUnit = 91
+Module = mod-gpu-l1-45
+
+[Entry gpu-cu-92]
+Arch = SouthernIslands
+ComputeUnit = 92
+Module = mod-gpu-l1-46
+
+[Entry gpu-cu-93]
+Arch = SouthernIslands
+ComputeUnit = 93
+Module = mod-gpu-l1-46
+
+[Entry gpu-cu-94]
+Arch = SouthernIslands
+ComputeUnit = 94
+Module = mod-gpu-l1-47
+
+[Entry gpu-cu-95]
+Arch = SouthernIslands
+ComputeUnit = 95
+Module = mod-gpu-l1-47
+
+
+;; L1$-L2$ network for CPUs.
+
+[Network net-cpu-l1-l2-0]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-cpu-l1-l2-1]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-cpu-l1-l2-2]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-cpu-l1-l2-3]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-cpu-l1-l2-4]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-cpu-l1-l2-5]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-cpu-l1-l2-6]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-cpu-l1-l2-7]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-cpu-l1-l2-8]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-cpu-l1-l2-9]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-cpu-l1-l2-10]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-cpu-l1-l2-11]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-cpu-l1-l2-12]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-cpu-l1-l2-13]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-cpu-l1-l2-14]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-cpu-l1-l2-15]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-cpu-l1-l2-16]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-cpu-l1-l2-17]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-cpu-l1-l2-18]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-cpu-l1-l2-19]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-cpu-l1-l2-20]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-cpu-l1-l2-21]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-cpu-l1-l2-22]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-cpu-l1-l2-23]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+
+;; L1$-L2$ network for GPUs.
+
+[Network net-gpu-l1-l2-0]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-gpu-l1-l2-1]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-gpu-l1-l2-2]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-gpu-l1-l2-3]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-gpu-l1-l2-4]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-gpu-l1-l2-5]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-gpu-l1-l2-6]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-gpu-l1-l2-7]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-gpu-l1-l2-8]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-gpu-l1-l2-9]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-gpu-l1-l2-10]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-gpu-l1-l2-11]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-gpu-l1-l2-12]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-gpu-l1-l2-13]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-gpu-l1-l2-14]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-gpu-l1-l2-15]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-gpu-l1-l2-16]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-gpu-l1-l2-17]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-gpu-l1-l2-18]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-gpu-l1-l2-19]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-gpu-l1-l2-20]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-gpu-l1-l2-21]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-gpu-l1-l2-22]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+[Network net-gpu-l1-l2-23]
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
+
+
+;; Total nodes (Switches): 64 
+;; Total memory controllers: 16 
+;; Total number of CPU cores: 48 
+;; Total number of SouthernIslands GPU cores: 96 
+;; Total number of L1$ CPUs: 48 
+;; Total number of L1$ GPUs: 24 
+;; Total number of L2$ CPUs: 24 
+;; Total number of L2$ GPUs: 24 
+

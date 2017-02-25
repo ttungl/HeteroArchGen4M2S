@@ -1,0 +1,40 @@
+[ General ]
+	Cores = 48
+	Threads = 1
+	Frequency = 2400
+
+[ Pipeline ]
+	DecodeWidth = 4
+	DispatchWidth = 4
+	IssueWidth = 4
+	CommitWidth = 4
+
+[ Queues ]
+	FetchQueueSize = 64
+	RobSize = 128
+	IqSize = 51
+	LsqSize = 64
+	RfIntSize = 85
+	RfFpSize = 43
+
+[ FunctionalUnits ]
+	IntAdd.Count = 4
+	IntMult.Count = 1
+	IntDiv.Count = 1
+	EffAddr.Count = 4
+	Logic.Count = 4
+	FpSimple.Count = 4
+	FpAdd.Count = 4
+	FpMult.Count = 1
+	FpDiv.Count = 1
+	FpComplex.Count = 1
+
+[ BranchPredictor ]
+	Kind = Combined
+	Bimod.Size = 4096
+	Choice.Size = 4096
+	TwoLevel.L1Size = 1024
+	TwoLevel.L2Size = 1
+	TwoLevel.HistorySize = 8
+	BTB.Sets = 1024
+	BTB.Assoc = 1
