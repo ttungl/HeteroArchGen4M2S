@@ -13,7 +13,7 @@
 # `HeteroArchGen4M2S` is written to help you configure M2S 
 # easily, but non-warranty and non-mechantability.
 # ============================================================================
-from write_to_File import write_to_File
+# from write_to_File import write_to_File
 
 # Read total cycles
 # Input: pipeline.out
