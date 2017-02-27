@@ -34,5 +34,5 @@ def read_results(benchmark):
 	print "Done! `%s_network_performance.out` in the results directory." % benchmark
 
 ##### run 
-benchmark = 'default_mm' ## should be passed down from the main_config file
-read_results(benchmark)
+##benchmark = 'default_mm' ## should be passed down from the main_config file
+##read_results(benchmark)
