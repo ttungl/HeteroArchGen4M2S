@@ -174,7 +174,7 @@ Let’s use the `blacksholes` example with 16 cores CPUs (`8` x86 CPUs), 16 core
 	* Network Latency (cycles): 23.6969
 
 
-6. 	To get the dynamic power from McPAT.
+6. 	To get the dynamic power from McPAT. (Note, this section is finalizing. Available soon.)
 
 	* Make sure you are in `multi2sim-5.0` directory. 
 
