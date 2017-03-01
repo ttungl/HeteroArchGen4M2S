@@ -15,6 +15,8 @@
 # ============================================================================
 
 from read_sdpairs import read_data
+from graph_datastructure import Graph
+
 # LOCAL_LINKS_PATH: to file of the optimized results (local links)
 # HYBRID_LINKS_PATH: to file of the optimized results (hybrid links)
 # network_mode: 
@@ -24,6 +26,7 @@ from read_sdpairs import read_data
 	# [Add later] 3: Ring
 	
 import math # use sqrt
+
 
 def create_netconfig(num_of_nodes, L2_blocksize, network_mode, LOCAL_LINKS_PATH, HYBRID_LINKS_PATH, LOCAL_LINKWIDTH, HYBRID_LINKWIDTH):
 	## check input validation
@@ -40,7 +43,8 @@ def create_netconfig(num_of_nodes, L2_blocksize, network_mode, LOCAL_LINKS_PATH,
 		bufferSize 	= bandwidth * num_of_nodes;
 	
 	# File name
-	f = open('configs/netconfig', 'w');
+	# f = open('configs/netconfig', 'w');
+	f = open('configs/netconfig_XYrouting', 'w');
 
 	if network_mode == 0: 
 		f.write(";; 2D-Mesh Network.\n");
@@ -138,9 +142,36 @@ def create_netconfig(num_of_nodes, L2_blocksize, network_mode, LOCAL_LINKS_PATH,
 					f.write("Type = Bidirectional\n");
 					f.write("\n");
 		f.write("\n");
+
+		#### XY-routing
+		f.write("[Network.mynet.Routes]\n");
+
+		## build the coordinate xy
+		countX = 0
+		countY = 0
+		array3 = [] ## XY coordinate
+		for i in range(num_of_nodes):
+			if countY % math.sqrt(num_of_nodes) == 0:
+				countY = 0
+				countX = countX + 1
+				array3.extend([[countX-1, countY]])
+			else:
+				array3.extend([[countX-1, countY]])
+			countY = countY + 1
+
+		## build all pairs in the network
+		array4 = [] ## all sd-pairs in the network
+		for i in range(num_of_nodes):
+			for j in range(num_of_nodes):
+				if not i==j:
+					array4.extend([[i,j]])
+		##
+		# print array3
+		print array4
+
 		# close
 		f.close();
-	
+		
 	## Customized 2D-Mesh network
 	if network_mode == 1:
 		## Customized 2D-Mesh 
@@ -171,11 +202,11 @@ def create_netconfig(num_of_nodes, L2_blocksize, network_mode, LOCAL_LINKS_PATH,
 			f.write("\n");
 
 		## For local links
-		array =[]	
-		array.extend(read_data(LOCAL_LINKS_PATH))
+		array1 =[]	
+		array1.extend(read_data(LOCAL_LINKS_PATH))
 		# sort
-		array = sorted(array)
-		for ePair in array:
+		array1 = sorted(array1)
+		for ePair in array1:
 			# print ePair
 			count = 0;
 			for eElem in ePair:
@@ -193,20 +224,68 @@ def create_netconfig(num_of_nodes, L2_blocksize, network_mode, LOCAL_LINKS_PATH,
 					f.write("Bandwidth = %0.f\n" % LOCAL_LINKWIDTH);
 			f.write("\n");
 		
-		## XY-routing
-			# [Network.mynet.Routes]
-			# N1.to.N2 = S1
-			# S1.to.N2 = S2
+		###################	Shortest Path Routing protocol 
+		f.write("[Network.mynet.Routes]\n");
+		
+		array2 = [] ## local+hybrid links
+		array2.extend(array) ## node id starts from 1.
+		array2.extend(array1) 
+		
+		## build the coordinate xy
+		countX = 0
+		countY = 0
+		array3 = [] ## coordinate
+		for i in range(num_of_nodes):
+			if countY % math.sqrt(num_of_nodes) == 0:
+				countY = 0
+				countX = countX + 1
+				array3.extend([[countX-1, countY]])
+			else:
+				array3.extend([[countX-1, countY]])
+			countY = countY + 1
+		
+		## subtract each elem in pairs in the list by 1; 
+		##   due to the node IDs start from zero;
+		array2[:] = [(x-1,y-1) for (x,y) in array2]
 
-			# N1.to.N3 = S1
-			# S1.to.N3 = S2
-			# S2.to.N3 = S3
+		# array2: customized network (local+hybrid links) 
+		# array3: the XY coordinate
+		##################################################
+		array4 = [] ## all sd-pairs in the network
+		for i in range(num_of_nodes):
+			for j in range(num_of_nodes):
+				if not i==j:
+					array4.extend([[i,j]])
+		##################################################
+		# 1. Find the shortest path from `src` to `dst` using dijkstra's algorithm.
+		# 2. Form the routes following the m2s format.
 
-			# N1.to.N4 = S1
-			# S1.to.N4 = S4
-			###################	
-
-
+		## 1.
+		array2 = sorted(array2)
+		gx = Graph(array2, directed=True)
+		
+		## 2. 
+		f.write(";; Bidirectional routes\n\n")
+		for (s,d) in array4:
+			path = gx.find_shortest_path(s,d)
+			if path:
+				# print path
+				for (index,node) in enumerate(path):
+					if index==0:
+						f.write("n%d.to.n%d = sw%d\n" % (path[index], path[(len(path)-1)], path[index]));
+					else:
+						f.write("sw%d.to.n%d = sw%d\n" % (path[index-1], path[(len(path)-1)], path[index]));					
+				f.write("\n")
+				## 
+				revpath = path[::-1] ## reversed path
+				# print revpath
+				for (index,node) in enumerate(revpath):
+					if index==0:
+						f.write("n%d.to.n%d = sw%d\n" % (revpath[index], revpath[(len(path)-1)], revpath[index]));
+					else:
+						f.write("sw%d.to.n%d = sw%d\n" % (revpath[index-1], revpath[(len(path)-1)], revpath[index]));
+				f.write("\n")
+					
 		# close
 		f.close();
 
@@ -297,17 +376,20 @@ def create_netconfig(num_of_nodes, L2_blocksize, network_mode, LOCAL_LINKS_PATH,
 
 	## Ring network
 	# if network_mode == 3:
-	# 	##
-	# 	##
-	# 	print 'You are not expected to be here!'
+	# 	print 'This will be updated soon!'
 
 # --
 ## for testing
-# LOCALLINKS_PATH = 'results_hybrid_local_links/test_topoA_hybridlinks_4x4.txt'
-# HYBRIDLINKS_PATH = 'results_hybrid_local_links/test_topoA_locallinks_4x4.txt'
-# create_netconfig(16, 512, 2, LOCALLINKS_PATH, HYBRIDLINKS_PATH,)
+HYBRIDLINKS_PATH = 'results_hybrid_local_links/test_topoA_hybridlinks_4x4.txt'
+LOCALLINKS_PATH = 'results_hybrid_local_links/test_topoA_locallinks_4x4.txt'
+HYBRID_LINKWIDTH 	= 32 	## Bytes per cycle (frequency*bandwidth(= 2.4GHz * 32Bytes/cyc ~ 80GBps)) 
+LOCAL_LINKWIDTH 	= 16
+num_of_nodes = 16
+L2_blocksize = 512
+network_mode = 0
 
-
+# create_netconfig(16, 512, 1, LOCALLINKS_PATH, HYBRIDLINKS_PATH,)
+create_netconfig(num_of_nodes, L2_blocksize, network_mode, LOCALLINKS_PATH, HYBRIDLINKS_PATH, LOCAL_LINKWIDTH, HYBRID_LINKWIDTH);
 
 
 
