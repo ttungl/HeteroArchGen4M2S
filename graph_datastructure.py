@@ -16,10 +16,13 @@
 # `HeteroArchGen4M2S` is written to help you configure M2S 
 # easily, but non-warranty and non-mechantability.
 # ============================================================================
-# sources: 
-# http://stackoverflow.com/a/30747003/2881205
-# How to import classes: http://stackoverflow.com/a/4142178/2881205
-# find paths in graphs: https://www.python.org/doc/essays/graphs/
+# Note: Most of the parts in this graph datastructure are copied from [1].
+#       Some other modifications (find all paths and shortest paths)[2, 3] are added 
+#       to be suitable for general-purpose uses.  
+# Sources: 
+# [1] http://stackoverflow.com/a/30747003/2881205
+# [2] How to import classes: http://stackoverflow.com/a/4142178/2881205
+# [3] Find paths in graphs: https://www.python.org/doc/essays/graphs/
 
 from collections import defaultdict
 
