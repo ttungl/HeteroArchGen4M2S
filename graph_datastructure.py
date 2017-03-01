@@ -19,6 +19,8 @@
 # Note: Most of the parts in this graph datastructure are copied from [1].
 #       Some other modifications (find all paths and shortest paths)[2, 3] are added 
 #       to be suitable for general-purpose uses.  
+#       Important: To use this `Graph` class, you need to import it into the "caller" file (main),
+#       and create an empty file "__init__.py" under the same directory of this class file. 
 # Sources: 
 # [1] http://stackoverflow.com/a/30747003/2881205
 # [2] How to import classes: http://stackoverflow.com/a/4142178/2881205
