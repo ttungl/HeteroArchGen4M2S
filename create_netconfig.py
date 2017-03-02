@@ -40,7 +40,7 @@ import math # use sqrt
 # 	xy_path = []
 # 	s_coor = source_coor
 # 	d_coor = dest_coor
-= 'results_hybrid_local_links/test_topoA_hybridlinks_4x4.txt'
+# HYBRIDLINKS_PATH = 'results_hybrid_local_links/test_topoA_hybridlinks_4x4.txt'
 # LOCALLINKS_PATH = 'results_hybrid_local_links/test_topoA_locallinks_4x4.txt'
 # HYBRID_LINKWIDTH 	= 32 	## Bytes per cycle (frequency*bandwidth(= 2.4GHz * 32Bytes/cyc ~ 80GBps)) 
 # LOCAL_LINKWIDTH 	= 16
