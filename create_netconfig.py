@@ -40,7 +40,13 @@ import math # use sqrt
 # 	xy_path = []
 # 	s_coor = source_coor
 # 	d_coor = dest_coor
-
+= 'results_hybrid_local_links/test_topoA_hybridlinks_4x4.txt'
+# LOCALLINKS_PATH = 'results_hybrid_local_links/test_topoA_locallinks_4x4.txt'
+# HYBRID_LINKWIDTH 	= 32 	## Bytes per cycle (frequency*bandwidth(= 2.4GHz * 32Bytes/cyc ~ 80GBps)) 
+# LOCAL_LINKWIDTH 	= 16
+# num_of_nodes = 16
+# L2_blocksize = 512
+# network_mode = 0
 # 	# print s_coor, d_coor
 # 	# print XYcoordinate
 
@@ -176,8 +182,8 @@ def create_netconfig(num_of_nodes, L2_blocksize, network_mode, LOCAL_LINKS_PATH,
 		bufferSize 	= bandwidth * num_of_nodes;
 	
 	# File name
-	# f = open('configs/netconfig', 'w');
-	f = open('configs/netconfig_XYrouting', 'w');
+	f = open('configs/netconfig', 'w');
+	# f = open('configs/netconfig_XYrouting', 'w');
 
 	if network_mode == 0: 
 		f.write(";; 2D-Mesh Network.\n");
@@ -524,16 +530,16 @@ def create_netconfig(num_of_nodes, L2_blocksize, network_mode, LOCAL_LINKS_PATH,
 
 # --
 ## for testing
-HYBRIDLINKS_PATH = 'results_hybrid_local_links/test_topoA_hybridlinks_4x4.txt'
-LOCALLINKS_PATH = 'results_hybrid_local_links/test_topoA_locallinks_4x4.txt'
-HYBRID_LINKWIDTH 	= 32 	## Bytes per cycle (frequency*bandwidth(= 2.4GHz * 32Bytes/cyc ~ 80GBps)) 
-LOCAL_LINKWIDTH 	= 16
-num_of_nodes = 16
-L2_blocksize = 512
-network_mode = 0
+# HYBRIDLINKS_PATH = 'results_hybrid_local_links/test_topoA_hybridlinks_4x4.txt'
+# LOCALLINKS_PATH = 'results_hybrid_local_links/test_topoA_locallinks_4x4.txt'
+# HYBRID_LINKWIDTH 	= 32 	## Bytes per cycle (frequency*bandwidth(= 2.4GHz * 32Bytes/cyc ~ 80GBps)) 
+# LOCAL_LINKWIDTH 	= 16
+# num_of_nodes = 16
+# L2_blocksize = 512
+# network_mode = 0
 
 # create_netconfig(16, 512, 1, LOCALLINKS_PATH, HYBRIDLINKS_PATH,)
-create_netconfig(num_of_nodes, L2_blocksize, network_mode, LOCALLINKS_PATH, HYBRIDLINKS_PATH, LOCAL_LINKWIDTH, HYBRID_LINKWIDTH);
+# create_netconfig(num_of_nodes, L2_blocksize, network_mode, LOCALLINKS_PATH, HYBRIDLINKS_PATH, LOCAL_LINKWIDTH, HYBRID_LINKWIDTH);
 
 
 
