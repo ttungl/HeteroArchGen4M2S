@@ -23,10 +23,143 @@ from graph_datastructure import Graph
 	# 0: 2D-Mesh [Default]
 	# 1: Customized 2D-Mesh Network [+PATHS]
 	# 2: Torus
-	# [Add later] 3: Ring
+	# [optional] 3: Ring
 	
 import math # use sqrt
 
+# def check_coord_index(xy_coor, XYcoordinate):	
+# 	for (idx,coord) in enumerate(XYcoordinate):
+# 		# print idx,coord
+# 		if xy_coor == coord:
+# 			# print xy_coor, coord
+# 			# print idx
+# 			return idx 
+# 	return -1
+
+# def find_XY_path(source_coor, dest_coor, XYcoordinate):
+# 	xy_path = []
+# 	s_coor = source_coor
+# 	d_coor = dest_coor
+
+# 	# print s_coor, d_coor
+# 	# print XYcoordinate
+
+# 	# print source_coor, dest_coor
+# 		#### xy-routing
+# 		# x_src++ until = x_dst; 
+# 		# then, y_src++ until = y_dst; 
+# 	## x-coordinate ++
+# 		# while not source_coor[0] == dest_coor[0]:
+# 		# 	if source_coor[0] == dest_coor[0]: 
+# 		# 		# add path
+# 		# 		break
+# 		# 	else:
+# 		# 		source_coor[0] = source_coor[0] + 1
+# 		# 		print source_coor[0]
+# 		# 		# add path
+# 		# 	print source_coor
+# 	# while not source_coor[0] > dest_coor[0]:
+# 		# 	if source_coor[0] == dest_coor[0]: ## if x_src == x_dst, then ++(/--) y_src
+# 		# 		print "s[0] = d[0]\n"
+# 		# 		break
+# 		# 		# # print source_coor,dest_coor 
+# 		# 		# if source_coor[1] == dest_coor[1]:
+# 		# 		# 	# print "s[1] = d[1]\n"
+# 		# 		# 	# print source_coor,dest_coor 
+# 		# 		# 	# done
+# 		# 		# 	break
+# 		# 		# if source_coor[1] < dest_coor[1]:
+# 		# 		# 	# print "s[1] < d[1]\n"
+# 		# 		# 	# print source_coor,dest_coor 
+# 		# 		# 	source_coor[1] = source_coor[1] + 1;	
+# 		# 		# else: ## y_src > y_dest
+# 		# 		# 	# print "s[1] > d[1]\n" 
+# 		# 		# 	# print source_coor,dest_coor 
+# 		# 		# 	source_coor[1] = source_coor[1] - 1;
+
+# 		# 	if source_coor[0] < dest_coor[0]:
+# 		# 		print "s[0] < d[0]\n"
+# 		# 		print source_coor,dest_coor 
+# 		# 		source_coor[0] = source_coor[0] + 1;
+# 		# 	else: ## x_src > x_dest
+# 		# 		print "s[0] > d[0]\n"
+# 		# 		print source_coor,dest_coor 
+# 		# 		source_coor[0] = source_coor[0] - 1;
+	
+# 	####### x1 = x2
+# 	if s_coor[0] == d_coor[0]: ## x-coord
+# 		if s_coor[1] == d_coor[1]: ## y-coord: y1 = y2 
+# 			idx = check_coord_index(d_coor, XYcoordinate)
+# 			xy_path.extend([idx])
+# 			return xy_path
+
+# 		if s_coor[1] < d_coor[1]: ## y1 < y2
+# 			while not d_coor[1] == s_coor[1]+1:
+# 				s_coor[1] = s_coor[1] + 1
+# 				idx = check_coord_index(s_coor, XYcoordinate)
+# 				xy_path.extend([idx])
+# 			return xy_path
+
+# 		if s_coor[1] > d_coor[1]: ## y1 > y2
+# 			while not d_coor[1]+1 == s_coor[1]:
+# 				d_coor[1] = d_coor[1] + 1
+# 				idx = check_coord_index(d_coor, XYcoordinate)
+# 				xy_path.extend([idx])
+# 			return xy_path	
+		
+# 	#######	x1 < x2
+# 	if s_coor[0] < d_coor[0]: ## x-coord
+# 		while not d_coor[0] == s_coor[0]+1:
+# 			s_coor[0] = s_coor[0] + 1
+# 			idx = check_coord_index(s_coor, XYcoordinate)
+# 			xy_path.extend([idx])
+# 		## at this point, x1=x2, then check y1,y2.	
+# 		if s_coor[1] == d_coor[1]: ## y-coord: y1 = y2
+# 			idx = check_coord_index(d_coor, XYcoordinate)
+# 			xy_path.extend([idx])
+# 			return xy_path
+
+# 		if s_coor[1] < d_coor[1]: ## y-coord: y1 < y2
+# 			while not d_coor[1] == s_coor[1]+1:
+# 				s_coor[1] = s_coor[1] + 1
+# 				idx = check_coord_index(s_coor, XYcoordinate)
+# 				xy_path.extend([idx])
+# 			return xy_path
+
+# 		if s_coor[1] > d_coor[1]: ## y-coord
+# 			while not d_coor[1]+1 == s_coor[1]:
+# 				d_coor[1] = d_coor[1] + 1
+# 				idx = check_coord_index(d_coor, XYcoordinate)
+# 				xy_path.extend([idx])
+# 			return xy_path
+	
+# 	####### x1 > x2
+# 	if s_coor[0] > d_coor[0]: ## x-coord
+# 		while not s_coor[0] == d_coor[0]+1:
+# 			d_coor[0] = d_coor[0] + 1
+# 			idx = check_coord_index(d_coor, XYcoordinate)
+# 			xy_path.extend([idx])
+		
+# 		if s_coor[1] == d_coor[1]:
+# 			idx = check_coord_index(d_coor, XYcoordinate)
+# 			xy_path.extend([idx])
+# 			return xy_path
+
+# 		if s_coor[1] < d_coor[1]:
+# 			while not d_coor[1] == s_coor[1]+1:
+# 				s_coor[1] = s_coor[1] + 1
+# 				idx = check_coord_index(s_coor, XYcoordinate)
+# 				xy_path.extend([idx])
+# 			return xy_path
+
+# 		if s_coor[1] > d_coor[1]:
+# 			while not s_coor[1] == d_coor[1]+1:
+# 				d_coor[1] = d_coor[1] + 1
+# 				idx = check_coord_index(d_coor, XYcoordinate)
+# 				xy_path.extend([idx])
+# 			return xy_path
+
+# 	return -1
 
 def create_netconfig(num_of_nodes, L2_blocksize, network_mode, LOCAL_LINKS_PATH, HYBRID_LINKS_PATH, LOCAL_LINKWIDTH, HYBRID_LINKWIDTH):
 	## check input validation
@@ -143,31 +276,42 @@ def create_netconfig(num_of_nodes, L2_blocksize, network_mode, LOCAL_LINKS_PATH,
 					f.write("\n");
 		f.write("\n");
 
-		#### XY-routing
-		f.write("[Network.mynet.Routes]\n");
+		# #### XY-routing
+		# f.write("[Network.mynet.Routes]\n");
 
-		## build the coordinate xy
-		countX = 0
-		countY = 0
-		array3 = [] ## XY coordinate
-		for i in range(num_of_nodes):
-			if countY % math.sqrt(num_of_nodes) == 0:
-				countY = 0
-				countX = countX + 1
-				array3.extend([[countX-1, countY]])
-			else:
-				array3.extend([[countX-1, countY]])
-			countY = countY + 1
+		# ## build the coordinate xy
+		# countX = 0
+		# countY = 0
+		# array3 = [] ## XY coordinate
+		# for i in range(num_of_nodes):
+		# 	if countY % math.sqrt(num_of_nodes) == 0:
+		# 		countY = 0
+		# 		countX = countX + 1
+		# 		array3.extend([[countX-1, countY]])
+		# 	else:
+		# 		array3.extend([[countX-1, countY]])
+		# 	countY = countY + 1
 
-		## build all pairs in the network
-		array4 = [] ## all sd-pairs in the network
-		for i in range(num_of_nodes):
-			for j in range(num_of_nodes):
-				if not i==j:
-					array4.extend([[i,j]])
-		##
+		# ## build all pairs in the network
+		# array4 = [] ## all sd-pairs in the network
+		# for i in range(num_of_nodes):
+		# 	for j in range(num_of_nodes):
+		# 		if not i==j:
+		# 			array4.extend([[i,j]])
+		# ##
 		# print array3
-		print array4
+
+		# for (src,dst) in array4:
+		# 	print src,dst	
+		# 	# print array5
+		# 	# convert to the XY coordinate
+		# 	src_coor = array3[src]
+		# 	dst_coor = array3[dst]
+
+		# 	print src_coor,dst_coor
+		# 	# xy_path = find_XY_path(src_coor, dst_coor, array3)
+		# 	# print xy_path
+		# # print array5
 
 		# close
 		f.close();
@@ -250,13 +394,13 @@ def create_netconfig(num_of_nodes, L2_blocksize, network_mode, LOCAL_LINKS_PATH,
 
 		# array2: customized network (local+hybrid links) 
 		# array3: the XY coordinate
-		##################################################
+		#####
 		array4 = [] ## all sd-pairs in the network
 		for i in range(num_of_nodes):
 			for j in range(num_of_nodes):
 				if not i==j:
 					array4.extend([[i,j]])
-		##################################################
+		#####
 		# 1. Find the shortest path from `src` to `dst` using dijkstra's algorithm.
 		# 2. Form the routes following the m2s format.
 
