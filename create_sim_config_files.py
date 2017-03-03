@@ -29,7 +29,7 @@ from create_shell_script import create_shell_script
 #### 		Each core in the set can have its own L1$ (Data&Instr) 
 #### 		or it can share the Instruction-L1$ with the other core in that set.
 ####		by enabling `L1_Inst_shared` flag in the CPU Memory Parameters settings.
-num_of_cpu_cores = 48 
+num_of_cpu_cores = 16 
 cpu_frequency = 2400 ## 2.4GHz
 num_of_threads = 1
 ROB_size = 128
@@ -42,11 +42,11 @@ x86_max_inst = 100000000
 #### Note: 	a set of GPU includes four compute units. 
 #### 		Each two units share with one L1$. 
 #### 		Each two L1$ shares with one L2$.
-num_of_gpu_cores 	= 96 	## the number of compute units of GPUs. (each GPU has 4 units.)
+num_of_gpu_cores 	= 16 	## the number of compute units of GPUs. (each GPU has 4 units.)
 type_of_gpu = 'SouthernIslands' ## Note, multi2sim-5.0 does not support Evergreen anymore.
 
 ## CPU Memory Parameters 	
-num_of_MC = 16 			# number of memory controllers; [2, 4, 8, 16]
+num_of_MC = 4 			# number of memory controllers; [2, 4, 8, 16]
 L1_Inst_shared = 0		# enable/disable (1/0) shared Instruction L1$
 L1_size = 32			# size of L1$ (kB); [16, 32, 64]
 L1_assoc = 1			# associativity of L1$ (#-way) full-assoc
@@ -72,25 +72,31 @@ GPU_L2_blocksize = 64 	# blocksize of L2$ (Bytes)
 
 ## Benchmark:
 # benchmark = [a vector of benchmarks]
-# benchmark = ['fmm', 'fft', 'lu', 'cholesky']
+# splash2-benchmark = ['radix', 'fmm', 'barnes', 'cholesky', 'fft', 'lu', 'ocean', 'radiosity', 'raytrace', 'water-nsquared', 'water-spatial']
 
-benchmark = ''
+benchmark = 'raytrace'
 if benchmark == '':
 		benchmark = 'default_mm'
 
 ## injection rate for synthetic traffic
 injection_rate = '0.1'
-
+# numThreads = [8, 16, 32, 48, 56, 64, 128, 256]
+numThreads = 8
 ## Network Parameters
 #### Notice: source-destination nodes' id from the input files should start at 1, not zero.
 ## For a customized 2D-Mesh network
-# HYBRIDLINKS_PATH = 'results_hybrid_local_links/test_topoA_hybridlinks_4x4.txt'
-# LOCALLINKS_PATH = 'results_hybrid_local_links/test_topoA_locallinks_4x4.txt'
+HYBRIDLINKS_PATH = 'results_hybrid_local_links/test_topoA_hybridlinks_4x4.txt'
+LOCALLINKS_PATH = 'results_hybrid_local_links/test_topoA_locallinks_4x4.txt'
 
-HYBRIDLINKS_PATH = 'results_hybrid_local_links/topoA_hybridlinks_sync_025_size8x8_normalize.txt'
-LOCALLINKS_PATH = 'results_hybrid_local_links/topoA_locallinks_8x8.txt'
+# HYBRIDLINKS_PATH = 'results_hybrid_local_links/topoA_hybridlinks_sync_025_size8x8_normalize_cplex.txt'
+# HYBRIDLINKS_PATH = 'results_hybrid_local_links/topoA_hybridlinks_sync_025_size8x8_normalize_Regression.txt'
+# LOCALLINKS_PATH = 'results_hybrid_local_links/topoA_locallinks_8x8.txt'
 
-## network_mode: [0] default 2D-mesh; [1]: Customized 2D-Mesh Network; [2]: Torus; [3]: Ring
+## network_mode: 
+# [0] default 2D-mesh; 
+# [1]: Customized 2D-Mesh Network; 
+# [2]: Torus; 
+# (optional) [3]: Ring
 network_mode = 1
 net_max_inst = 100000
 
@@ -142,7 +148,7 @@ def main():
 															LOCAL_LINKWIDTH, HYBRID_LINKWIDTH)
 
 	create_shell_script(num_of_cpu_cores, num_of_gpu_cores, type_of_gpu, \
-						x86_max_inst, benchmark, net_max_inst, injection_rate)
+						x86_max_inst, benchmark, net_max_inst, numThreads, injection_rate)
 
 
 if __name__ == "__main__": main()

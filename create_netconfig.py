@@ -27,6 +27,16 @@ from graph_datastructure import Graph
 	
 import math # use sqrt
 
+def get_unique_items_inList(items_list):
+	seen = set()
+	result = []
+	for item in items_list:
+		if item not in seen:
+			seen.add(item)
+			result.append(item)
+	return result
+
+
 def create_netconfig(num_of_nodes, L2_blocksize, network_mode, LOCAL_LINKS_PATH, HYBRID_LINKS_PATH, LOCAL_LINKWIDTH, HYBRID_LINKWIDTH):
 	## check input validation
 	assert (num_of_nodes>0), 'Error! number of nodes should be a non-zero number!'
@@ -197,68 +207,74 @@ def create_netconfig(num_of_nodes, L2_blocksize, network_mode, LOCAL_LINKS_PATH,
 					f.write("Bandwidth = %0.f\n" % LOCAL_LINKWIDTH);
 			f.write("\n");
 		
-		###################	Shortest Path Routing protocol 
-		f.write("[Network.mynet.Routes]\n");
+	###################	Shortest Path Routing protocol 
+		# f.write("[Network.mynet.Routes]\n");
 		
-		array2 = [] ## local+hybrid links
-		array2.extend(array) ## node id starts from 1.
-		array2.extend(array1) 
+		# array2 = [] ## local+hybrid links
+		# array2.extend(array) ## node id starts from 1.
+		# array2.extend(array1) 
 		
-		## build the coordinate xy
-		countX = 0
-		countY = 0
-		array3 = [] ## coordinate
-		for i in range(num_of_nodes):
-			if countY % math.sqrt(num_of_nodes) == 0:
-				countY = 0
-				countX = countX + 1
-				array3.extend([[countX-1, countY]])
-			else:
-				array3.extend([[countX-1, countY]])
-			countY = countY + 1
+		# ## build the coordinate xy
+		# countX = 0
+		# countY = 0
+		# array3 = [] ## coordinate
+		# for i in range(num_of_nodes):
+		# 	if countY % math.sqrt(num_of_nodes) == 0:
+		# 		countY = 0
+		# 		countX = countX + 1
+		# 		array3.extend([[countX-1, countY]])
+		# 	else:
+		# 		array3.extend([[countX-1, countY]])
+		# 	countY = countY + 1
 		
-		## subtract each elem in pairs in the list by 1; 
-		##   due to the node IDs start from zero;
-		array2[:] = [(x-1,y-1) for (x,y) in array2]
+		# ## subtract each elem in pairs in the list by 1; 
+		# ##   due to the node IDs start from zero;
+		# array2[:] = [(x-1,y-1) for (x,y) in array2]
 
-		# array2: customized network (local+hybrid links) 
-		# array3: the XY coordinate
-		#####
-		array4 = [] ## all sd-pairs in the network
-		for i in range(num_of_nodes):
-			for j in range(num_of_nodes):
-				if not i==j:
-					array4.extend([[i,j]])
-		#####
-		# 1. Find the shortest path from `src` to `dst` using dijkstra's algorithm.
-		# 2. Form the routes following the m2s format.
+		# # array2: customized network (local+hybrid links) 
+		# # array3: the XY coordinate
+		# #####
+		# array4 = [] ## all sd-pairs in the network
+		# for i in range(num_of_nodes):
+		# 	for j in range(num_of_nodes):
+		# 		if not i==j:
+		# 			array4.extend([[i,j]])
+		# #####
+		# # 1. Find the shortest path from `src` to `dst` using dijkstra's algorithm.
+		# # 2. Form the routes following the m2s format.
 
-		## 1.
-		array2 = sorted(array2)
-		gx = Graph(array2, directed=True)
+		# ## 1.
+		# array2 = sorted(array2)
+		# gx = Graph(array2, directed=True)
 		
-		## 2. 
-		f.write(";; Bidirectional routes\n\n")
-		for (s,d) in array4:
-			path = gx.find_shortest_path(s,d)
-			if path:
-				# print path
-				for (index,node) in enumerate(path):
-					if index==0:
-						f.write("n%d.to.n%d = sw%d\n" % (path[index], path[(len(path)-1)], path[index]));
-					else:
-						f.write("sw%d.to.n%d = sw%d\n" % (path[index-1], path[(len(path)-1)], path[index]));					
-				f.write("\n")
-				## 
-				revpath = path[::-1] ## reversed path
-				# print revpath
-				for (index,node) in enumerate(revpath):
-					if index==0:
-						f.write("n%d.to.n%d = sw%d\n" % (revpath[index], revpath[(len(path)-1)], revpath[index]));
-					else:
-						f.write("sw%d.to.n%d = sw%d\n" % (revpath[index-1], revpath[(len(path)-1)], revpath[index]));
-				f.write("\n")
-					
+		# ## 2. 
+		# # f.write(";; Bidirectional routes\n\n")
+		# items_list = []
+		# unique_items = []
+		# for (s,d) in array4:
+		# 	path = gx.find_shortest_path(s,d)
+		# 	if path:
+		# 		## forwarded paths
+		# 		for (index,node) in enumerate(path):
+		# 			if index==0:
+		# 				items_list.append("n%d.to.n%d = sw%d" % (path[index], path[(len(path)-1)], path[index]))
+		# 			else:
+		# 				items_list.append("sw%d.to.n%d = sw%d" % (path[index-1], path[(len(path)-1)], path[index]))
+		# 		## reversed paths		
+		# 		revpath = path[::-1] 
+		# 		for (index,node) in enumerate(revpath):
+		# 			if index==0:
+		# 				items_list.append("n%d.to.n%d = sw%d" % (revpath[index], revpath[(len(path)-1)], revpath[index]))
+		# 			else:
+		# 				items_list.append("sw%d.to.n%d = sw%d" % (revpath[index-1], revpath[(len(path)-1)], revpath[index]))
+				
+		# ## Sort the unique items in the list
+		# unique_items = get_unique_items_inList(items_list)
+		
+		# for eachitem in unique_items:
+		# 	f.write(eachitem)
+		# 	f.write("\n")
+
 		# close
 		f.close();
 
