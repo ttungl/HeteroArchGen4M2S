@@ -1,3 +1,6 @@
+Update: 03/02/17
+	Added benchmarks: SPLASH2 and HeteroMark.
+
 Release: 02/18/17
 	Version: 1.0
 	Description: Almost full functions, except McPAT's scripts.
