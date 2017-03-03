@@ -74,7 +74,7 @@ GPU_L2_blocksize = 64 	# blocksize of L2$ (Bytes)
 # benchmark = [a vector of benchmarks]
 # splash2-benchmark = ['radix', 'fmm', 'barnes', 'cholesky', 'fft', 'lu', 'ocean', 'radiosity', 'raytrace', 'water-nsquared', 'water-spatial']
 
-benchmark = 'raytrace'
+benchmark = 'lu'
 if benchmark == '':
 		benchmark = 'default_mm'
 
