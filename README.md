@@ -17,7 +17,8 @@ Please cite my tool using this [bibtex](https://github.com/ttungl/HeteroArchGen4
 	Journal = {https://github.com/ttungl/HeteroArchGen4M2S},
 	Title = {{HeteroArchGen4M2S: An automatic generator tool for configuring and running heterogeneous CPU-GPU architectures}},
 	Year = {2017}}
-	Paper reference will be updated soon. Enjoy it!
+	
+	Note, paper reference will be updated soon. Enjoy it!
 
 ##Setup Requirements
 
