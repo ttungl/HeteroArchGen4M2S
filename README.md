@@ -10,7 +10,7 @@ easily, but non-warranty and non-mechantability.
 
 > A pdf version of this manual is also available in `HeteroArchGen4M2S.pdf`.
 
-	Please cite my tool using this bibtex: 
+	Please cite my tool using this [bibtex](HeteroArchGen4M2S/bibtex.bib): 
 	@article{HeteroArchGen4M2S,
 	Author = {Tung Thanh Le},
 	Journal = {https://github.com/ttungl/HeteroArchGen4M2S},
