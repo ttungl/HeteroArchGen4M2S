@@ -43,6 +43,7 @@ easily, but non-warranty and non-mechantability.
 6. Required benchmarks to run:
 	
 	* Download benchmarks. Note that, type the commands under the installed multi2sim directory. 
+	
 	> `git clone https://github.com/Multi2Sim/m2s-bench-splash2.git`
 	
 	> `git clone https://github.com/Multi2Sim/m2s-bench-spec2006.git`
