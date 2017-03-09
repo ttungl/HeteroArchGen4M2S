@@ -9,14 +9,12 @@ Heterogeneous Architecture Configurations Generator for Multi2Sim simulator (Het
 easily, but non-warranty and non-mechantability.
 
 > A pdf version of this manual is also available in `HeteroArchGen4M2S.pdf`.
-
-	Please cite my tool using this [bibtex](HeteroArchGen4M2S/bibtex.bib): 
+Please cite my tool using this [bibtex](https://github.com/ttungl/HeteroArchGen4M2S/blob/master/bibtex.bib): 
 	@article{HeteroArchGen4M2S,
 	Author = {Tung Thanh Le},
 	Journal = {https://github.com/ttungl/HeteroArchGen4M2S},
 	Title = {{HeteroArchGen4M2S: An automatic generator tool for configuring and running heterogeneous CPU-GPU architectures}},
-	Year = {2017}
-	}
+	Year = {2017}}
 	Paper reference will be updated soon. Enjoy it!
 
 ##Setup Requirements
