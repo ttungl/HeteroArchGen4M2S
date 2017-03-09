@@ -12,9 +12,9 @@ easily, but non-warranty and non-mechantability.
 
 > * Please cite my tool using this link: 
 
-> Tung Thanh Le, "https://github.com/ttungl/HeteroArchGen4M2S"
+	> Tung Thanh Le, "https://github.com/ttungl/HeteroArchGen4M2S"
 
-> Paper reference will be updated soon. Enjoy it!
+	> Paper reference will be updated soon. Enjoy it!
 
 ##Setup Requirements
 
