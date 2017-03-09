@@ -9,7 +9,8 @@ Heterogeneous Architecture Configurations Generator for Multi2Sim simulator (Het
 easily, but non-warranty and non-mechantability.
 
 > A pdf version of this manual is also available in `HeteroArchGen4M2S.pdf`.
-> Please cite my tool using this link: 
+
+> * Please cite my tool using this link: 
 > Tung Thanh Le, "https://github.com/ttungl/HeteroArchGen4M2S"
 > Paper reference will be updated soon. Enjoy it!
 
@@ -25,7 +26,7 @@ easily, but non-warranty and non-mechantability.
 
 3. Download and install `multi2sim-5.0` from:
 	
-	* `https://github.com/Multi2Sim/multi2sim`. 
+	* `git clone https://github.com/Multi2Sim/multi2sim.git`
 
 4. Download `McPAT` (current version-1.3) from:
 	
@@ -41,10 +42,13 @@ easily, but non-warranty and non-mechantability.
 
 6. Required benchmarks to run:
 	
-	* Download benchmarks from `https://github.com/Multi2Sim`. 
-
-	* Then unzip the benchmarks' files under the installed multi2sim directory
-
+	* Download benchmarks. Note that, type the commands under the installed multi2sim directory. 
+	git clone https://github.com/Multi2Sim/m2s-bench-splash2.git
+	git clone https://github.com/Multi2Sim/m2s-bench-spec2006.git
+	git clone https://github.com/Multi2Sim/m2s-bench-parsec-3.0.git
+	git clone https://github.com/Multi2Sim/m2s-bench-cudasdk-6.5.git
+	git clone https://github.com/Multi2Sim/m2s-bench-heteromark.git
+	
 	* Compile the benchmarks following the README file.
 
 	> Note: In case you want to run CUDA benchmarks, you can download other benchmarks for CPU-GPU systems such as Rodinia, Parboil, etc. Your desktop should have a NVIDIA graphic card (e.g., NVIDIA Quadro 4000), and you need to install the graphic card driver for running the simulation. (When compiling benchmarks, use `-m32` flag after `gcc` to make compatible with `multi2sim` 32-bit (no support 64-bit at this time)). 
