@@ -43,11 +43,11 @@ easily, but non-warranty and non-mechantability.
 6. Required benchmarks to run:
 	
 	* Download benchmarks. Note that, type the commands under the installed multi2sim directory. 
-	git clone https://github.com/Multi2Sim/m2s-bench-splash2.git
-	git clone https://github.com/Multi2Sim/m2s-bench-spec2006.git
-	git clone https://github.com/Multi2Sim/m2s-bench-parsec-3.0.git
-	git clone https://github.com/Multi2Sim/m2s-bench-cudasdk-6.5.git
-	git clone https://github.com/Multi2Sim/m2s-bench-heteromark.git
+	> git clone https://github.com/Multi2Sim/m2s-bench-splash2.git
+	> git clone https://github.com/Multi2Sim/m2s-bench-spec2006.git
+	> git clone https://github.com/Multi2Sim/m2s-bench-parsec-3.0.git
+	> git clone https://github.com/Multi2Sim/m2s-bench-cudasdk-6.5.git
+	> git clone https://github.com/Multi2Sim/m2s-bench-heteromark.git
 	
 	* Compile the benchmarks following the README file.
 
