@@ -9,7 +9,9 @@ Heterogeneous Architecture Configurations Generator for Multi2Sim simulator (Het
 easily, but non-warranty and non-mechantability.
 
 > A pdf version of this manual is also available in `HeteroArchGen4M2S.pdf`.
+
 Please cite my tool using this [bibtex](https://github.com/ttungl/HeteroArchGen4M2S/blob/master/bibtex.bib): 
+
 	@article{HeteroArchGen4M2S,
 	Author = {Tung Thanh Le},
 	Journal = {https://github.com/ttungl/HeteroArchGen4M2S},
