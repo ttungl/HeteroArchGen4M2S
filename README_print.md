@@ -1,7 +1,7 @@
 ##Introduction
 Heterogeneous Architecture Configurations Generator for Multi2Sim simulator (HeteroArchGen4M2S) 
 
-`HeteroArchGen4M2S`: An automatic generator tool for configuring and running heterogeneous CPU-GPU architectures on Multi2Sim (M2S) simulator. This tool runs on top of M2S simulator, it allows us to configure the various heterogeneous CPU-GPU architectures (e.g., number of CPU cores, GPU cores, L1$, L2$, memory (size and latency (via `CACTI 6.5`)), network topologies (currently support 2D-Mesh, customized 2D-Mesh, and Torus networks)...). The output files include the results of network throughput and latency, caches/memory access time, and and dynamic power of the cores (can be collected after running `McPAT`).
+`HeteroArchGen4M2S`: An automatic generator software tool for configuring and running heterogeneous CPU-GPU architectures on Multi2Sim (M2S) simulator. This tool runs on top of M2S simulator, it allows us to configure the various heterogeneous CPU-GPU architectures (e.g., number of CPU cores, GPU cores, L1$, L2$, memory (size and latency (via `CACTI 6.5`)), network topologies (currently support 2D-Mesh, customized 2D-Mesh, and Torus networks)...). The output files include the results of network throughput and latency, caches/memory access time, and and dynamic power of the cores (can be collected after running `McPAT`).
 
 `HeteroArchGen4M2S` is free software, which is freely to be redistributed and modified it under the terms of the GNU General Public License as published by the Free Software Foundation (For more details `http://www.gnu.org/licenses`).
 
@@ -9,6 +9,16 @@ Heterogeneous Architecture Configurations Generator for Multi2Sim simulator (Het
 easily, but non-warranty and non-mechantability.
 
 > A pdf version of this manual is also available in `HeteroArchGen4M2S.pdf`.
+
+Please cite my tool using this [bibtex](https://github.com/ttungl/HeteroArchGen4M2S/blob/master/bibtex.bib): 
+
+	@article{HeteroArchGen4M2S,
+	Author = {Tung Thanh Le},
+	Journal = {https://github.com/ttungl/HeteroArchGen4M2S},
+	Title = {{HeteroArchGen4M2S: An automatic generator tool for configuring and running heterogeneous CPU-GPU architectures}},
+	Year = {2017}}
+	
+	Note, paper reference will be updated soon. Enjoy it!
 
 ##Setup Requirements
 
@@ -22,7 +32,7 @@ easily, but non-warranty and non-mechantability.
 
 3. Download and install `multi2sim-5.0` from:
 	
-	* `https://github.com/Multi2Sim/multi2sim`. 
+	* `git clone https://github.com/Multi2Sim/multi2sim.git`
 
 4. Download `McPAT` (current version-1.3) from:
 	
@@ -38,13 +48,21 @@ easily, but non-warranty and non-mechantability.
 
 6. Required benchmarks to run:
 	
-	* Download benchmarks from `https://github.com/Multi2Sim`. 
-
-	* Then unzip the benchmarks' files under the installed multi2sim directory
-
+	* Download benchmarks. Note that, type the commands under the installed multi2sim directory. 
+	
+	> `git clone https://github.com/Multi2Sim/m2s-bench-splash2.git`
+	
+	> `git clone https://github.com/Multi2Sim/m2s-bench-spec2006.git`
+	
+	> `git clone https://github.com/Multi2Sim/m2s-bench-parsec-3.0.git`
+	
+	> `git clone https://github.com/Multi2Sim/m2s-bench-cudasdk-6.5.git`
+	
+	> `git clone https://github.com/Multi2Sim/m2s-bench-heteromark.git`
+	
 	* Compile the benchmarks following the README file.
 
-	> Note: In case you want to run CUDA benchmarks, you can download other benchmarks for CPU-GPU systems such as Rodinia, Parboil, etc. Your desktop should have a NVIDIA graphic card (e.g., NVIDIA Quadro 4000), and you need to install the graphic card driver for running the simulation. (When compiling benchmarks, use `-m32` flag after `gcc` to make compatible with `multi2sim` 32-bit (no support 64-bit at this time)). 
+	> Note: All the packages are compiled to binary. If you want to modify the benchmarks, you can download the source codes from `https://github.com/Multi2Sim`. In case you want to run CUDA benchmarks, you can download other benchmarks for CPU-GPU systems such as Rodinia, Parboil, etc. Your desktop should have a NVIDIA graphic card (e.g., NVIDIA Quadro 4000), and you need to install the graphic card driver for running the simulation. (When compiling benchmarks, use `-m32` flag after `gcc` to make compatible with `multi2sim` 32-bit (no support 64-bit at this time)). 
 
 ##Download HeteroArchGen4M2S
 
@@ -141,7 +159,7 @@ Let’s use the `blacksholes` example with 16 cores CPUs (`8` x86 CPUs), 16 core
 	* Network Latency (cycles): 23.6969
 
 
-6. 	To get the dynamic power from McPAT.
+6. 	To get the dynamic power from McPAT. (Note, this section is finalizing. Available soon.)
 
 	* Make sure you are in `multi2sim-5.0` directory. 
 
@@ -160,6 +178,6 @@ This work is also inspired by [M2StoMcPAT](http://www.ece.umd.edu/~cserafy1/inde
 
 		Tung Thanh Le
 		ttungl at gmail dot com
-		Version 1.0
-		Date: 02/18/17
+		Release: Version 1.0 (02/18/17)
+		
 
