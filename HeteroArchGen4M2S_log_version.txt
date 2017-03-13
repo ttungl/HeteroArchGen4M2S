@@ -1,5 +1,10 @@
-Update: 03/02/17
-	Added benchmarks: SPLASH2 and HeteroMark.
+Update: 03/13/17
+	In create_sim_config_files.py:
+		+ Updated the network-only mode.
+
+Update: 03/01/17
+	In create_netconfig.py: 
+		+ Updated the shortest path routing protocol using Dijkstra's algorithm for customized 2D-Mesh Networks.
 
 Release: 02/18/17
 	Version: 1.0

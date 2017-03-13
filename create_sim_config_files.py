@@ -22,14 +22,14 @@ from create_netconfig import create_netconfig
 from create_shell_script import create_shell_script
 
 # [cpu gpu mc]
-# [16 16 4] : 16 nodes
-# [48 96 16] : 64 nodes
+# [16 16 4] : 16 nodes/switches on the interconnect
+# [48 96 16] : 64 nodes/switches
 ## CPU Parameters
 #### Note: 	a set of CPU includes two cores.
 #### 		Each core in the set can have its own L1$ (Data&Instr) 
 #### 		or it can share the Instruction-L1$ with the other core in that set.
 ####		by enabling `L1_Inst_shared` flag in the CPU Memory Parameters settings.
-num_of_cpu_cores = 16 
+num_of_cpu_cores = 48 
 cpu_frequency = 2400 ## 2.4GHz
 num_of_threads = 1
 ROB_size = 128
@@ -42,11 +42,11 @@ x86_max_inst = 100000000
 #### Note: 	a set of GPU includes four compute units. 
 #### 		Each two units share with one L1$. 
 #### 		Each two L1$ shares with one L2$.
-num_of_gpu_cores 	= 16 	## the number of compute units of GPUs. (each GPU has 4 units.)
-type_of_gpu = 'SouthernIslands' ## Note, multi2sim-5.0 does not support Evergreen anymore.
+num_of_gpu_cores 	= 96 	## the number of compute units of GPUs. (each GPU has 4 units.)
+type_of_gpu = 'SouthernIslands' ## Note, multi2sim-5.0 does support different types of GPUs, see in Manual.
 
 ## CPU Memory Parameters 	
-num_of_MC = 4 			# number of memory controllers; [2, 4, 8, 16]
+num_of_MC = 16 			# number of memory controllers; [2, 4, 8, 16]
 L1_Inst_shared = 0		# enable/disable (1/0) shared Instruction L1$
 L1_size = 32			# size of L1$ (kB); [16, 32, 64]
 L1_assoc = 1			# associativity of L1$ (#-way) full-assoc
@@ -70,13 +70,18 @@ GPU_L2_blocksize = 64 	# blocksize of L2$ (Bytes)
 
 ## Note: L3$ shared caches for CPUs and GPUs can be extended if needed. (need a little more work!)
 
-## Benchmark:
-# benchmark = [a vector of benchmarks]
+## List of benchmarks:
 # splash2-benchmark = ['radix', 'fmm', 'barnes', 'cholesky', 'fft', 'lu', 'ocean', 'radiosity', 'raytrace', 'water-nsquared', 'water-spatial']
+# hetero-mark-benchmark = ['aes', 'fir', 'histogram', 'kmeans', 'page_rank']
+# amdsdk2.5-benchmark = ['BinarySearch']
 
-benchmark = 'lu'
+benchmark = 'aes'
 if benchmark == '':
 		benchmark = 'default_mm'
+
+## [0] disable synthetic workload (using benchmarks), 		
+## [1] enable synthetic workload (not using benchmarks). 
+# synthetic_workload = 1 
 
 ## injection rate for synthetic traffic
 injection_rate = '0.1'
@@ -85,20 +90,21 @@ numThreads = 8
 ## Network Parameters
 #### Notice: source-destination nodes' id from the input files should start at 1, not zero.
 ## For a customized 2D-Mesh network
-HYBRIDLINKS_PATH = 'results_hybrid_local_links/test_topoA_hybridlinks_4x4.txt'
-LOCALLINKS_PATH = 'results_hybrid_local_links/test_topoA_locallinks_4x4.txt'
+# HYBRIDLINKS_PATH = 'results_hybrid_local_links/test_topoA_hybridlinks_4x4.txt'
+# LOCALLINKS_PATH = 'results_hybrid_local_links/test_topoA_locallinks_4x4.txt'
 
-# HYBRIDLINKS_PATH = 'results_hybrid_local_links/topoA_hybridlinks_sync_025_size8x8_normalize_cplex.txt'
+HYBRIDLINKS_PATH = 'results_hybrid_local_links/topoA_hybridlinks_sync_025_size8x8_normalize_cplex.txt'
 # HYBRIDLINKS_PATH = 'results_hybrid_local_links/topoA_hybridlinks_sync_025_size8x8_normalize_Regression.txt'
-# LOCALLINKS_PATH = 'results_hybrid_local_links/topoA_locallinks_8x8.txt'
+LOCALLINKS_PATH = 'results_hybrid_local_links/topoA_locallinks_8x8.txt'
 
 ## network_mode: 
 # [0] default 2D-mesh; 
 # [1]: Customized 2D-Mesh Network; 
 # [2]: Torus; 
 # (optional) [3]: Ring
-network_mode = 1
+network_mode = 0
 net_max_inst = 100000
+network_only = 1 ## 1 for network-only, else 0 (full-system).
 
 #### Base conversion 
 # link_width = 8 Bytes per cycle
@@ -148,7 +154,7 @@ def main():
 															LOCAL_LINKWIDTH, HYBRID_LINKWIDTH)
 
 	create_shell_script(num_of_cpu_cores, num_of_gpu_cores, type_of_gpu, \
-						x86_max_inst, benchmark, net_max_inst, numThreads, injection_rate)
+						x86_max_inst, benchmark, net_max_inst, network_only, numThreads)
 
 
 if __name__ == "__main__": main()
