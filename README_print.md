@@ -38,7 +38,7 @@ Please cite my tool using this [bibtex](https://github.com/ttungl/HeteroArchGen4
 	
 	* `https://code.google.com/archive/p/mcpat/`. 
 
-	* Unzip it, and copy all files from mcpat folder to under multi2sim directory and install it following the README file.
+	* Unzip it, compile it using `make`, and then go back under `multi2sim` directory, use `mv mcpat/* .` copy all files from mcpat folder to under multi2sim directory and install it following the README file.
 
 5. Download and install `CACTI6.5` from:
 
@@ -110,7 +110,6 @@ Let’s use the `blacksholes` example with 16 cores CPUs (`8` x86 CPUs), 16 core
 	* For benchmarks, you need to modify the name of specific benchmark you want to run, and modify the command line of this benchmark and its path in `create_shell_script` file.
 
 	* For network topologies, HeteroArchGen4M2S currently supports three types of network, including `2D-Mesh`, `customized 2D-Mesh`, and `2D-Torus`. For `customized 2D-Mesh`, you need to specify the paths for local links and hybrid links in your network, as well as their linkwidths. 
-		
 
 3.	After modifying `create_sim_configs_files.py`: 
 

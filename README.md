@@ -38,7 +38,7 @@ Please cite my tool using this [bibtex](https://github.com/ttungl/HeteroArchGen4
 	
 	* `https://code.google.com/archive/p/mcpat/`. 
 
-	* Unzip it, and copy all files from mcpat folder to under multi2sim directory and install it following the README file.
+	* Unzip it, compile it using `make`, and then go back under `multi2sim` directory, use `mv mcpat/* .` copy all files from mcpat folder to under multi2sim directory and install it following the README file.
 
 5. Download and install `CACTI6.5` from:
 
