@@ -276,7 +276,7 @@ def create_netconfig(num_of_nodes, L2_blocksize, network_mode, LOCAL_LINKS_PATH,
 		# 	f.write("\n")
 
 		# close
-		f.close();
+		# f.close();
 
 	## 2D-Torus network 
 	if network_mode == 2:
