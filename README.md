@@ -1,4 +1,4 @@
-##Heterogeneous Architecture Configurations Generator for Multi2Sim simulator (HeteroArchGen4M2S) 
+##Introduction: Heterogeneous Architecture Configurations Generator for Multi2Sim simulator (HeteroArchGen4M2S) 
 
 `HeteroArchGen4M2S`: An automatic generator software for configuring and running heterogeneous CPU-GPU architectures on Multi2Sim (M2S) simulator. This tool runs on top of M2S simulator, it allows us to configure the various heterogeneous CPU-GPU architectures (e.g., number of CPU cores, GPU cores, L1$, L2$, memory (size and latency (via `CACTI 6.5`)), network topologies (currently support 2D-Mesh, customized 2D-Mesh, and Torus networks)...). The output files include the results of network throughput and latency, caches/memory access time, and and dynamic power of the cores (can be collected after running `McPAT`).
 
