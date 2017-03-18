@@ -119,14 +119,16 @@ numL2cpu = numL1cpu/2
 numL2gpu = numL1gpu/2
 numL2 = numL2cpu + numL2gpu
 ##
-
+num_cache_levels = 2
+## [65, 45, 32, 22, 16]
+core_tech_node = 45
 
 ## List of benchmarks:
 # splash2-benchmark = ['radix', 'fmm', 'barnes', 'cholesky', 'fft', 'lu', 'ocean', 'radiosity', 'raytrace', 'water-nsquared', 'water-spatial']
 # hetero-mark-benchmark = ['aes', 'fir', 'histogram', 'kmeans', 'page_rank']
 # amdsdk2.5-benchmark = ['BinarySearch']
 
-benchmark = ''
+benchmark = 'radix'
 if benchmark == '':
 		benchmark = 'default_mm'
 
@@ -207,6 +209,6 @@ def main():
 	create_shell_script(num_of_cpu_cores, num_of_gpu_cores, type_of_gpu, \
 						x86_max_inst, benchmark, net_max_inst, network_only, numThreads_benchmark)
 
-	create_xml_for_mcpat(num_nodes, numL1, numL2, num_of_MC, benchmark)
+	create_xml_for_mcpat(num_nodes, numL1, numL2, num_cache_levels, num_of_MC, ROB_size, benchmark, core_tech_node, cpu_frequency)
 
 if __name__ == "__main__": main()

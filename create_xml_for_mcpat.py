@@ -14,7 +14,8 @@
 # easily, but non-warranty and non-mechantability.
 # ============================================================================
 
-def create_xml_for_mcpat(numcores, numL1Caches, numL2Caches, num_mem_controllers, benchmark):
+
+def create_xml_for_mcpat(numcores, numL1Caches, numL2Caches, num_cache_levels, num_mem_controllers, ROB_size, benchmark, core_tech_node, cpu_frequency):
 	## Create a sample file "McPAT_hsa_%0.f_benchmark_%s.xml".
 	## Several paramters that need to be updated
 	
@@ -47,13 +48,13 @@ def create_xml_for_mcpat(numcores, numL1Caches, numL2Caches, num_mem_controllers
 	f.write("	<param name=\"homogeneous_ccs\" value=\"1\"/>\n")
 	f.write("	<!--cache coherece hardware -->\n")
 	f.write("	<param name=\"homogeneous_NoCs\" value=\"1\"/>\n")
-	f.write("	<param name=\"core_tech_node\" value=\"45\"/>\n")
+	f.write("	<param name=\"core_tech_node\" value=\"%0.f\"/>\n" % core_tech_node)
 	f.write("	<!-- nm -->\n")
-	f.write("	<param name=\"target_core_clockrate\" value=\"3400\"/>\n")
+	f.write("	<param name=\"target_core_clockrate\" value=\"%0.f\"/>\n" % cpu_frequency)
 	f.write("	<!--MHz -->\n")
 	f.write("	<param name=\"temperature\" value=\"380\"/>\n") 
 	f.write("	<!-- Kelvin -->\n")
-	f.write("	<param name=\"number_cache_levels\" value=\"2\"/>\n")
+	f.write("	<param name=\"number_cache_levels\" value=\"%0.f\"/>\n" % num_cache_levels)
 	f.write("	<param name=\"interconnect_projection_type\" value=\"0\"/>\n")
 	f.write("	<!--0: agressive wire technology; 1: conservative wire technology -->\n")
 	f.write("	<param name=\"device_type\" value=\"0\"/>\n")
@@ -126,7 +127,7 @@ def create_xml_for_mcpat(numcores, numL1Caches, numL2Caches, num_mem_controllers
 		f.write("		<param name=\"instruction_window_size\" value=\"40\"/>\n")	## 40
 		f.write("		<param name=\"fp_instruction_window_size\" value=\"64\"/>\n")
 		f.write("		<!-- the instruction issue Q as in Alpha 21264; The RS as in Intel P6 -->\n")	
-		f.write("		<param name=\"ROB_size\" value=\"64\"/>\n")	## 64
+		f.write("		<param name=\"ROB_size\" value=\"%0.f\"/>\n" % ROB_size)	## 64
 		f.write("		<!-- each in-flight instruction has an entry in ROB -->\n")	
 		f.write("		<!-- registers -->\n")	
 		f.write("		<param name=\"archi_Regs_IRF_size\" value=\"16\"/>\n")	## 16
