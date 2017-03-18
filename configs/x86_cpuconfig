@@ -1,7 +1,7 @@
 [ General ]
-	Cores = 48
+	Cores = 16
 	Threads = 1
-	Frequency = 2400
+	Frequency = 3400
 
 [ Pipeline ]
 	DecodeWidth = 4

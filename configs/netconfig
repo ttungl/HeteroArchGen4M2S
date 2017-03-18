@@ -1,10 +1,10 @@
-;; Customized 2D-Mesh Network.
+;; 2D-Mesh Network.
 ;; Interconnection network net-l2-mm.
 
 [Network.net-l2-mm]
-DefaultInputBufferSize = 1536
-DefaultOutputBufferSize = 1536
-DefaultBandwidth = 24
+DefaultInputBufferSize = 1152
+DefaultOutputBufferSize = 1152
+DefaultBandwidth = 72
 
 
 ;; Switches.
@@ -57,150 +57,6 @@ Type = Switch
 [Network.net-l2-mm.Node.sw15]
 Type = Switch
 
-[Network.net-l2-mm.Node.sw16]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw17]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw18]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw19]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw20]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw21]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw22]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw23]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw24]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw25]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw26]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw27]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw28]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw29]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw30]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw31]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw32]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw33]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw34]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw35]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw36]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw37]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw38]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw39]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw40]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw41]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw42]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw43]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw44]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw45]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw46]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw47]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw48]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw49]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw50]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw51]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw52]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw53]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw54]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw55]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw56]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw57]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw58]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw59]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw60]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw61]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw62]
-Type = Switch
-
-[Network.net-l2-mm.Node.sw63]
-Type = Switch
-
 
 ;; Nodes.
 
@@ -250,150 +106,6 @@ Type = EndNode
 Type = EndNode
 
 [Network.net-l2-mm.Node.n15]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n16]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n17]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n18]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n19]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n20]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n21]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n22]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n23]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n24]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n25]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n26]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n27]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n28]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n29]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n30]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n31]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n32]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n33]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n34]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n35]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n36]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n37]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n38]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n39]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n40]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n41]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n42]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n43]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n44]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n45]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n46]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n47]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n48]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n49]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n50]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n51]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n52]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n53]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n54]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n55]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n56]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n57]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n58]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n59]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n60]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n61]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n62]
-Type = EndNode
-
-[Network.net-l2-mm.Node.n63]
 Type = EndNode
 
 
@@ -479,942 +191,127 @@ Source = sw15
 Dest = n15
 Type = Bidirectional
 
-[Network.net-l2-mm.Link.sw16-n16]
-Source = sw16
-Dest = n16
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw17-n17]
-Source = sw17
-Dest = n17
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw18-n18]
-Source = sw18
-Dest = n18
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw19-n19]
-Source = sw19
-Dest = n19
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw20-n20]
-Source = sw20
-Dest = n20
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw21-n21]
-Source = sw21
-Dest = n21
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw22-n22]
-Source = sw22
-Dest = n22
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw23-n23]
-Source = sw23
-Dest = n23
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw24-n24]
-Source = sw24
-Dest = n24
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw25-n25]
-Source = sw25
-Dest = n25
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw26-n26]
-Source = sw26
-Dest = n26
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw27-n27]
-Source = sw27
-Dest = n27
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw28-n28]
-Source = sw28
-Dest = n28
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw29-n29]
-Source = sw29
-Dest = n29
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw30-n30]
-Source = sw30
-Dest = n30
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw31-n31]
-Source = sw31
-Dest = n31
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw32-n32]
-Source = sw32
-Dest = n32
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw33-n33]
-Source = sw33
-Dest = n33
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw34-n34]
-Source = sw34
-Dest = n34
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw35-n35]
-Source = sw35
-Dest = n35
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw36-n36]
-Source = sw36
-Dest = n36
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw37-n37]
-Source = sw37
-Dest = n37
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw38-n38]
-Source = sw38
-Dest = n38
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw39-n39]
-Source = sw39
-Dest = n39
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw40-n40]
-Source = sw40
-Dest = n40
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw41-n41]
-Source = sw41
-Dest = n41
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw42-n42]
-Source = sw42
-Dest = n42
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw43-n43]
-Source = sw43
-Dest = n43
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw44-n44]
-Source = sw44
-Dest = n44
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw45-n45]
-Source = sw45
-Dest = n45
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw46-n46]
-Source = sw46
-Dest = n46
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw47-n47]
-Source = sw47
-Dest = n47
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw48-n48]
-Source = sw48
-Dest = n48
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw49-n49]
-Source = sw49
-Dest = n49
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw50-n50]
-Source = sw50
-Dest = n50
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw51-n51]
-Source = sw51
-Dest = n51
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw52-n52]
-Source = sw52
-Dest = n52
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw53-n53]
-Source = sw53
-Dest = n53
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw54-n54]
-Source = sw54
-Dest = n54
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw55-n55]
-Source = sw55
-Dest = n55
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw56-n56]
-Source = sw56
-Dest = n56
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw57-n57]
-Source = sw57
-Dest = n57
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw58-n58]
-Source = sw58
-Dest = n58
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw59-n59]
-Source = sw59
-Dest = n59
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw60-n60]
-Source = sw60
-Dest = n60
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw61-n61]
-Source = sw61
-Dest = n61
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw62-n62]
-Source = sw62
-Dest = n62
-Type = Bidirectional
-
-[Network.net-l2-mm.Link.sw63-n63]
-Source = sw63
-Dest = n63
-Type = Bidirectional
-
 
 ;; Links connection among the switches to form the interconnection network.
-
-[Network.net-l2-mm.Link.sw0-sw32]
-Source = sw0
-Dest = sw32
-Type = Bidirectional
-Bandwidth = 32
-
-[Network.net-l2-mm.Link.sw0-sw50]
-Source = sw0
-Dest = sw50
-Type = Bidirectional
-Bandwidth = 32
-
-[Network.net-l2-mm.Link.sw3-sw42]
-Source = sw3
-Dest = sw42
-Type = Bidirectional
-Bandwidth = 32
-
-[Network.net-l2-mm.Link.sw3-sw57]
-Source = sw3
-Dest = sw57
-Type = Bidirectional
-Bandwidth = 32
-
-[Network.net-l2-mm.Link.sw13-sw42]
-Source = sw13
-Dest = sw42
-Type = Bidirectional
-Bandwidth = 32
-
-[Network.net-l2-mm.Link.sw17-sw58]
-Source = sw17
-Dest = sw58
-Type = Bidirectional
-Bandwidth = 32
-
-[Network.net-l2-mm.Link.sw18-sw54]
-Source = sw18
-Dest = sw54
-Type = Bidirectional
-Bandwidth = 32
-
-[Network.net-l2-mm.Link.sw18-sw56]
-Source = sw18
-Dest = sw56
-Type = Bidirectional
-Bandwidth = 32
-
-[Network.net-l2-mm.Link.sw19-sw48]
-Source = sw19
-Dest = sw48
-Type = Bidirectional
-Bandwidth = 32
-
-[Network.net-l2-mm.Link.sw20-sw43]
-Source = sw20
-Dest = sw43
-Type = Bidirectional
-Bandwidth = 32
-
-[Network.net-l2-mm.Link.sw20-sw46]
-Source = sw20
-Dest = sw46
-Type = Bidirectional
-Bandwidth = 32
-
-[Network.net-l2-mm.Link.sw31-sw60]
-Source = sw31
-Dest = sw60
-Type = Bidirectional
-Bandwidth = 32
 
 [Network.net-l2-mm.Link.sw0-sw1]
 Source = sw0
 Dest = sw1
 Type = Bidirectional
-Bandwidth = 16
 
-[Network.net-l2-mm.Link.sw0-sw8]
+[Network.net-l2-mm.Link.sw0-sw4]
 Source = sw0
-Dest = sw8
+Dest = sw4
 Type = Bidirectional
-Bandwidth = 16
 
 [Network.net-l2-mm.Link.sw1-sw2]
 Source = sw1
 Dest = sw2
 Type = Bidirectional
-Bandwidth = 16
 
-[Network.net-l2-mm.Link.sw1-sw9]
+[Network.net-l2-mm.Link.sw1-sw5]
 Source = sw1
-Dest = sw9
+Dest = sw5
 Type = Bidirectional
-Bandwidth = 16
 
 [Network.net-l2-mm.Link.sw2-sw3]
 Source = sw2
 Dest = sw3
 Type = Bidirectional
-Bandwidth = 16
 
-[Network.net-l2-mm.Link.sw2-sw10]
+[Network.net-l2-mm.Link.sw2-sw6]
 Source = sw2
-Dest = sw10
+Dest = sw6
 Type = Bidirectional
-Bandwidth = 16
 
-[Network.net-l2-mm.Link.sw3-sw4]
+[Network.net-l2-mm.Link.sw3-sw7]
 Source = sw3
-Dest = sw4
+Dest = sw7
 Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw3-sw11]
-Source = sw3
-Dest = sw11
-Type = Bidirectional
-Bandwidth = 16
 
 [Network.net-l2-mm.Link.sw4-sw5]
 Source = sw4
 Dest = sw5
 Type = Bidirectional
-Bandwidth = 16
 
-[Network.net-l2-mm.Link.sw4-sw12]
+[Network.net-l2-mm.Link.sw4-sw8]
 Source = sw4
-Dest = sw12
+Dest = sw8
 Type = Bidirectional
-Bandwidth = 16
 
 [Network.net-l2-mm.Link.sw5-sw6]
 Source = sw5
 Dest = sw6
 Type = Bidirectional
-Bandwidth = 16
 
-[Network.net-l2-mm.Link.sw5-sw13]
+[Network.net-l2-mm.Link.sw5-sw9]
 Source = sw5
-Dest = sw13
+Dest = sw9
 Type = Bidirectional
-Bandwidth = 16
 
 [Network.net-l2-mm.Link.sw6-sw7]
 Source = sw6
 Dest = sw7
 Type = Bidirectional
-Bandwidth = 16
 
-[Network.net-l2-mm.Link.sw6-sw14]
+[Network.net-l2-mm.Link.sw6-sw10]
 Source = sw6
-Dest = sw14
+Dest = sw10
 Type = Bidirectional
-Bandwidth = 16
 
-[Network.net-l2-mm.Link.sw7-sw15]
+[Network.net-l2-mm.Link.sw7-sw11]
 Source = sw7
-Dest = sw15
+Dest = sw11
 Type = Bidirectional
-Bandwidth = 16
 
 [Network.net-l2-mm.Link.sw8-sw9]
 Source = sw8
 Dest = sw9
 Type = Bidirectional
-Bandwidth = 16
 
-[Network.net-l2-mm.Link.sw8-sw16]
+[Network.net-l2-mm.Link.sw8-sw12]
 Source = sw8
-Dest = sw16
+Dest = sw12
 Type = Bidirectional
-Bandwidth = 16
 
 [Network.net-l2-mm.Link.sw9-sw10]
 Source = sw9
 Dest = sw10
 Type = Bidirectional
-Bandwidth = 16
 
-[Network.net-l2-mm.Link.sw9-sw17]
+[Network.net-l2-mm.Link.sw9-sw13]
 Source = sw9
-Dest = sw17
+Dest = sw13
 Type = Bidirectional
-Bandwidth = 16
 
 [Network.net-l2-mm.Link.sw10-sw11]
 Source = sw10
 Dest = sw11
 Type = Bidirectional
-Bandwidth = 16
 
-[Network.net-l2-mm.Link.sw10-sw18]
+[Network.net-l2-mm.Link.sw10-sw14]
 Source = sw10
-Dest = sw18
+Dest = sw14
 Type = Bidirectional
-Bandwidth = 16
 
-[Network.net-l2-mm.Link.sw11-sw12]
+[Network.net-l2-mm.Link.sw11-sw15]
 Source = sw11
-Dest = sw12
+Dest = sw15
 Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw11-sw19]
-Source = sw11
-Dest = sw19
-Type = Bidirectional
-Bandwidth = 16
 
 [Network.net-l2-mm.Link.sw12-sw13]
 Source = sw12
 Dest = sw13
 Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw12-sw20]
-Source = sw12
-Dest = sw20
-Type = Bidirectional
-Bandwidth = 16
 
 [Network.net-l2-mm.Link.sw13-sw14]
 Source = sw13
 Dest = sw14
 Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw13-sw21]
-Source = sw13
-Dest = sw21
-Type = Bidirectional
-Bandwidth = 16
 
 [Network.net-l2-mm.Link.sw14-sw15]
 Source = sw14
 Dest = sw15
 Type = Bidirectional
-Bandwidth = 16
 
-[Network.net-l2-mm.Link.sw14-sw22]
-Source = sw14
-Dest = sw22
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw15-sw23]
-Source = sw15
-Dest = sw23
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw16-sw17]
-Source = sw16
-Dest = sw17
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw16-sw24]
-Source = sw16
-Dest = sw24
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw17-sw18]
-Source = sw17
-Dest = sw18
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw17-sw25]
-Source = sw17
-Dest = sw25
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw18-sw19]
-Source = sw18
-Dest = sw19
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw18-sw26]
-Source = sw18
-Dest = sw26
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw19-sw20]
-Source = sw19
-Dest = sw20
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw19-sw27]
-Source = sw19
-Dest = sw27
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw20-sw21]
-Source = sw20
-Dest = sw21
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw20-sw28]
-Source = sw20
-Dest = sw28
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw21-sw22]
-Source = sw21
-Dest = sw22
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw21-sw29]
-Source = sw21
-Dest = sw29
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw22-sw23]
-Source = sw22
-Dest = sw23
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw22-sw30]
-Source = sw22
-Dest = sw30
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw23-sw31]
-Source = sw23
-Dest = sw31
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw24-sw25]
-Source = sw24
-Dest = sw25
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw25-sw26]
-Source = sw25
-Dest = sw26
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw26-sw27]
-Source = sw26
-Dest = sw27
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw27-sw28]
-Source = sw27
-Dest = sw28
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw28-sw29]
-Source = sw28
-Dest = sw29
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw29-sw30]
-Source = sw29
-Dest = sw30
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw30-sw31]
-Source = sw30
-Dest = sw31
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw32-sw33]
-Source = sw32
-Dest = sw33
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw32-sw40]
-Source = sw32
-Dest = sw40
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw33-sw34]
-Source = sw33
-Dest = sw34
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw33-sw41]
-Source = sw33
-Dest = sw41
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw34-sw35]
-Source = sw34
-Dest = sw35
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw34-sw42]
-Source = sw34
-Dest = sw42
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw35-sw36]
-Source = sw35
-Dest = sw36
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw35-sw43]
-Source = sw35
-Dest = sw43
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw36-sw37]
-Source = sw36
-Dest = sw37
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw36-sw44]
-Source = sw36
-Dest = sw44
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw37-sw38]
-Source = sw37
-Dest = sw38
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw37-sw45]
-Source = sw37
-Dest = sw45
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw38-sw39]
-Source = sw38
-Dest = sw39
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw38-sw46]
-Source = sw38
-Dest = sw46
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw39-sw47]
-Source = sw39
-Dest = sw47
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw40-sw41]
-Source = sw40
-Dest = sw41
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw40-sw48]
-Source = sw40
-Dest = sw48
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw41-sw42]
-Source = sw41
-Dest = sw42
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw41-sw49]
-Source = sw41
-Dest = sw49
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw42-sw43]
-Source = sw42
-Dest = sw43
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw42-sw50]
-Source = sw42
-Dest = sw50
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw43-sw44]
-Source = sw43
-Dest = sw44
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw43-sw51]
-Source = sw43
-Dest = sw51
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw44-sw45]
-Source = sw44
-Dest = sw45
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw44-sw52]
-Source = sw44
-Dest = sw52
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw45-sw46]
-Source = sw45
-Dest = sw46
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw45-sw53]
-Source = sw45
-Dest = sw53
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw46-sw47]
-Source = sw46
-Dest = sw47
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw46-sw54]
-Source = sw46
-Dest = sw54
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw47-sw55]
-Source = sw47
-Dest = sw55
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw48-sw49]
-Source = sw48
-Dest = sw49
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw48-sw56]
-Source = sw48
-Dest = sw56
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw49-sw50]
-Source = sw49
-Dest = sw50
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw49-sw57]
-Source = sw49
-Dest = sw57
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw50-sw51]
-Source = sw50
-Dest = sw51
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw50-sw58]
-Source = sw50
-Dest = sw58
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw51-sw52]
-Source = sw51
-Dest = sw52
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw51-sw59]
-Source = sw51
-Dest = sw59
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw52-sw53]
-Source = sw52
-Dest = sw53
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw52-sw60]
-Source = sw52
-Dest = sw60
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw53-sw54]
-Source = sw53
-Dest = sw54
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw53-sw61]
-Source = sw53
-Dest = sw61
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw54-sw55]
-Source = sw54
-Dest = sw55
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw54-sw62]
-Source = sw54
-Dest = sw62
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw55-sw63]
-Source = sw55
-Dest = sw63
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw56-sw57]
-Source = sw56
-Dest = sw57
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw57-sw58]
-Source = sw57
-Dest = sw58
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw58-sw59]
-Source = sw58
-Dest = sw59
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw59-sw60]
-Source = sw59
-Dest = sw60
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw60-sw61]
-Source = sw60
-Dest = sw61
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw61-sw62]
-Source = sw61
-Dest = sw62
-Type = Bidirectional
-Bandwidth = 16
-
-[Network.net-l2-mm.Link.sw62-sw63]
-Source = sw62
-Dest = sw63
-Type = Bidirectional
-Bandwidth = 16
 
