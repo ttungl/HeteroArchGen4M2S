@@ -20,7 +20,7 @@ Please cite my tool using this [bibtex](https://github.com/ttungl/HeteroArchGen4
 	
 	Note, paper reference will be updated soon. Enjoy it!
 
-##Setup Requirements
+## Setup Requirements
 
 1. Currently HeteroArchGen4M2S has been tested on 64-bit platforms:
 
@@ -64,34 +64,34 @@ Please cite my tool using this [bibtex](https://github.com/ttungl/HeteroArchGen4
 
 	> Note: All the packages are compiled to binary. If you want to modify the benchmarks, you can download the source codes from `https://github.com/Multi2Sim`. In case you want to run CUDA benchmarks, you can download other benchmarks for CPU-GPU systems such as Rodinia, Parboil, etc. Your desktop should have a NVIDIA graphic card (e.g., NVIDIA Quadro 4000), and you need to install the graphic card driver for running the simulation. (When compiling benchmarks, use `-m32` flag after `gcc` to make compatible with `multi2sim` 32-bit (no support 64-bit at this time)). 
 
-##Download HeteroArchGen4M2S
+## Download HeteroArchGen4M2S
 
 	git clone https://github.com/ttungl/HeteroArchGen4M2S.git
 
-##Build configuration files with HeteroArchGen4M2S
+## Build configuration files with HeteroArchGen4M2S
 
 Let’s assume you are in the home directory (`$multi2sim/HeteroArchGen4M2S`)
 
-####Where are the configuration files?
+#### Where are the configuration files?
 * Run `/multi2sim/HeteroArchGen4M2S$ python create_sim_configs_files.py`.
 * The output files will be saved in the `configs` directory.
 * `cd configs` >>> the `configs` folder contains four files, including `memconfig`, `netconfig`, `x86_cpuconfig`, and `si_gpuconfig`.
 
-####How to run the simulation?
+#### How to run the simulation?
 * Previous steps show how to generate the configuration files. By running `create_sim_configs_files.py`, it also generated a shell script file inside `run_simulation_files` folder. The bash file (shell script) has been `chmod 777` for running.
 * Go back under `multi2sim` directory.
 * Run `./HeteroArchGen4M2S/run_simulation_files/run-bash-sim.sh`. 
 * This will create the output files which are the results of the simulation.  
 
-####Where are the output files after simulation?
+#### Where are the output files after simulation?
 * `cd results` >>> Note that, `results` folder contains two files at this point, including `pipeline.out`, `mem.out`.
 
 * With `net_report.out` file, it is generated under the `multi2sim` directory (outside of `HeteroArchGen4M2S` folder), you need to copy this file to `HeteroArchGen4M2S/results`.
 
 * Now, there are three files should be in `results` folder, including `pipeline.out`, `mem.out`, and `net_report.out`(just copied).
 
-##Demonstration: 
-###How to run multi2sim with HeteroArchGen4M2S ?
+## Demonstration: 
+### How to run multi2sim with HeteroArchGen4M2S ?
 
 Let’s use the `radix` example with 16 cores CPUs (`8` x86 CPUs), 16 cores GPUs (`4` Southern Islands GPUs), 4 Memory Controllers, in a 2D-Mesh for demonstration. 
 
@@ -205,15 +205,15 @@ Let’s use the `radix` example with 16 cores CPUs (`8` x86 CPUs), 16 cores GPUs
 
 	* Then you will see as below, and should follow the guide:
 	
-	###Type in the pipeline report from multi2sim: 
+	#### Type in the pipeline report from multi2sim: 
 
 	`HeteroArchGen4M2S/results/radix_pipeline.out`
 	
-	###Type in any template xml file of mcpat: 
+	#### Type in any template xml file of mcpat: 
 	
 	`HeteroArchGen4M2S/pipeline_xml_for_mcpat/McPAT_hsa_16_benchmark_radix.xml`
 	
-	###Name a new xml file for input of mcpat: 
+	#### Name a new xml file for input of mcpat: 
 	
 	`HeteroArchGen4M2S/pipeline_xml_for_mcpat/McPAT_hsa_16_radix_result.xml`
 
