@@ -14,7 +14,6 @@
 # easily, but non-warranty and non-mechantability.
 # ============================================================================
 
-
 def create_xml_for_mcpat(numcores, numL1Caches, numL2Caches, num_mem_controllers, benchmark):
 	## Create a sample file "McPAT_hsa_%0.f_benchmark_%s.xml".
 	## Several paramters that need to be updated
