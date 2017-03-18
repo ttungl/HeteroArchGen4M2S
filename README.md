@@ -225,6 +225,7 @@ Let’s use the `radix` example with 16 cores CPUs (`8` x86 CPUs), 16 cores GPUs
 
 	* `mcpat_hetero_16_radix_output.out` contains the dynamic power results of the system as follows.
 
+
 	```
 	McPAT (version 1.3 of Feb, 2015) is computing the target processor...
  
