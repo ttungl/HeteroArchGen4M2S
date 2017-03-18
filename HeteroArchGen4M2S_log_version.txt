@@ -1,3 +1,8 @@
+Update: 03/17/17
+	In create_sim_config_files.py:
+		+ Updated the "create_xml_for_mcpat" method.
+		+ Modified the "" file for McPAT1.3 (tested successfully)
+
 Update: 03/13/17
 	In create_sim_config_files.py:
 		+ Updated the network-only mode.
