@@ -109,38 +109,39 @@ Let’s use the `blacksholes` example with 16 cores CPUs (`8` x86 CPUs), 16 core
 	* For benchmarks, you need to modify the name of specific benchmark you want to run, and modify the command line of this benchmark and its path in `create_shell_script` file.
 
 	* For network topologies, HeteroArchGen4M2S currently supports three types of network, including `2D-Mesh`, `customized 2D-Mesh`, and `2D-Torus`. For `customized 2D-Mesh`, you need to specify the paths for local links and hybrid links in your network, as well as their linkwidths. 
-```
-			---------------- Heterogeneous CPU-GPU Architecture ---------------
 
-			|~~CPU~~|..|~~CPU~~~||~~~~~~~~GPU~~~~~~~|..|~~~~~~~~~~GPU~~~~~~~~~|
-			|-------|  |--------||------------------|  |----------------------|
-			||c0||c1|..|c14||c15||cu0||cu1||cu2||cu3|..|cu12||cu13||cu14||cu15|
-			|-------|  |--------||------------------|  |----------------------|
-		      |   |      |   | 	    \   /    \   /         \   /      \   / 
-		    ----  ---- ---- ----    -----    -----		   -----      -----	
-		    |L1$||L1$| |L1$||L1$|   |L1$|    |L1$|         |L1$|      |L1$| 	  
-		    |D/I||D/I| |D/I||D/I|   -----    -----         -----      -----  	
-		    ---- ----  ---- ----      |        |             |          |   
-		      |    |    |    |      ------------net_g0     -------------net_g3          
-		      -------   -------net_c7     |                       |        
-		         | net_c0   |             |                       | 
-		       -----	  -----			 -----					 -----					 
-		       |L2$|	  |L2$|			 |L2$|					 |L2$|				 
-		       -----      -----			 -----                   -----						
-		         | sw0 ...	| sw7		   | sw8       ...         | sw11
-		        -------------------------------------------------------
-		        |  			      2D-Mesh network 					  |	 			
-		        -------------------------------------------------------
-		               	   | sw12	| sw13	| sw14  | sw15	  net-l2-mm	
-		               	 -----	  -----   -----	  -----			
-		               	 |MM0|	  |MM1|	  |MM2|	  |MM3|	
-		               	 -----	  -----	  -----	  -----
-				
-		* net_c0: net-cpu-l1-l2-0
-		* net_c7: net-cpu-l1-l2-7
-		* net_g0: net-gpu-l1-l2-0
-		* net_g3: net-gpu-l1-l2-3       	         	 
-		```
+```
+    ---------------- Heterogeneous CPU-GPU Architecture ---------------
+
+    |~~CPU~~|..|~~CPU~~~||~~~~~~~~GPU~~~~~~~|..|~~~~~~~~~~GPU~~~~~~~~~|
+    |-------|  |--------||------------------|  |----------------------|
+    ||c0||c1|..|c14||c15||cu0||cu1||cu2||cu3|..|cu12||cu13||cu14||cu15|
+    |-------|  |--------||------------------|  |----------------------|
+      |   |      |   |      \   /    \   /         \   /      \   / 
+    ----  ---- ---- ----    -----    -----         -----      ----- 
+    |L1$||L1$| |L1$||L1$|   |L1$|    |L1$|         |L1$|      |L1$|       
+    |D/I||D/I| |D/I||D/I|   -----    -----         -----      -----     
+    ---- ----  ---- ----      |        |             |          |   
+      |    |    |    |      ------------net_g0     -------------net_g3          
+      -------   -------net_c7     |                       |        
+         | net_c0   |             |                       | 
+       -----      -----          -----                   -----                   
+       |L2$|      |L2$|          |L2$|                   |L2$|               
+       -----      -----          -----                   -----                      
+         | sw0 ...  | sw7          | sw8       ...         | sw11
+        -------------------------------------------------------
+        |                 2D-Mesh network                     |             
+        -------------------------------------------------------
+                   | sw12   | sw13  | sw14  | sw15    net-l2-mm 
+                 -----    -----   -----   -----         
+                 |MM0|    |MM1|   |MM2|   |MM3| 
+                 -----    -----   -----   -----
+
+* net_c0: net-cpu-l1-l2-0
+* net_c7: net-cpu-l1-l2-7
+* net_g0: net-gpu-l1-l2-0
+* net_g3: net-gpu-l1-l2-3                        
+```
 
 
 3.	After modifying `create_sim_configs_files.py`: 
