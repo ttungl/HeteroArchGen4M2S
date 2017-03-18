@@ -1,11 +1,15 @@
 #!/bin/bash
 
+# This is inspired by Peilong
+# https://github.com/Peilong/multi2sim-4.0-hc/blob/master/McPAT08release/m2s2xml.sh
+
 # $1  $2  $3  are :
 # $1: the output file from the multi2sim, 
 # using cmd: m2s --cpu-sim detailed --report-cpu-pipeline report.pipeline(report file) ~/Apply_Calibration/Apply_Cali(benchmark);
 # $2: any template xml file of mcpat;
 # $3: a new xml file for mcpat. 
 # So the first two are input file names and the third is the output file name
+#
 
 echo "Type in the pipeline report from multi2sim:"
 read -e IN_M2S
@@ -16,7 +20,7 @@ read -e OUT_XML
 # IN_M2S=$1
 # IN_XML=$2
 # OUT_XML=$3
-OUT_TEMP=HeteroArchGen4M2S/pipeline_xml_for_mcpat/mcpat.xml
+OUT_TEMP=HeteroArchGen4M2S/pipeline_xml_for_mcpat/mcpat_hsa_1.xml
 
 m2s_data=$(grep -m 1 "Cycles"   $IN_M2S | sed "s;Cycles = \(.*\);\1;")
 sed "s;\(.*\)total_cycles\"\(.*\)\"\(.*\)\"\(.*\);\1total_cycles\"\2\"$m2s_data\"\4;"  $IN_XML  > $OUT_XML 
@@ -99,9 +103,21 @@ m2s_data=$(grep -m 1 "RF_Int.Reads"   $IN_M2S | sed "s;RF_Int.Reads = \(.*\);\1;
 cp  $OUT_XML  $OUT_TEMP
 sed "s;\(.*\)\"int_regfile_reads\"\(.*\)\"\(.*\)\"\(.*\);\1\"int_regfile_reads\"\2\"$m2s_data\"\4;"  $OUT_TEMP  > $OUT_XML 
 
+# float is added.
+m2s_data=$(grep -m 1 "RF_Fp.Reads"   $IN_M2S | sed "s;RF_Fp.Reads = \(.*\);\1;")
+cp  $OUT_XML  $OUT_TEMP
+sed "s;\(.*\)\"float_regfile_reads\"\(.*\)\"\(.*\)\"\(.*\);\1\"float_regfile_reads\"\2\"$m2s_data\"\4;"  $OUT_TEMP  > $OUT_XML 
+
+
 m2s_data=$(grep -m 1 "RF_Int.Writes"   $IN_M2S | sed "s;RF_Int.Writes = \(.*\);\1;")
 cp  $OUT_XML  $OUT_TEMP
 sed "s;\(.*\)\"int_regfile_writes\"\(.*\)\"\(.*\)\"\(.*\);\1\"int_regfile_writes\"\2\"$m2s_data\"\4;"  $OUT_TEMP  > $OUT_XML 
+
+# float is added
+m2s_data=$(grep -m 1 "RF_Fp.Writes"   $IN_M2S | sed "s;RF_Fp.Writes = \(.*\);\1;")
+cp  $OUT_XML  $OUT_TEMP
+sed "s;\(.*\)\"float_regfile_writes\"\(.*\)\"\(.*\)\"\(.*\);\1\"float_regfile_writes\"\2\"$m2s_data\"\4;"  $OUT_TEMP  > $OUT_XML 
+
 
 m2s_data=$(grep -m 1 "Dispatch.Uop.call"   $IN_M2S | sed "s;Dispatch.Uop.call = \(.*\);\1;")
 cp  $OUT_XML  $OUT_TEMP
@@ -111,17 +127,17 @@ m2s_data=$(grep -m 1 "Dispatch.WndSwitch"   $IN_M2S | sed "s;Dispatch.WndSwitch 
 cp  $OUT_XML  $OUT_TEMP
 sed "s;\(.*\)context_switches\"\(.*\)\"\(.*\)\"\(.*\);\1context_switches\"\2\"$m2s_data\"\4;"  $OUT_TEMP  > $OUT_XML 
 
-#m2s_data=$(grep -m 1 "Issue.SimpleInteger"   $IN_M2S | sed "s;Issue.SimpleInteger = \(.*\);\1;")
-#cp  $OUT_XML  $OUT_TEMP
-#sed "s;\(.*\)ialu_accesses\"\(.*\)\"\(.*\)\"\(.*\);\1ialu_accesses\"\2\"$m2s_data\"\4;"  $OUT_TEMP  > $OUT_XML 
+m2s_data=$(grep -m 1 "Issue.SimpleInteger"   $IN_M2S | sed "s;Issue.SimpleInteger = \(.*\);\1;")
+cp  $OUT_XML  $OUT_TEMP
+sed "s;\(.*\)ialu_accesses\"\(.*\)\"\(.*\)\"\(.*\);\1ialu_accesses\"\2\"$m2s_data\"\4;"  $OUT_TEMP  > $OUT_XML 
 
 m2s_data=$(grep -m 1 "Issue.FloatingPoint"   $IN_M2S | sed "s;Issue.FloatingPoint = \(.*\);\1;")
 cp  $OUT_XML  $OUT_TEMP
 sed "s;\(.*\)fpu_accesses\"\(.*\)\"\(.*\)\"\(.*\);\1fpu_accesses\"\2\"$m2s_data\"\4;"  $OUT_TEMP  > $OUT_XML 
 
-#m2s_data=$(grep -m 1 "Issue.ComplexInteger"   $IN_M2S | sed "s;Issue.ComplexInteger = \(.*\);\1;")
-#cp  $OUT_XML  $OUT_TEMP
-#sed "s;\(.*\)mul_accesses\"\(.*\)\"\(.*\)\"\(.*\);\1mul_accesses\"\2\"$m2s_data\"\4;"  $OUT_TEMP  > $OUT_XML 
+m2s_data=$(grep -m 1 "Issue.ComplexInteger"   $IN_M2S | sed "s;Issue.ComplexInteger = \(.*\);\1;")
+cp  $OUT_XML  $OUT_TEMP
+sed "s;\(.*\)mul_accesses\"\(.*\)\"\(.*\)\"\(.*\);\1mul_accesses\"\2\"$m2s_data\"\4;"  $OUT_TEMP  > $OUT_XML 
 
 m2s_data=$(grep -m 1 "BTB.Reads"   $IN_M2S | sed "s;BTB.Reads = \(.*\);\1;")
 cp  $OUT_XML  $OUT_TEMP
@@ -206,8 +222,6 @@ cp  $OUT_XML  $OUT_TEMP
 sed "s;\(.*\)conflicts\"\(.*\)\"\(.*\)\"\(.*\)dcache\_\(.*\);\1conflicts\"\2\"$m2s_data\"\4dcache\_\5;"  $OUT_TEMP  > $OUT_XML 
 
 
-
-
 m2s_data=$(grep -m 1 "Cores"   $IN_M2S | sed "s;Cores = \(.*\);\1;")
 cp  $OUT_XML  $OUT_TEMP
 sed "s;\(.*\)\"number_of_cores\"\(.*\)\"\(.*\)\"\(.*\);\1\"number_of_cores\"\2\"$m2s_data\"\4;"  $OUT_TEMP  > $OUT_XML 
@@ -257,9 +271,9 @@ cp  $OUT_XML  $OUT_TEMP
 sed "s;\(.*\)\"load_buffer_size\"\(.*\)\"\(.*\)\"\(.*\);\1\"load_buffer_size\"\2\"$m2s_data\"\4;"  $OUT_TEMP  > $OUT_XML 
 sed "s;\(.*\)\"store_buffer_size\"\(.*\)\"\(.*\)\"\(.*\);\1\"store_buffer_size\"\2\"$m2s_data\"\4;"  $OUT_TEMP  > $OUT_XML 
 
-#m2s_data=$(grep -m 1 "fu.IntAdd.Accesses"   $IN_M2S | sed "s;fu.IntAdd.Accesses = \([1-9]*\)\(.*\);\1;")
-#cp  $OUT_XML  $OUT_TEMP
-#sed "s;\(.*\)\"ALU_per_core\"\(.*\)\"\(.*\)\"\(.*\);\1\"ALU_per_core\"\2\"$m2s_data\"\4;"  $OUT_TEMP  > $OUT_XML 
+# m2s_data=$(grep -m 1 "fu.IntAdd.Accesses"   $IN_M2S | sed "s;fu.IntAdd.Accesses = \([1-9]*\)\(.*\);\1;")
+# cp  $OUT_XML  $OUT_TEMP
+# sed "s;\(.*\)\"ALU_per_core\"\(.*\)\"\(.*\)\"\(.*\);\1\"ALU_per_core\"\2\"$m2s_data\"\4;"  $OUT_TEMP  > $OUT_XML 
 
 #m2s_data=$(grep -m 1 "fu.IntMult.Accesses"   $IN_M2S | sed "s;fu.IntMult.Accesses = \([1-9]*\)\(.*\);\1;")
 #cp  $OUT_XML  $OUT_TEMP
