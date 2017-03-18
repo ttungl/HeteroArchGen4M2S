@@ -55,7 +55,7 @@ Please cite my tool using this [bibtex](https://github.com/ttungl/HeteroArchGen4
 	
 	> `git clone https://github.com/Multi2Sim/m2s-bench-spec2006.git`
 	
-	> `git clone https://github.com/Multi2Sim/m2s-bench-parsec-3.0.git`
+	> `git clone https://github.com/Multi2Sim/m2s-bench-splash2.git`
 	
 	> `git clone https://github.com/Multi2Sim/m2s-bench-cudasdk-6.5.git`
 	
@@ -96,7 +96,7 @@ Let’s assume you are in the home directory (`$multi2sim/HeteroArchGen4M2S`)
 
 Let’s use the `radix` example with 16 cores CPUs (`8` x86 CPUs), 16 cores GPUs (`4` Southern Islands GPUs), 4 Memory Controllers, in a 2D-Mesh for demonstration. 
 
-> Important: You need to download `parsec` benchmark from `https://github.com/Multi2Sim/m2s-bench-parsec-3.0`, then unzip it under the `benchmarks` folder in `multi2sim` directory for demonstration.
+> Important: You need to download `parsec` benchmark from `https://github.com/Multi2Sim/m2s-bench-splash2`, then unzip it under the `benchmarks` folder in `multi2sim` directory for demonstration.
 
 1.	Suppose that you already got the cache and memory latencies for your proposed architecture by running `CACTI6.5`.  
 
@@ -122,14 +122,14 @@ Let’s use the `radix` example with 16 cores CPUs (`8` x86 CPUs), 16 cores GPUs
 	* A shell script (`.sh`) has also been generated in the `run_simulation_files` folder. The shell script looks like as below.
 
 		> m2s --x86-sim detailed --x86-report \
-		HeteroArchGen4M2S/results/blackscholes_pipeline.out \
-		--mem-report HeteroArchGen4M2S/results/blackscholes_mem.out \
+		HeteroArchGen4M2S/results/radix_pipeline.out \
+		--mem-report HeteroArchGen4M2S/results/radix_mem.out \
 		--x86-config ./HeteroArchGen4M2S/configs/x86_cpuconfig \
 		--si-sim detailed --si-config ./HeteroArchGen4M2S/configs/si_gpuconfig \
 		--mem-config ./HeteroArchGen4M2S/configs/memconfig \
 		--net-config ./HeteroArchGen4M2S/configs/netconfig \
-		--x86-max-inst 100000000 --net-report blackscholes_net_report.out \
-		benchmarks/m2s-bench-parsec-3.0/blackscholes/blackscholes 16 in_4K.txt prives.txt data-small
+		--x86-max-inst 100000000 --net-report radix_net_report.out \
+		benchmarks/m2s-bench-splash2/radix/radix 16 in_4K.txt prives.txt data-small
 
 	* `cd ..` to `multi2sim` directory.
 
