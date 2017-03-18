@@ -20,6 +20,7 @@ from create_southern_islands_gpuconfig import create_southern_islands_gpuconfig
 from create_memconfig import create_memconfig
 from create_netconfig import create_netconfig
 from create_shell_script import create_shell_script
+from create_xml_for_mcpat import create_xml_for_mcpat
 
 # [cpu gpu mc]
 # [16 16 4] : 16 nodes/switches on the interconnect
@@ -29,8 +30,8 @@ from create_shell_script import create_shell_script
 #### 		Each core in the set can have its own L1$ (Data&Instr) 
 #### 		or it can share the Instruction-L1$ with the other core in that set.
 ####		by enabling `L1_Inst_shared` flag in the CPU Memory Parameters settings.
-num_of_cpu_cores = 48 
-cpu_frequency = 2400 ## 2.4GHz
+num_of_cpu_cores = 16 
+cpu_frequency = 3400 ## 3.4GHz
 num_of_threads = 1
 ROB_size = 128
 pipelines_size = 4
@@ -42,11 +43,11 @@ x86_max_inst = 100000000
 #### Note: 	a set of GPU includes four compute units. 
 #### 		Each two units share with one L1$. 
 #### 		Each two L1$ shares with one L2$.
-num_of_gpu_cores 	= 96 	## the number of compute units of GPUs. (each GPU has 4 units.)
+num_of_gpu_cores 	= 16 	## the number of compute units of GPUs. (each GPU has 4 units.)
 type_of_gpu = 'SouthernIslands' ## Note, multi2sim-5.0 does support different types of GPUs, see in Manual.
 
 ## CPU Memory Parameters 	
-num_of_MC = 16 			# number of memory controllers; [2, 4, 8, 16]
+num_of_MC = 4 			# number of memory controllers; [2, 4, 8, 16]
 L1_Inst_shared = 0		# enable/disable (1/0) shared Instruction L1$
 L1_size = 32			# size of L1$ (kB); [16, 32, 64]
 L1_assoc = 1			# associativity of L1$ (#-way) full-assoc
@@ -68,14 +69,64 @@ GPU_L2_latency = 63 	# latency of L2$ (ns)
 GPU_L1_blocksize = 64 	# blocksize of L1$ (Bytes)
 GPU_L2_blocksize = 64 	# blocksize of L2$ (Bytes) 
 
-## Note: L3$ shared caches for CPUs and GPUs can be extended if needed. (need a little more work!)
+## NOTICE: L3$ shared caches for CPUs and GPUs can be extended if needed. (need a little more work!)
+
+
+# ```  
+#     ------- An Example of a Heterogeneous CPU-GPU Architecture --------
+
+#     |~~CPU~~|..|~~CPU~~~||~~~~~~~~GPU~~~~~~~|..|~~~~~~~~~~GPU~~~~~~~~~|
+#     |-------|  |--------||------------------|  |----------------------|
+#     ||c0||c1|..|c14||c15||cu0||cu1||cu2||cu3|..|cu12||cu13||cu14||cu15|
+#     |-------|  |--------||------------------|  |----------------------|
+#       |   |      |   |      \   /    \   /         \   /      \   / 
+#     ----  ---- ---- ----    -----    -----         -----      ----- 
+#     |L1$||L1$| |L1$||L1$|   |L1$|    |L1$|         |L1$|      |L1$|       
+#     |D/I||D/I| |D/I||D/I|   -----    -----         -----      -----     
+#     ---- ----  ---- ----      |        |             |          |   
+#       |    |    |    |      ------------net_g0     -------------net_g3          
+#       -------   -------net_c7     |                       |        
+#          | net_c0   |             |                       | 
+#        -----      -----          -----                   -----                   
+#        |L2$|      |L2$|          |L2$|                   |L2$|               
+#        -----      -----          -----                   -----                      
+#          | sw0 ...  | sw7          | sw8       ...         | sw11
+#         -------------------------------------------------------
+#         |                 2D-Mesh network                     |             
+#         -------------------------------------------------------
+#                    | sw12   | sw13  | sw14  | sw15    net-l2-mm 
+#                  -----    -----   -----   -----         
+#                  |MM0|    |MM1|   |MM2|   |MM3| 
+#                  -----    -----   -----   -----
+
+# * net_c0: net-cpu-l1-l2-0
+# * net_c7: net-cpu-l1-l2-7
+# * net_g0: net-gpu-l1-l2-0
+# * net_g3: net-gpu-l1-l2-3                        
+# ```
+
+## Calculate the number of L1 caches and L2 caches
+# Each core of CPU has one separate L1$.
+# Each two-compute units of GPU has one shared L1$.
+# Each two L1$ of CPU have one shared L2$.
+# Each two L1$ of GPU have one shared L2$.
+# All of L2$ connect to the NOC.
+numL1cpu = num_of_cpu_cores
+numL1gpu = num_of_gpu_cores/2
+numL1 = numL1cpu + numL1gpu
+##
+numL2cpu = numL1cpu/2
+numL2gpu = numL1gpu/2
+numL2 = numL2cpu + numL2gpu
+##
+
 
 ## List of benchmarks:
 # splash2-benchmark = ['radix', 'fmm', 'barnes', 'cholesky', 'fft', 'lu', 'ocean', 'radiosity', 'raytrace', 'water-nsquared', 'water-spatial']
 # hetero-mark-benchmark = ['aes', 'fir', 'histogram', 'kmeans', 'page_rank']
 # amdsdk2.5-benchmark = ['BinarySearch']
 
-benchmark = 'aes'
+benchmark = ''
 if benchmark == '':
 		benchmark = 'default_mm'
 
@@ -85,8 +136,8 @@ if benchmark == '':
 
 ## injection rate for synthetic traffic
 injection_rate = '0.1'
-# numThreads = [8, 16, 32, 48, 56, 64, 128, 256]
-numThreads = 8
+# numThreads_benchmark = [8, 16, 32, 48, 56, 64, 128, 256]
+numThreads_benchmark = 32
 ## Network Parameters
 #### Notice: source-destination nodes' id from the input files should start at 1, not zero.
 ## For a customized 2D-Mesh network
@@ -104,7 +155,7 @@ LOCALLINKS_PATH = 'results_hybrid_local_links/topoA_locallinks_8x8.txt'
 # (optional) [3]: Ring
 network_mode = 0
 net_max_inst = 100000
-network_only = 1 ## 1 for network-only, else 0 (full-system).
+network_only = 0 ## [1] for network-only, else [0] (full-system).
 
 #### Base conversion 
 # link_width = 8 Bytes per cycle
@@ -154,7 +205,8 @@ def main():
 															LOCAL_LINKWIDTH, HYBRID_LINKWIDTH)
 
 	create_shell_script(num_of_cpu_cores, num_of_gpu_cores, type_of_gpu, \
-						x86_max_inst, benchmark, net_max_inst, network_only, numThreads)
+						x86_max_inst, benchmark, net_max_inst, network_only, numThreads_benchmark)
 
+	create_xml_for_mcpat(num_nodes, numL1, numL2, num_of_MC, benchmark)
 
 if __name__ == "__main__": main()
