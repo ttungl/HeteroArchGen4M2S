@@ -166,8 +166,7 @@ Let’s use the `radix` example with 16 cores CPUs (`8` x86 CPUs), 16 cores GPUs
 
 	* `cd ..` to `multi2sim` directory.
 
-	* `./HeteroArchGen4M2S/run_simulation_files/run-sim-16-CPU-16-\
-	SouthernIslands-GPU-benchmark-radix.sh`
+	* `./HeteroArchGen4M2S/run_simulation_files/run-sim-16-CPU-16-SouthernIslands-GPU-benchmark-radix.sh`
 
 4.	To check the results, all of them are in the `results` folder, including:
 
