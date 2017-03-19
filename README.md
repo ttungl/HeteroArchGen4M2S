@@ -192,7 +192,7 @@ Let’s use the `radix` example with 16 cores CPUs (`8` x86 CPUs), 16 cores GPUs
 	* Network Throughput (MBps): 32366.64 
 	* Network Latency (cycles): 23.6969
 
-6. To run the network-only mode, in the file `create_sim_configs_files`, you just need to modify the value of `network_only` to `1`. Thereby, now when running `HeteroArchGen4M2S$ python create_sim_configs_files`, the software will generate the bash file with network-only simulation.
+6. To run the network-only mode, in the file `create_sim_configs_files.py`, you just need to modify the value of `network_only` to `1`. Thereby, now when running `HeteroArchGen4M2S$ python create_sim_configs_files.py`, the software will generate the bash file with network-only simulation.
 
 7. 	To get the dynamic power from McPAT. 
 	After running the file `create_sim_configs_files.py`, it also generated a sample xml file in `pipeline_xml_for_mcpat` folder under `HeteroArchGen4M2S` directory. This file is named as following `McPAT_hsa_#cores_benchmark_bmname.xml`, e.g., in this case, its name is `McPAT_hsa_16_benchmark_radix.xml`.  
