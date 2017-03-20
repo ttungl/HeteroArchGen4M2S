@@ -224,7 +224,7 @@ Let’s use the `radix` example with 16 cores CPUs (`8` x86 CPUs), 16 cores GPUs
 	`multi2sim$ ./mcpat -infile HeteroArchGen4M2S/pipeline_xml_for_mcpat/McPAT_hsa_16_radix_result.xml -opt_for_clk 1 -print_level 5 > HeteroArchGen4M2S/pipeline_xml_for_mcpat/mcpat_hetero_16_radix_output.out`
 
 	* `mcpat_hetero_16_radix_output.out` contains the dynamic power results of the system as follows.
-	``
+	
 
 	```
 	McPAT (version 1.3 of Feb, 2015) is computing the target processor...
@@ -324,7 +324,7 @@ Let’s use the `radix` example with 16 cores CPUs (`8` x86 CPUs), 16 cores GPUs
 	...
 
 	```
-	``
+	
 	* From this file, you can be able to collect all the dynamic power information you need for evaluations. 
 
 > Now you are ready to go. Happy hacking the code!
