@@ -95,7 +95,7 @@ Let’s assume you are in the home directory (`$multi2sim/HeteroArchGen4M2S`)
 
 Let’s use the `radix` example with 16 cores CPUs (`8` x86 CPUs), 16 cores GPUs (`4` Southern Islands GPUs), 4 Memory Controllers, in a 2D-Mesh for demonstration. 
 
-> Important: You need to download `parsec` benchmark from `https://github.com/Multi2Sim/m2s-bench-splash2`, then unzip it under the `benchmarks` folder in `multi2sim` directory for demonstration.
+> Important: You need to download `splash2` benchmark from `https://github.com/Multi2Sim/m2s-bench-splash2`, then unzip it under the `benchmarks` folder in `multi2sim` directory for demonstration.
 
 1.	Suppose that you already got the cache and memory latencies for your proposed architecture by running `CACTI6.5`.  
 
@@ -166,7 +166,8 @@ Let’s use the `radix` example with 16 cores CPUs (`8` x86 CPUs), 16 cores GPUs
 
 	* `cd ..` to `multi2sim` directory.
 
-	* `./HeteroArchGen4M2S/run_simulation_files/run-sim-16-CPU-16-SouthernIslands-GPU-benchmark-radix.sh`
+	* `./HeteroArchGen4M2S/run_simulation_files/run-sim-16-CPU-16-\
+	SouthernIslands-GPU-benchmark-radix.sh`
 
 4.	To check the results, all of them are in the `results` folder, including:
 
@@ -223,7 +224,7 @@ Let’s use the `radix` example with 16 cores CPUs (`8` x86 CPUs), 16 cores GPUs
 	`multi2sim$ ./mcpat -infile HeteroArchGen4M2S/pipeline_xml_for_mcpat/McPAT_hsa_16_radix_result.xml -opt_for_clk 1 -print_level 5 > HeteroArchGen4M2S/pipeline_xml_for_mcpat/mcpat_hetero_16_radix_output.out`
 
 	* `mcpat_hetero_16_radix_output.out` contains the dynamic power results of the system as follows.
-
+	``
 
 	```
 	McPAT (version 1.3 of Feb, 2015) is computing the target processor...
@@ -323,7 +324,7 @@ Let’s use the `radix` example with 16 cores CPUs (`8` x86 CPUs), 16 cores GPUs
 	...
 
 	```
-
+	``
 	* From this file, you can be able to collect all the dynamic power information you need for evaluations. 
 
 > Now you are ready to go. Happy hacking the code!
@@ -337,4 +338,3 @@ This work is also inspired by [M2StoMcPAT](http://www.ece.umd.edu/~cserafy1/inde
 		ttungl at gmail dot com
 		Release: Version 1.0 (02/18/17)
 		
-
