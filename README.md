@@ -329,7 +329,7 @@ Let’s use the `radix` example with 16 cores CPUs (`8` x86 CPUs), 16 cores GPUs
 
 > Now you are ready to go. Happy hacking the code!
 
-## Disclaims:
+## Claims:
 
 I would like to thank the open source multi2sim community.
 This work is also inspired by [M2StoMcPAT](http://www.ece.umd.edu/~cserafy1/index.htm) in Matlab, but I implemented completely in Python, with heterogeneous CPU-GPU architectures. 
