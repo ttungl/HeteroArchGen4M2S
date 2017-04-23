@@ -173,7 +173,7 @@ Let’s use the `radix` example with 16 cores CPUs (`8` x86 CPUs), 16 cores GPUs
 
 	* `radix_mem.out`
 	
-	* `radix_pipeline.out`
+	* `radix_pipeline.out` (Note, this file is only generated when simulating the full-system.)
 	
 	* With `net-l2-mm_radix_net_report.out`, it is saved under the `multi2sim` directory, so just copy into the `results` folder.
 
