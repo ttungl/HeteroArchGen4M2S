@@ -338,5 +338,5 @@ This work is also inspired by [M2StoMcPAT](http://www.ece.umd.edu/~cserafy1/inde
 
 		Tung Thanh Le
 		ttungl at gmail dot com
-		Release: Version 1.0 (02/18/17)
+		Released: Version 1.0 (02/18/17)
 		
