@@ -180,6 +180,8 @@ Let’s use the `radix` example with 16 cores CPUs (`8` x86 CPUs), 16 cores GPUs
 5.	To read the results:
 	
 	* Make sure you are in `HeteroArchGen4M2S` directory. 
+	
+	* Open the file `read_results.py`, change the benchmark name to be appropriate at line 47 (this will be updated for automatically updating the benchmark name soon!), then save and close the file.
 
 	* Run `python read_results.py`, the total cycles and network performance results are saved in `results` folder, under the names: `radix_totalCycles.out` and `radix_network_performance.out`. 
 
