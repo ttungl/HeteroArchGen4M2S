@@ -184,7 +184,7 @@ Let’s use the `radix` example with 16 cores CPUs (`8` x86 CPUs), 16 cores GPUs
 	* Run `python read_results.py`, the total cycles and network performance results are saved in `results` folder, under the names: `radix_totalCycles.out` and `radix_network_performance.out`. 
 
 
-	> For `radix_totalCycles.out`: (Note, this file is only generated when simulating the full-system, not for network-only.)
+	> For `radix_totalCycles.out`: (Note, the totalCycles.out is not supported for network-only mode.)
 	* Cycles: 306794
 	* Time (seconds): 3.94
 
