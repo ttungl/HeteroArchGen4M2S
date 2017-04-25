@@ -12,7 +12,7 @@ easily, but non-warranty and non-mechantability.
 
 Please cite my tool using this [bibtex](https://github.com/ttungl/HeteroArchGen4M2S/blob/master/bibtex.bib): 
 
-	@INPROCEEDINGS{tungle_isvlsi17, 
+	@INPROCEEDINGS{HeteroArchGen4M2S_TungLe_isvlsi17, 
 	author={Tung Thanh Le, Dan Zhao and Magdy Bayoumi}, 
 	booktitle={IEEE Computer Society Annual Symposium on VLSI}, 
 	title={Efficient Reconfigurable Global Network-on-chip Designs towards Heterogeneous CPU-GPU Systems: An Application-Aware Approach}, 
