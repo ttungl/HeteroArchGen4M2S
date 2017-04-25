@@ -12,14 +12,13 @@ easily, but non-warranty and non-mechantability.
 
 Please cite my tool using this [bibtex](https://github.com/ttungl/HeteroArchGen4M2S/blob/master/bibtex.bib): 
 
-	@article{HeteroArchGen4M2S,
-	Author = {Tung Thanh Le},
-	Journal = {https://github.com/ttungl/HeteroArchGen4M2S},
-	Title = {{HeteroArchGen4M2S: An automatic generator tool for configuring and running heterogeneous CPU-GPU architectures}},
-	Year = {2017}}
+	@INPROCEEDINGS{tungle_isvlsi17, 
+	author={Tung Thanh Le, Dan Zhao and Magdy Bayoumi}, 
+	booktitle={IEEE Computer Society Annual Symposium on VLSI}, 
+	title={Efficient Reconfigurable Global Network-on-chip Designs towards Heterogeneous CPU-GPU Systems: An Application-Aware Approach}, 
+	year={2017},
+	month={July},}
 	
-	Note, paper reference will be updated soon. Enjoy it!
-
 ## Setup Requirements
 
 1. Currently HeteroArchGen4M2S has been tested on 64-bit platforms:
