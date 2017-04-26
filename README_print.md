@@ -1,7 +1,7 @@
 ## Introduction
 Heterogeneous Architecture Configurations Generator for Multi2Sim simulator (HeteroArchGen4M2S) 
 
-`HeteroArchGen4M2S`: An automatic generator software for configuring and running heterogeneous CPU-GPU architectures on Multi2Sim (M2S) simulator. This tool runs on top of M2S simulator, it allows us to configure the various heterogeneous CPU-GPU architectures (e.g., number of CPU cores, GPU cores, L1$, L2$, memory (size and latency (via `CACTI 6.5`)), network topologies (currently support 2D-Mesh, customized 2D-Mesh, and Torus networks)...). The output files include the results of network throughput and latency, caches/memory access time, and and dynamic power of the cores (can be collected after running `McPAT`).
+`HeteroArchGen4M2S`: An automatic software for configuring and running heterogeneous CPU-GPU architectures on Multi2Sim (M2S) simulator. This tool is built on top of M2S simulator, it allows us to configure the various heterogeneous CPU-GPU architectures (e.g., number of CPU cores, GPU cores, L1$, L2$, memory (size and latency (via `CACTI 6.5`)), network topologies (currently support 2D-Mesh, customized 2D-Mesh, and Torus networks)...). The output files include the results of network throughput and latency, caches/memory access time, and and dynamic power of the cores (can be collected after running `McPAT`).
 
 `HeteroArchGen4M2S` is free software, which is freely to be redistributed and modified it under the terms of the GNU General Public License as published by the Free Software Foundation (For more details `http://www.gnu.org/licenses`).
 
@@ -12,15 +12,14 @@ easily, but non-warranty and non-mechantability.
 
 Please cite my tool using this [bibtex](https://github.com/ttungl/HeteroArchGen4M2S/blob/master/bibtex.bib): 
 
-	@article{HeteroArchGen4M2S,
-	Author = {Tung Thanh Le},
-	Journal = {https://github.com/ttungl/HeteroArchGen4M2S},
-	Title = {{HeteroArchGen4M2S: An automatic generator tool for 
-		configuring and running heterogeneous CPU-GPU architectures}},
-	Year = {2017}}
+	@INPROCEEDINGS{HeteroArchGen4M2S_TungLe_isvlsi17, 
+	author={Tung Thanh Le, Dan Zhao and Magdy Bayoumi}, 
+	booktitle={IEEE Computer Society Annual Symposium on VLSI}, 
+	title={Efficient Reconfigurable Global Network-on-chip Designs towards 
+			Heterogeneous CPU-GPU Systems: An Application-Aware Approach}, 
+	year={2017},
+	month={July},}
 	
-	Note, paper reference will be updated soon. Enjoy it!
-
 ## Setup Requirements
 
 1. Currently HeteroArchGen4M2S has been tested on 64-bit platforms:
@@ -139,18 +138,20 @@ Let’s use the `radix` example with 16 cores CPUs (`8` x86 CPUs), 16 cores GPUs
 
 	* `radix_mem.out`
 	
-	* `radix_pipeline.out`
+	* `radix_pipeline.out` (Note, this file is only generated when simulating the full-system.)
 	
 	* With `net-l2-mm_radix_net_report.out`, it is saved under the `multi2sim` directory, so just copy into the `results` folder.
 
 5.	To read the results:
 	
 	* Make sure you are in `HeteroArchGen4M2S` directory. 
+	
+	* Open the file `read_results.py`, change the benchmark name to be appropriate at line 47 (this will be updated for automatically updating the benchmark name soon!), then save and close the file.
 
 	* Run `python read_results.py`, the total cycles and network performance results are saved in `results` folder, under the names: `radix_totalCycles.out` and `radix_network_performance.out`. 
 
 
-	> For `radix_totalCycles.out`:
+	> For `radix_totalCycles.out`: (Note, the totalCycles.out is not supported for network-only mode.)
 	* Cycles: 306794
 	* Time (seconds): 3.94
 
@@ -173,41 +174,37 @@ Let’s use the `radix` example with 16 cores CPUs (`8` x86 CPUs), 16 cores GPUs
 	* Then you will see as below, and should follow the guide:
 	
 	#### Type in the pipeline report from multi2sim:
-
-		`HeteroArchGen4M2S/results/radix_pipeline.out`
+	* `HeteroArchGen4M2S/results/radix_pipeline.out`
 	
 	#### Type in any template xml file of mcpat:
-
-		`HeteroArchGen4M2S/pipeline_xml_for_mcpat/McPAT_hsa_16_benchmark_radix.xml`
+	* `HeteroArchGen4M2S/pipeline_xml_for_mcpat/McPAT_hsa_16_benchmark_radix.xml`
 	
 	#### Name a new xml file for input of mcpat:
+	* `HeteroArchGen4M2S/pipeline_xml_for_mcpat/McPAT_hsa_16_radix_result.xml`
 
-		`HeteroArchGen4M2S/pipeline_xml_for_mcpat/McPAT_hsa_16_radix_result.xml`
-
-	* After running the `.sh` file, you will see the file `McPAT_hsa_16_radix_result.xml` in `pipeline_xml_for_mcpat` subdirectory. 
+	After running the `.sh` file, you will see the file `McPAT_hsa_16_radix_result.xml` in `pipeline_xml_for_mcpat` subdirectory. 
 
 	* Run McPAT:
 
-	`multi2sim$ ./mcpat -infile HeteroArchGen4M2S/pipeline_xml_for_mcpat/ \
-	McPAT_hsa_16_radix_result.xml -opt_for_clk 1 -print_level 5 > \
-	HeteroArchGen4M2S/pipeline_xml_for_mcpat/mcpat_hetero_16_radix_output.out`
+	`multi2sim$ ./mcpat -infile HeteroArchGen4M2S/pipeline_xml_for_mcpat/ \ 
+	McPAT_hsa_16_radix_result.xml -opt_for_clk 1 -print_level 5 > HeteroArchGen4M2S/ \
+	pipeline_xml_for_mcpat/mcpat_hetero_16_radix_output.out`
 
 	* `mcpat_hetero_16_radix_output.out` contains the dynamic power results of the system as follows.
-
+	
 
 	```
 	McPAT (version 1.3 of Feb, 2015) is computing the target processor...
  
 
 	McPAT (version 1.3 of Feb, 2015) results  (current print level is 5)
-	******************************************************************
+	*********************************************************************
 	  Technology 45 nm
 	  Using Long Channel Devices When Appropriate
-	  Interconnect metal projection= aggressive 
-	  interconnect technology projection
+	  Interconnect metal projection= aggressive interconnect technology projection
 	  Core clock Rate(MHz) 3400
 
-	******************************************************************
+	*********************************************************************
 	Processor: 
 	  Area = 456.669 mm^2
 	  Peak Power = 455.678 W
@@ -281,7 +278,7 @@ Let’s use the `radix` example with 16 cores CPUs (`8` x86 CPUs), 16 cores GPUs
 	    Gate Leakage = 0.0607388 W
 	    Runtime Dynamic = 0.603445 W
 
-	******************************************************************
+	*********************************************************************
 	Core:
 	      Area = 18.3071 mm^2
 	      Peak Dynamic = 15.4953 W
@@ -294,7 +291,7 @@ Let’s use the `radix` example with 16 cores CPUs (`8` x86 CPUs), 16 cores GPUs
 	...
 
 	```
-
+	
 	* From this file, you can be able to collect all the dynamic power information you need for evaluations. 
 
 > Now you are ready to go. Happy hacking the code!
@@ -306,5 +303,5 @@ This work is also inspired by [M2StoMcPAT](http://www.ece.umd.edu/~cserafy1/inde
 
 		Tung Thanh Le
 		ttungl at gmail dot com
-		Release: Version 1.0 (02/18/17)
+		Released: Version 1.0 (02/18/17)
 		
