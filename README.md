@@ -328,7 +328,7 @@ Let’s use the `radix` example with 16 cores CPUs (`8` x86 CPUs), 16 cores GPUs
 	
 	* From this file, you can be able to collect all the dynamic power information you need for evaluations. 
 
-> Now you are ready to go. Happy hacking the code!
+> Now, you are ready to go. Happy hacking the code!
 
 ## Claims:
 
