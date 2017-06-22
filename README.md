@@ -23,7 +23,7 @@ Please cite my tool using this [bibtex](https://github.com/ttungl/HeteroArchGen4
 
 1. Currently HeteroArchGen4M2S has been tested on 64-bit platforms:
 
-	* Ubuntu 14.04 (final)
+	* Ubuntu 14.04 
 
 2. Required tools to build and run with HeteroArchGen4M2S:
 
