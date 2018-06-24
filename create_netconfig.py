@@ -15,7 +15,7 @@
 # ============================================================================
 
 from read_sdpairs import read_data
-from graph_datastructure import Graph
+#from graph_datastructure import Graph
 
 # LOCAL_LINKS_PATH: to file of the optimized results (local links)
 # HYBRID_LINKS_PATH: to file of the optimized results (hybrid links)
